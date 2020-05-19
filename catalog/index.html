@@ -8,10 +8,10 @@
 <meta content="UP42 Python SDK" name="description"/>
 <link href="https://up42.github.io/up42-py/catalog/" rel="canonical"/>
 <link href="../assets/logo-up42.ico" rel="shortcut icon"/>
-<meta content="mkdocs-1.1.1, mkdocs-material-5.1.6" name="generator"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-5.2.0" name="generator"/>
 <title>Catalog Search - UP42 Python SDK</title>
-<link href="../assets/stylesheets/main.4b9ffd7b.min.css" rel="stylesheet"/>
-<link href="../assets/stylesheets/palette.b79bcd20.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/main.18ac144a.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.616af814.min.css" rel="stylesheet"/>
 <meta content="#3f51b5" name="theme-color"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
@@ -21,7 +21,7 @@
 <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-132885718-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
 <script async="" src="https://www.google-analytics.com/analytics.js"></script>
 </head>
-<body data-md-color-accent="purple" data-md-color-primary="indigo" dir="ltr">
+<body data-md-color-accent="purple" data-md-color-primary="indigo" data-md-color-scheme="" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
@@ -223,13 +223,18 @@
     </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#initialize-catalog">
+    Initialize Catalog
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#search-scenes-in-aoi">
     Search scenes in aoi
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#quicklooks">
-    Quicklooks
+<a class="md-nav__link" href="#download-visualize-quicklooks">
+    Download &amp; visualize quicklooks
   </a>
 </li>
 </ul>
@@ -367,13 +372,18 @@
     </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#initialize-catalog">
+    Initialize Catalog
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#search-scenes-in-aoi">
     Search scenes in aoi
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#quicklooks">
-    Quicklooks
+<a class="md-nav__link" href="#download-visualize-quicklooks">
+    Download &amp; visualize quicklooks
   </a>
 </li>
 </ul>
@@ -384,6 +394,7 @@
 <div class="md-content">
 <article class="md-content__inner md-typeset">
 <h1 id="catalog-search"><img alt="🗺️" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f5fa.png" title=":world_map:"/> Catalog Search<a class="headerlink" href="#catalog-search" title="Permanent link">¶</a></h1>
+<h2 id="initialize-catalog">Initialize Catalog<a class="headerlink" href="#initialize-catalog" title="Permanent link">¶</a></h2>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">up42</span>
 <span class="n">up42</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">project_id</span><span class="o">=</span><span class="mi">12345</span><span class="p">,</span> <span class="n">project_api_key</span><span class="o">=</span><span class="mi">12345</span><span class="p">)</span>
 <span class="n">up42</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">cfg_file</span><span class="o">=</span><span class="s2">"config.json"</span><span class="p">)</span>
@@ -392,10 +403,9 @@
 <span class="n">catalog</span>
 </code></pre></div>
 <h2 id="search-scenes-in-aoi">Search scenes in aoi<a class="headerlink" href="#search-scenes-in-aoi" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code><span class="c1">#aoi = up42.read_vector_file("data/aoi_washington.geojson", </span>
-<span class="c1">#                           as_dataframe=False)</span>
-<span class="n">aoi</span> <span class="o">=</span> <span class="n">up42</span><span class="o">.</span><span class="n">get_example_aoi</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s2">"Berlin"</span><span class="p">,</span> <span class="n">as_dataframe</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">aoi</span>
+<div class="highlight"><pre><span></span><code><span class="n">aoi</span> <span class="o">=</span> <span class="n">up42</span><span class="o">.</span><span class="n">get_example_aoi</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="s2">"Berlin"</span><span class="p">,</span> <span class="n">as_dataframe</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1">#aoi = up42.read_vector_file("data/aoi_washington.geojson", </span>
+<span class="c1">#                            as_dataframe=False)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="n">search_paramaters</span> <span class="o">=</span> <span class="n">catalog</span><span class="o">.</span><span class="n">construct_parameters</span><span class="p">(</span><span class="n">geometry</span><span class="o">=</span><span class="n">aoi</span><span class="p">,</span> 
                                                  <span class="n">start_date</span><span class="o">=</span><span class="s2">"2018-01-01"</span><span class="p">,</span>
@@ -411,10 +421,11 @@
                       <span class="n">aoi</span><span class="o">=</span><span class="n">aoi</span><span class="p">,</span> 
                       <span class="n">legend_column</span><span class="o">=</span><span class="s2">"scene_id"</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="quicklooks">Quicklooks<a class="headerlink" href="#quicklooks" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code><span class="n">catalog</span><span class="o">.</span><span class="n">download_quicklooks</span><span class="p">(</span><span class="n">image_ids</span><span class="o">=</span><span class="n">search_results</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">to_list</span><span class="p">(),</span> <span class="n">sensor</span><span class="o">=</span><span class="s2">"pleiades"</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="n">catalog</span><span class="o">.</span><span class="n">plot_quicklooks</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span>
+<h2 id="download-visualize-quicklooks">Download &amp; visualize quicklooks<a class="headerlink" href="#download-visualize-quicklooks" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">catalog</span><span class="o">.</span><span class="n">download_quicklooks</span><span class="p">(</span><span class="n">image_ids</span><span class="o">=</span><span class="n">search_results</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">to_list</span><span class="p">(),</span> 
+                            <span class="n">sensor</span><span class="o">=</span><span class="s2">"pleiades"</span><span class="p">)</span>
+
+<span class="n">catalog</span><span class="o">.</span><span class="n">plot_quicklooks</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span>
 </code></pre></div>
 </article>
 </div>
@@ -467,7 +478,7 @@
 <a class="md-footer-social__link" href="https://github.com/up42" rel="noopener" target="_blank" title="github.com">
 <svg viewbox="0 0 480 512" xmlns="http://www.w3.org/2000/svg"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"></path></svg>
 </a>
-<a class="md-footer-social__link" href="https://twitter.com/up42official" rel="noopener" target="_blank" title="twitter.com">
+<a class="md-footer-social__link" href="https://twitter.com/up42_" rel="noopener" target="_blank" title="twitter.com">
 <svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>
 </a>
 <a class="md-footer-social__link" href="https://www.linkedin.com/company/up42/" rel="noopener" target="_blank" title="www.linkedin.com">
@@ -478,14 +489,14 @@
 </div>
 </footer>
 </div>
-<script src="../assets/javascripts/vendor.a0c4167b.min.js"></script>
-<script src="../assets/javascripts/bundle.fb26dd1d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+<script src="../assets/javascripts/vendor.d710d30a.min.js"></script>
+<script src="../assets/javascripts/bundle.5f27aba8.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
 <script>
         app = initialize({
           base: "..",
           features: ["tabs"],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.37585f48.min.js"
+            worker: "../assets/javascripts/worker/search.27c6a5e6.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
