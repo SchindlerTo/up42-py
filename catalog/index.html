@@ -412,14 +412,14 @@
 <span class="c1">#aoi = up42.read_vector_file("data/aoi_washington.geojson", </span>
 <span class="c1">#                            as_dataframe=False)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="n">search_paramaters</span> <span class="o">=</span> <span class="n">catalog</span><span class="o">.</span><span class="n">construct_parameters</span><span class="p">(</span><span class="n">geometry</span><span class="o">=</span><span class="n">aoi</span><span class="p">,</span> 
+<div class="highlight"><pre><span></span><code><span class="n">search_parameters</span> <span class="o">=</span> <span class="n">catalog</span><span class="o">.</span><span class="n">construct_parameters</span><span class="p">(</span><span class="n">geometry</span><span class="o">=</span><span class="n">aoi</span><span class="p">,</span> 
                                                  <span class="n">start_date</span><span class="o">=</span><span class="s2">"2018-01-01"</span><span class="p">,</span>
                                                  <span class="n">end_date</span><span class="o">=</span><span class="s2">"2020-12-31"</span><span class="p">,</span>
                                                  <span class="n">sensors</span><span class="o">=</span><span class="p">[</span><span class="s2">"pleiades"</span><span class="p">],</span>
                                                  <span class="n">max_cloudcover</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
                                                  <span class="n">sortby</span><span class="o">=</span><span class="s2">"cloudCoverage"</span><span class="p">,</span> 
                                                  <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">search_results</span> <span class="o">=</span> <span class="n">catalog</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">search_paramaters</span><span class="o">=</span><span class="n">search_paramaters</span><span class="p">)</span>
+<span class="n">search_results</span> <span class="o">=</span> <span class="n">catalog</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">search_parameters</span><span class="o">=</span><span class="n">search_parameters</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">search_results</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="n">catalog</span><span class="o">.</span><span class="n">plot_coverage</span><span class="p">(</span><span class="n">scenes</span><span class="o">=</span><span class="n">search_results</span><span class="p">,</span> 

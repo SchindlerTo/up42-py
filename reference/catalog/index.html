@@ -734,7 +734,7 @@ scenes with 8.4 or less cloudcover.</p>
     <span class="p">)</span>
 
     <span class="c1"># TODO: cc also contains nan with sentinel 1 etc. ignore?</span>
-    <span class="n">search_paramaters</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">search_parameters</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s2">"datetime"</span><span class="p">:</span> <span class="n">datetime</span><span class="p">,</span>
         <span class="s2">"intersects"</span><span class="p">:</span> <span class="n">aoi_geometry</span><span class="p">,</span>
         <span class="s2">"limit"</span><span class="p">:</span> <span class="n">limit</span><span class="p">,</span>
@@ -742,7 +742,7 @@ scenes with 8.4 or less cloudcover.</p>
         <span class="s2">"sortby"</span><span class="p">:</span> <span class="p">[{</span><span class="s2">"field"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"properties.</span><span class="si">{</span><span class="n">sortby</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"direction"</span><span class="p">:</span> <span class="n">sort_order</span><span class="p">}],</span>
     <span class="p">}</span>
 
-    <span class="k">return</span> <span class="n">search_paramaters</span>
+    <span class="k">return</span> <span class="n">search_parameters</span>
 </code></pre>
 </div>
 </td>
@@ -964,7 +964,7 @@ directory.</p>
 <div class="doc doc-object doc-method">
 <h2 class="doc doc-heading" id="up42.catalog.Catalog.search">
 <code class="highlight language-python">
-search<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">search_paramaters</span><span class="p">,</span> <span class="n">as_dataframe</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> </code>
+search<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">search_parameters</span><span class="p">,</span> <span class="n">as_dataframe</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> </code>
 <a class="headerlink" href="#up42.catalog.Catalog.search" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents">
 <p>Searches the catalog for the the search parameters and returns the metadata of
@@ -1018,7 +1018,7 @@ the matching scenes.</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="highlight">
-<pre><span></span><code>    <span class="n">search_paramaters</span><span class="o">=</span><span class="p">{</span>
+<pre><span></span><code>    <span class="n">search_parameters</span><span class="o">=</span><span class="p">{</span>
         <span class="s2">"datetime"</span><span class="p">:</span> <span class="s2">"2019-01-01T00:00:00Z/2019-01-15T00:00:00Z"</span><span class="p">,</span>
         <span class="s2">"intersects"</span><span class="p">:</span> <span class="p">{</span>
             <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"Polygon"</span><span class="p">,</span>
@@ -1109,7 +1109,7 @@ the matching scenes.</p>
 <td class="code">
 <div class="highlight">
 <pre><span></span><code><span class="k">def</span> <span class="nf">search</span><span class="p">(</span>
-    <span class="bp">self</span><span class="p">,</span> <span class="n">search_paramaters</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">as_dataframe</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">search_parameters</span><span class="p">:</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">as_dataframe</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">GeoDataFrame</span><span class="p">,</span> <span class="n">Dict</span><span class="p">]:</span>
     <span class="sd">"""</span>
 <span class="sd">    Searches the catalog for the the search parameters and returns the metadata of</span>
@@ -1124,7 +1124,7 @@ the matching scenes.</p>
 
 <span class="sd">    Example:</span>
 <span class="sd">        ```python</span>
-<span class="sd">            search_paramaters={</span>
+<span class="sd">            search_parameters={</span>
 <span class="sd">                "datetime": "2019-01-01T00:00:00Z/2019-01-15T00:00:00Z",</span>
 <span class="sd">                "intersects": {</span>
 <span class="sd">                    "type": "Polygon",</span>
@@ -1136,9 +1136,9 @@ the matching scenes.</p>
 <span class="sd">                }</span>
 <span class="sd">        ```</span>
 <span class="sd">    """</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Searching catalog with: </span><span class="si">%r</span><span class="s2">"</span><span class="p">,</span> <span class="n">search_paramaters</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Searching catalog with: </span><span class="si">%r</span><span class="s2">"</span><span class="p">,</span> <span class="n">search_parameters</span><span class="p">)</span>
     <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_endpoint</span><span class="p">()</span><span class="si">}</span><span class="s2">/catalog/stac/search"</span>
-    <span class="n">response_json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="s2">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">search_paramaters</span><span class="p">)</span>
+    <span class="n">response_json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="s2">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">search_parameters</span><span class="p">)</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="s2"> results returned."</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">response_json</span><span class="p">[</span><span class="s2">"features"</span><span class="p">]))</span>
     <span class="n">dst_crs</span> <span class="o">=</span> <span class="s2">"EPSG:4326"</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">GeoDataFrame</span><span class="o">.</span><span class="n">from_features</span><span class="p">(</span><span class="n">response_json</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">dst_crs</span><span class="p">)</span>
@@ -1152,7 +1152,7 @@ the matching scenes.</p>
     <span class="c1"># bounds geometry, can contain scenes that touch the aoi bbox, but not the aoi.</span>
     <span class="c1"># So number returned images not consistent with set limit.</span>
     <span class="c1"># TODO: Resolve on backend</span>
-    <span class="n">geometry</span> <span class="o">=</span> <span class="n">search_paramaters</span><span class="p">[</span><span class="s2">"intersects"</span><span class="p">]</span>
+    <span class="n">geometry</span> <span class="o">=</span> <span class="n">search_parameters</span><span class="p">[</span><span class="s2">"intersects"</span><span class="p">]</span>
     <span class="n">poly</span> <span class="o">=</span> <span class="n">shape</span><span class="p">(</span><span class="n">geometry</span><span class="p">)</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">poly</span><span class="p">)]</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
