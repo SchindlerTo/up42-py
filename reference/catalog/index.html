@@ -1,4 +1,4 @@
-
+<!-- Elements added to main will be displayed on all pages -->
 <!DOCTYPE html>
 
 <html class="no-js" lang="en">
@@ -8,16 +8,15 @@
 <meta content="UP42 Python SDK" name="description"/>
 <link href="https://up42.github.io/up42-py/reference/catalog/" rel="canonical"/>
 <link href="../../assets/logo-up42.ico" rel="shortcut icon"/>
-<meta content="mkdocs-1.1.2, mkdocs-material-5.2.2" name="generator"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-5.4.0" name="generator"/>
 <title>Catalog - UP42 Python SDK</title>
-<link href="../../assets/stylesheets/main.a2408e81.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.fe0cca5b.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.a46bcfb3.min.css" rel="stylesheet"/>
 <meta content="#3f51b5" name="theme-color"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
 <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
 <link href="../../stylesheets/extra.css" rel="stylesheet"/>
-<link href="https://www.google-analytics.com" rel="preconnect dns-prefetch"/>
 <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-132885718-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
 <script async="" src="https://www.google-analytics.com/analytics.js"></script>
 </head>
@@ -26,11 +25,19 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#project-class">
+<a class="md-skip" href="#catalog-class">
           Skip to content
         </a>
 </div>
 <div data-md-component="announce">
+<aside class="md-announce">
+<div class="md-announce__inner md-grid md-typeset">
+<style>.md-announce a,.md-announce a:focus,.md-announce a:hover{color:currentColor}.md-announce strong{white-space:nowrap}.md-announce .twitter{margin-left:.2em;color:#00acee}</style>
+<a href="https://up42.github.io/up42-py/release-notes/"><strong>New:</strong> Find recent changes &amp; new features in the 📅
+      <strong>Release Notes</strong>!
+    </a>
+</div>
+</aside>
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header-nav md-grid">
@@ -105,13 +112,8 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../installation/">
-          Guides
-        </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../project/">
-          Code Reference
+<a class="md-tabs__link" href="../../30-second-example/">
+          Getting Started
         </a>
 </li>
 <li class="md-tabs__item">
@@ -120,8 +122,23 @@
         </a>
 </li>
 <li class="md-tabs__item">
+<a class="md-tabs__link" href="../../cli/">
+          CLI
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../project/">
+          Code Reference
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../CHANGELOG/">
+          Releases
+        </a>
+</li>
+<li class="md-tabs__item">
 <a class="md-tabs__link" href="../../support-faq/">
-          Support &amp; FAQ
+          FAQ &amp; Support
         </a>
 </li>
 </ul>
@@ -165,19 +182,24 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" id="nav-2" type="checkbox"/>
 <label class="md-nav__link" for="nav-2">
-      Guides
+      Getting Started
       <span class="md-nav__icon md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
 </span>
 </label>
-<nav aria-label="Guides" class="md-nav" data-md-level="1">
+<nav aria-label="Getting Started" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="nav-2">
 <span class="md-nav__icon md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </span>
-        Guides
+        Getting Started
       </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../30-second-example/" title="30 Second Example">
+      30 Second Example
+    </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../installation/" title="Installation">
       Installation
@@ -194,38 +216,96 @@
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../30-second-example/" title="30 Second Example">
-      30 Second Example
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../typical-usage/" title="Typical Usage">
-      Typical Usage
-    </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../../catalog/" title="Catalog Search">
       Catalog Search
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../cli/" title="Command Line Interface">
-      Command Line Interface
+<a class="md-nav__link" href="../../detailed-example/" title="Detailed Example">
+      Detailed Example
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
+<label class="md-nav__link" for="nav-3">
+      Examples
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+</span>
+</label>
+<nav aria-label="Examples" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-3">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+        Examples
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../examples-intro/" title="Examples">
+      Examples
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../examples/radar_processing_1/" title="Radar processing">
+      Radar processing
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../examples/airports-parallel/" title="Airport monitoring">
+      Airport monitoring
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../examples/flood_mapping/" title="Flood mapping">
+      Flood mapping
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" id="nav-4" type="checkbox"/>
+<label class="md-nav__link" for="nav-4">
+      CLI
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+</span>
+</label>
+<nav aria-label="CLI" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-4">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+        CLI
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cli/" title="Command Line Interface (CLI)">
+      Command Line Interface (CLI)
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../cli/" title="Command Reference">
+      Command Reference
     </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
-<label class="md-nav__link" for="nav-3">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="nav-5" id="nav-5" type="checkbox"/>
+<label class="md-nav__link" for="nav-5">
       Code Reference
       <span class="md-nav__icon md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
 </span>
 </label>
 <nav aria-label="Code Reference" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="nav-3">
+<label class="md-nav__title" for="nav-5">
 <span class="md-nav__icon md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </span>
@@ -304,67 +384,57 @@
       Tools
     </a>
 </li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" id="nav-4" type="checkbox"/>
-<label class="md-nav__link" for="nav-4">
-      Examples
-      <span class="md-nav__icon md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
-</span>
-</label>
-<nav aria-label="Examples" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="nav-4">
-<span class="md-nav__icon md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
-</span>
-        Examples
-      </label>
-<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../examples-intro/" title="Examples">
-      Examples
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../examples/radar_processing_1/" title="Radar processing">
-      Radar processing
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../examples/airports-parallel/" title="Airport monitoring">
-      Airport monitoring
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../examples/flood_mapping/" title="Flood mapping">
-      Flood mapping
+<a class="md-nav__link" href="../cli/" title="CLI">
+      CLI
     </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" id="nav-5" type="checkbox"/>
-<label class="md-nav__link" for="nav-5">
-      Support &amp; FAQ
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" id="nav-6" type="checkbox"/>
+<label class="md-nav__link" for="nav-6">
+      Releases
       <span class="md-nav__icon md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
 </span>
 </label>
-<nav aria-label="Support &amp; FAQ" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="nav-5">
+<nav aria-label="Releases" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-6">
 <span class="md-nav__icon md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </span>
-        Support &amp; FAQ
+        Releases
       </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../support-faq/" title="FAQ">
-      FAQ
+<a class="md-nav__link" href="../../CHANGELOG/" title="Releases">
+      Releases
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" id="nav-7" type="checkbox"/>
+<label class="md-nav__link" for="nav-7">
+      FAQ &amp; Support
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+</span>
+</label>
+<nav aria-label="FAQ &amp; Support" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-7">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+        FAQ &amp; Support
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../support-faq/" title="FAQ &amp; Support">
+      FAQ &amp; Support
     </a>
 </li>
 </ul>
@@ -418,7 +488,7 @@
 </div>
 <div class="md-content">
 <article class="md-content__inner md-typeset">
-<h1 id="project-class">Project class<a class="headerlink" href="#project-class" title="Permanent link">¶</a></h1>
+<h1 id="catalog-class">Catalog class<a class="headerlink" href="#catalog-class" title="Permanent link">¶</a></h1>
 <div class="doc doc-object doc-class">
 <h2 class="hidden-toc" href="#up42.catalog.Catalog" id="up42.catalog.Catalog" style="visibility: hidden; width: 0; height: 0;">
 <a class="headerlink" href="#up42.catalog.Catalog" title="Permanent link">¶</a></h2>
@@ -435,8 +505,6 @@ __init__<span class="p">(</span><span class="bp">self</span><span class="p">,</s
 <div class="doc doc-contents">
 <p>The Catalog class enables access to the UP42 catalog search. You can search
 for satellite image scenes for different sensors and criteria like cloud cover etc.</p>
-<p>Public Methods:
-    construct_parameters, search, download_quicklooks</p>
 <details class="quote">
 <summary>Source code in <code>up42/catalog.py</code></summary>
 <table class="highlighttable">
@@ -449,19 +517,15 @@ for satellite image scenes for different sensors and criteria like cloud cover e
 57
 58
 59
-60
-61
-62</pre>
+60</pre>
 </div>
 </td>
 <td class="code">
 <div class="highlight">
 <pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">auth</span><span class="p">:</span> <span class="n">Auth</span><span class="p">):</span>
-    <span class="sd">"""The Catalog class enables access to the UP42 catalog search. You can search</span>
+    <span class="sd">"""</span>
+<span class="sd">    The Catalog class enables access to the UP42 catalog search. You can search</span>
 <span class="sd">    for satellite image scenes for different sensors and criteria like cloud cover etc.</span>
-
-<span class="sd">    Public Methods:</span>
-<span class="sd">        construct_parameters, search, download_quicklooks</span>
 <span class="sd">    """</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">auth</span> <span class="o">=</span> <span class="n">auth</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">quicklooks</span> <span class="o">=</span> <span class="kc">None</span>
@@ -523,7 +587,7 @@ List, GeoDataFrame, Point, Polygon.</p>
 <td><code>sensors</code></td>
 <td><code>List[str]</code></td>
 <td>
-<p>The satellite sensor(s) to search for, one or multiple of
+<p>The satellite sensors to search for, one or multiple of
 ["pleiades", "spot", "sentinel1", "sentinel2", "sentinel3", "sentinel5p"]</p>
 </td>
 <td><code>['pleiades', 'spot', 'sentinel1', 'sentinel2', 'sentinel3', 'sentinel5p']</code></td>
@@ -587,7 +651,9 @@ scenes with 8.4 or less cloudcover.</p>
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span> 68
+<pre><span></span> 66
+ 67
+ 68
  69
  70
  71
@@ -660,9 +726,7 @@ scenes with 8.4 or less cloudcover.</p>
 138
 139
 140
-141
-142
-143</pre>
+141</pre>
 </div>
 </td>
 <td class="code">
@@ -695,7 +759,7 @@ scenes with 8.4 or less cloudcover.</p>
 <span class="sd">            List, GeoDataFrame, Point, Polygon.</span>
 <span class="sd">        start_date: Query period starting day, format "2020-01-01".</span>
 <span class="sd">        end_date: Query period ending day, format "2020-01-01".</span>
-<span class="sd">        sensors: The satellite sensor(s) to search for, one or multiple of</span>
+<span class="sd">        sensors: The satellite sensors to search for, one or multiple of</span>
 <span class="sd">            ["pleiades", "spot", "sentinel1", "sentinel2", "sentinel3", "sentinel5p"]</span>
 <span class="sd">        limit: The maximum number of search results to return.</span>
 <span class="sd">        max_cloudcover: Maximum cloudcover % - 100 will return all scenes, 8.4 will return all</span>
@@ -779,11 +843,11 @@ be plotted via catalog.plot_quicklooks().</p>
 <td><em>required</em></td>
 </tr>
 <tr>
-<td><code>sensors</code></td>
-<td><code></code></td>
+<td><code>sensor</code></td>
+<td><code>str</code></td>
 <td>
-<p>The satellite sensor(s) to search for, one of
-"pleiades", "spot", "sentinel1", "sentinel2", "sentinel3", "sentinel5p".</p>
+<p>The satellite sensor of the image_ids, one of "pleiades", "spot",
+"sentinel1", "sentinel2", "sentinel3", "sentinel5p".</p>
 </td>
 <td><em>required</em></td>
 </tr>
@@ -821,7 +885,9 @@ directory.</p>
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>213
+<pre><span></span>211
+212
+213
 214
 215
 216
@@ -882,9 +948,7 @@ directory.</p>
 271
 272
 273
-274
-275
-276</pre>
+274</pre>
 </div>
 </td>
 <td class="code">
@@ -901,8 +965,8 @@ directory.</p>
 
 <span class="sd">    Args:</span>
 <span class="sd">        image_ids: provider image_id in the form "6dffb8be-c2ab-46e3-9c1c-6958a54e4527"</span>
-<span class="sd">        sensors: The satellite sensor(s) to search for, one of</span>
-<span class="sd">            "pleiades", "spot", "sentinel1", "sentinel2", "sentinel3", "sentinel5p".</span>
+<span class="sd">        sensor: The satellite sensor of the image_ids, one of "pleiades", "spot",</span>
+<span class="sd">            "sentinel1", "sentinel2", "sentinel3", "sentinel5p".</span>
 <span class="sd">        output_directory: The file output directory, defaults to the current working</span>
 <span class="sd">            directory.</span>
 
@@ -981,8 +1045,8 @@ the matching scenes.</p>
 </thead>
 <tbody>
 <tr>
-<td><code>search_params</code></td>
-<td><code></code></td>
+<td><code>search_parameters</code></td>
+<td><code>Dict</code></td>
 <td>
 <p>The catalog search parameters, see example.</p>
 </td>
@@ -1015,8 +1079,7 @@ the matching scenes.</p>
 </tr>
 </tbody>
 </table>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
+<p><strong>Examples:</strong></p>
 <div class="highlight">
 <pre><span></span><code>    <span class="n">search_parameters</span><span class="o">=</span><span class="p">{</span>
         <span class="s2">"datetime"</span><span class="p">:</span> <span class="s2">"2019-01-01T00:00:00Z/2019-01-15T00:00:00Z"</span><span class="p">,</span>
@@ -1030,14 +1093,15 @@ the matching scenes.</p>
         <span class="p">}</span>
 </code></pre>
 </div>
-</div>
 <details class="quote">
 <summary>Source code in <code>up42/catalog.py</code></summary>
 <table class="highlighttable">
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>145
+<pre><span></span>143
+144
+145
 146
 147
 148
@@ -1101,9 +1165,7 @@ the matching scenes.</p>
 206
 207
 208
-209
-210
-211</pre>
+209</pre>
 </div>
 </td>
 <td class="code">
@@ -1116,7 +1178,7 @@ the matching scenes.</p>
 <span class="sd">    the matching scenes.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        search_params: The catalog search parameters, see example.</span>
+<span class="sd">        search_parameters: The catalog search parameters, see example.</span>
 <span class="sd">        as_dataframe: return type, GeoDataFrame if True (default), FeatureCollection if False.</span>
 
 <span class="sd">    Returns:</span>
@@ -1243,19 +1305,22 @@ the matching scenes.</p>
 <a class="md-footer-social__link" href="https://www.linkedin.com/company/up42/" rel="noopener" target="_blank" title="www.linkedin.com">
 <svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
 </a>
+<a class="md-footer-social__link" href="mailto:support@up42.com" rel="noopener" target="_blank" title="">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg>
+</a>
 </div>
 </div>
 </div>
 </footer>
 </div>
 <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
-<script src="../../assets/javascripts/bundle.5f27aba8.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+<script src="../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
 <script>
         app = initialize({
           base: "../..",
           features: ["tabs"],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.27c6a5e6.min.js"
+            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

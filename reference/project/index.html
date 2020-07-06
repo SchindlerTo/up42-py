@@ -1,4 +1,4 @@
-
+<!-- Elements added to main will be displayed on all pages -->
 <!DOCTYPE html>
 
 <html class="no-js" lang="en">
@@ -8,16 +8,15 @@
 <meta content="UP42 Python SDK" name="description"/>
 <link href="https://up42.github.io/up42-py/reference/project/" rel="canonical"/>
 <link href="../../assets/logo-up42.ico" rel="shortcut icon"/>
-<meta content="mkdocs-1.1.2, mkdocs-material-5.2.2" name="generator"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-5.4.0" name="generator"/>
 <title>Project - UP42 Python SDK</title>
-<link href="../../assets/stylesheets/main.a2408e81.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.fe0cca5b.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.a46bcfb3.min.css" rel="stylesheet"/>
 <meta content="#3f51b5" name="theme-color"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
 <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
 <link href="../../stylesheets/extra.css" rel="stylesheet"/>
-<link href="https://www.google-analytics.com" rel="preconnect dns-prefetch"/>
 <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-132885718-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
 <script async="" src="https://www.google-analytics.com/analytics.js"></script>
 </head>
@@ -31,6 +30,14 @@
         </a>
 </div>
 <div data-md-component="announce">
+<aside class="md-announce">
+<div class="md-announce__inner md-grid md-typeset">
+<style>.md-announce a,.md-announce a:focus,.md-announce a:hover{color:currentColor}.md-announce strong{white-space:nowrap}.md-announce .twitter{margin-left:.2em;color:#00acee}</style>
+<a href="https://up42.github.io/up42-py/release-notes/"><strong>New:</strong> Find recent changes &amp; new features in the 📅
+      <strong>Release Notes</strong>!
+    </a>
+</div>
+</aside>
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header-nav md-grid">
@@ -105,13 +112,8 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../installation/">
-          Guides
-        </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="./">
-          Code Reference
+<a class="md-tabs__link" href="../../30-second-example/">
+          Getting Started
         </a>
 </li>
 <li class="md-tabs__item">
@@ -120,8 +122,23 @@
         </a>
 </li>
 <li class="md-tabs__item">
+<a class="md-tabs__link" href="../../cli/">
+          CLI
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="./">
+          Code Reference
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../CHANGELOG/">
+          Releases
+        </a>
+</li>
+<li class="md-tabs__item">
 <a class="md-tabs__link" href="../../support-faq/">
-          Support &amp; FAQ
+          FAQ &amp; Support
         </a>
 </li>
 </ul>
@@ -165,19 +182,24 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" id="nav-2" type="checkbox"/>
 <label class="md-nav__link" for="nav-2">
-      Guides
+      Getting Started
       <span class="md-nav__icon md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
 </span>
 </label>
-<nav aria-label="Guides" class="md-nav" data-md-level="1">
+<nav aria-label="Getting Started" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="nav-2">
 <span class="md-nav__icon md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </span>
-        Guides
+        Getting Started
       </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../30-second-example/" title="30 Second Example">
+      30 Second Example
+    </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../installation/" title="Installation">
       Installation
@@ -194,38 +216,96 @@
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../30-second-example/" title="30 Second Example">
-      30 Second Example
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../typical-usage/" title="Typical Usage">
-      Typical Usage
-    </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="../../catalog/" title="Catalog Search">
       Catalog Search
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../cli/" title="Command Line Interface">
-      Command Line Interface
+<a class="md-nav__link" href="../../detailed-example/" title="Detailed Example">
+      Detailed Example
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
+<label class="md-nav__link" for="nav-3">
+      Examples
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+</span>
+</label>
+<nav aria-label="Examples" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-3">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+        Examples
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../examples-intro/" title="Examples">
+      Examples
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../examples/radar_processing_1/" title="Radar processing">
+      Radar processing
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../examples/airports-parallel/" title="Airport monitoring">
+      Airport monitoring
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../examples/flood_mapping/" title="Flood mapping">
+      Flood mapping
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" id="nav-4" type="checkbox"/>
+<label class="md-nav__link" for="nav-4">
+      CLI
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+</span>
+</label>
+<nav aria-label="CLI" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-4">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+        CLI
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cli/" title="Command Line Interface (CLI)">
+      Command Line Interface (CLI)
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../cli/" title="Command Reference">
+      Command Reference
     </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
-<label class="md-nav__link" for="nav-3">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="nav-5" id="nav-5" type="checkbox"/>
+<label class="md-nav__link" for="nav-5">
       Code Reference
       <span class="md-nav__icon md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
 </span>
 </label>
 <nav aria-label="Code Reference" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="nav-3">
+<label class="md-nav__title" for="nav-5">
 <span class="md-nav__icon md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </span>
@@ -314,67 +394,57 @@
       Tools
     </a>
 </li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" id="nav-4" type="checkbox"/>
-<label class="md-nav__link" for="nav-4">
-      Examples
-      <span class="md-nav__icon md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
-</span>
-</label>
-<nav aria-label="Examples" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="nav-4">
-<span class="md-nav__icon md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
-</span>
-        Examples
-      </label>
-<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../examples-intro/" title="Examples">
-      Examples
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../examples/radar_processing_1/" title="Radar processing">
-      Radar processing
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../examples/airports-parallel/" title="Airport monitoring">
-      Airport monitoring
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../examples/flood_mapping/" title="Flood mapping">
-      Flood mapping
+<a class="md-nav__link" href="../cli/" title="CLI">
+      CLI
     </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" id="nav-5" type="checkbox"/>
-<label class="md-nav__link" for="nav-5">
-      Support &amp; FAQ
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" id="nav-6" type="checkbox"/>
+<label class="md-nav__link" for="nav-6">
+      Releases
       <span class="md-nav__icon md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
 </span>
 </label>
-<nav aria-label="Support &amp; FAQ" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="nav-5">
+<nav aria-label="Releases" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-6">
 <span class="md-nav__icon md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </span>
-        Support &amp; FAQ
+        Releases
       </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../support-faq/" title="FAQ">
-      FAQ
+<a class="md-nav__link" href="../../CHANGELOG/" title="Releases">
+      Releases
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" id="nav-7" type="checkbox"/>
+<label class="md-nav__link" for="nav-7">
+      FAQ &amp; Support
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+</span>
+</label>
+<nav aria-label="FAQ &amp; Support" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-7">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+        FAQ &amp; Support
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../support-faq/" title="FAQ &amp; Support">
+      FAQ &amp; Support
     </a>
 </li>
 </ul>
@@ -455,9 +525,6 @@ __init__<span class="p">(</span><span class="bp">self</span><span class="p">,</s
 <div class="doc doc-contents">
 <p>The Project class can query all available workflows and spawn new workflows
 within an UP42 project. Also handles project user settings.</p>
-<p>Public Methods:
-    create_workflow, get_workflows, get_jobs, get_project_settings,
-    update_project_settings</p>
 <details class="quote">
 <summary>Source code in <code>up42/project.py</code></summary>
 <table class="highlighttable">
@@ -472,11 +539,7 @@ within an UP42 project. Also handles project user settings.</p>
 21
 22
 23
-24
-25
-26
-27
-28</pre>
+24</pre>
 </div>
 </td>
 <td class="code">
@@ -485,10 +548,6 @@ within an UP42 project. Also handles project user settings.</p>
     <span class="sd">"""</span>
 <span class="sd">    The Project class can query all available workflows and spawn new workflows</span>
 <span class="sd">    within an UP42 project. Also handles project user settings.</span>
-
-<span class="sd">    Public Methods:</span>
-<span class="sd">        create_workflow, get_workflows, get_jobs, get_project_settings,</span>
-<span class="sd">        update_project_settings</span>
 <span class="sd">    """</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">auth</span> <span class="o">=</span> <span class="n">auth</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">project_id</span> <span class="o">=</span> <span class="n">project_id</span>
@@ -570,7 +629,11 @@ most recent workflow with the same name &amp; description.</p>
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>42
+<pre><span></span>38
+39
+40
+41
+42
 43
 44
 45
@@ -610,11 +673,7 @@ most recent workflow with the same name &amp; description.</p>
 79
 80
 81
-82
-83
-84
-85
-86</pre>
+82</pre>
 </div>
 </td>
 <td class="code">
@@ -724,7 +783,11 @@ get_jobs<span class="p">(</span><span class="bp">self</span><span class="p">,</s
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>114
+<pre><span></span>110
+111
+112
+113
+114
 115
 116
 117
@@ -745,11 +808,7 @@ get_jobs<span class="p">(</span><span class="bp">self</span><span class="p">,</s
 132
 133
 134
-135
-136
-137
-138
-139</pre>
+135</pre>
 </div>
 </td>
 <td class="code">
@@ -818,17 +877,17 @@ get_project_settings<span class="p">(</span><span class="bp">self</span><span cl
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>141
+<pre><span></span>137
+138
+139
+140
+141
 142
 143
 144
 145
 146
-147
-148
-149
-150
-151</pre>
+147</pre>
 </div>
 </td>
 <td class="code">
@@ -903,7 +962,11 @@ get_workflows<span class="p">(</span><span class="bp">self</span><span class="p"
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span> 88
+<pre><span></span> 84
+ 85
+ 86
+ 87
+ 88
  89
  90
  91
@@ -923,11 +986,7 @@ get_workflows<span class="p">(</span><span class="bp">self</span><span class="p"
 105
 106
 107
-108
-109
-110
-111
-112</pre>
+108</pre>
 </div>
 </td>
 <td class="code">
@@ -1015,7 +1074,11 @@ update_project_settings<span class="p">(</span><span class="bp">self</span><span
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>153
+<pre><span></span>149
+150
+151
+152
+153
 154
 155
 156
@@ -1041,11 +1104,7 @@ update_project_settings<span class="p">(</span><span class="bp">self</span><span
 176
 177
 178
-179
-180
-181
-182
-183</pre>
+179</pre>
 </div>
 </td>
 <td class="code">
@@ -1099,7 +1158,7 @@ update_project_settings<span class="p">(</span><span class="bp">self</span><span
 <footer class="md-footer">
 <div class="md-footer-nav">
 <nav aria-label="Footer" class="md-footer-nav__inner md-grid">
-<a class="md-footer-nav__link md-footer-nav__link--prev" href="../../cli/" rel="prev" title="Command Line Interface">
+<a class="md-footer-nav__link md-footer-nav__link--prev" href="../cli/" rel="prev" title="Command Reference">
 <div class="md-footer-nav__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -1108,7 +1167,7 @@ update_project_settings<span class="p">(</span><span class="bp">self</span><span
 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Command Line Interface
+                Command Reference
               </div>
 </div>
 </a>
@@ -1149,19 +1208,22 @@ update_project_settings<span class="p">(</span><span class="bp">self</span><span
 <a class="md-footer-social__link" href="https://www.linkedin.com/company/up42/" rel="noopener" target="_blank" title="www.linkedin.com">
 <svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
 </a>
+<a class="md-footer-social__link" href="mailto:support@up42.com" rel="noopener" target="_blank" title="">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg>
+</a>
 </div>
 </div>
 </div>
 </footer>
 </div>
 <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
-<script src="../../assets/javascripts/bundle.5f27aba8.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+<script src="../../assets/javascripts/bundle.b39636ac.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
 <script>
         app = initialize({
           base: "../..",
           features: ["tabs"],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.27c6a5e6.min.js"
+            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

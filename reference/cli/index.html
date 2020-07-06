@@ -6,10 +6,10 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="UP42 Python SDK" name="description"/>
-<link href="https://up42.github.io/up42-py/reference/jobtask/" rel="canonical"/>
+<link href="https://up42.github.io/up42-py/reference/cli/" rel="canonical"/>
 <link href="../../assets/logo-up42.ico" rel="shortcut icon"/>
 <meta content="mkdocs-1.1.2, mkdocs-material-5.4.0" name="generator"/>
-<title>JobTask - UP42 Python SDK</title>
+<title>CLI - UP42 Python SDK</title>
 <link href="../../assets/stylesheets/main.fe0cca5b.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.a46bcfb3.min.css" rel="stylesheet"/>
 <meta content="#3f51b5" name="theme-color"/>
@@ -25,7 +25,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#jobtask-class">
+<a class="md-skip" href="#command-line-interface-cli">
           Skip to content
         </a>
 </div>
@@ -57,7 +57,7 @@
           </span>
 <span class="md-header-nav__topic md-ellipsis">
             
-              JobTask
+              CLI
             
           </span>
 </div>
@@ -289,7 +289,7 @@
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../cli/" title="Command Reference">
+<a class="md-nav__link" href="./" title="Command Reference">
       Command Reference
     </a>
 </li>
@@ -327,52 +327,10 @@
       Job
     </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-        JobTask
-        <span class="md-nav__icon md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"></path></svg>
-</span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./" title="JobTask">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../jobtask/" title="JobTask">
       JobTask
     </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
-</span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#up42.jobtask.JobTask">
-    up42.jobtask.JobTask
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#up42.jobtask.JobTask.__init__">
-    __init__()
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#up42.jobtask.JobTask.download_quicklooks">
-    download_quicklooks()
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#up42.jobtask.JobTask.download_results">
-    download_results()
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#up42.jobtask.JobTask.get_results_json">
-    get_results_json()
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../catalog/" title="Catalog">
@@ -384,10 +342,232 @@
       Tools
     </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../cli/" title="CLI">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+        CLI
+        <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"></path></svg>
+</span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./" title="CLI">
       CLI
     </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#main">
+    main
+  </a>
+<nav aria-label="main" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#auth">
+    auth
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#catalog">
+    catalog
+  </a>
+<nav aria-label="catalog" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#construct-parameters">
+    construct-parameters
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#search">
+    search
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#config">
+    config
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-block-details">
+    get-block-details
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-blocks">
+    get-blocks
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#job">
+    job
+  </a>
+<nav aria-label="job" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cancel-job">
+    cancel-job
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#download-quicklooks">
+    download-quicklooks
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#download-results">
+    download-results
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-info">
+    get-info
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-jobtasks">
+    get-jobtasks
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-jobtasks-results-json">
+    get-jobtasks-results-json
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-logs">
+    get-logs
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-results-json">
+    get-results-json
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-status">
+    get-status
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#track-status">
+    track-status
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#project">
+    project
+  </a>
+<nav aria-label="project" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#create-workflow">
+    create-workflow
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-project-settings">
+    get-project-settings
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-workflows">
+    get-workflows
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#update-project-settings">
+    update-project-settings
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#workflow-from-name">
+    workflow-from-name
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#validate-manifest">
+    validate-manifest
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#workflow">
+    workflow
+  </a>
+<nav aria-label="workflow" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#add-workflow-tasks">
+    add-workflow-tasks
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#delete">
+    delete
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-compatible-blocks">
+    get-compatible-blocks
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-info_1">
+    get-info
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-jobs">
+    get-jobs
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-parameters-info">
+    get-parameters-info
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-workflow-tasks">
+    get-workflow-tasks
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#run-job">
+    run-job
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-job">
+    test-job
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#update-name">
+    update-name
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -457,29 +637,209 @@
     </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#up42.jobtask.JobTask">
-    up42.jobtask.JobTask
+<a class="md-nav__link" href="#main">
+    main
+  </a>
+<nav aria-label="main" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#auth">
+    auth
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#up42.jobtask.JobTask.__init__">
-    __init__()
+<a class="md-nav__link" href="#catalog">
+    catalog
+  </a>
+<nav aria-label="catalog" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#construct-parameters">
+    construct-parameters
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#up42.jobtask.JobTask.download_quicklooks">
-    download_quicklooks()
+<a class="md-nav__link" href="#search">
+    search
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#config">
+    config
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#up42.jobtask.JobTask.download_results">
-    download_results()
+<a class="md-nav__link" href="#get-block-details">
+    get-block-details
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#up42.jobtask.JobTask.get_results_json">
-    get_results_json()
+<a class="md-nav__link" href="#get-blocks">
+    get-blocks
   </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#job">
+    job
+  </a>
+<nav aria-label="job" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cancel-job">
+    cancel-job
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#download-quicklooks">
+    download-quicklooks
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#download-results">
+    download-results
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-info">
+    get-info
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-jobtasks">
+    get-jobtasks
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-jobtasks-results-json">
+    get-jobtasks-results-json
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-logs">
+    get-logs
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-results-json">
+    get-results-json
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-status">
+    get-status
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#track-status">
+    track-status
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#project">
+    project
+  </a>
+<nav aria-label="project" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#create-workflow">
+    create-workflow
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-project-settings">
+    get-project-settings
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-workflows">
+    get-workflows
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#update-project-settings">
+    update-project-settings
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#workflow-from-name">
+    workflow-from-name
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#validate-manifest">
+    validate-manifest
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#workflow">
+    workflow
+  </a>
+<nav aria-label="workflow" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#add-workflow-tasks">
+    add-workflow-tasks
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#delete">
+    delete
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-compatible-blocks">
+    get-compatible-blocks
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-info_1">
+    get-info
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-jobs">
+    get-jobs
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-parameters-info">
+    get-parameters-info
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#get-workflow-tasks">
+    get-workflow-tasks
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#run-job">
+    run-job
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-job">
+    test-job
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#update-name">
+    update-name
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -488,477 +848,280 @@
 </div>
 <div class="md-content">
 <article class="md-content__inner md-typeset">
-<h1 id="jobtask-class">JobTask class<a class="headerlink" href="#jobtask-class" title="Permanent link">¶</a></h1>
-<div class="doc doc-object doc-class">
-<h2 class="hidden-toc" href="#up42.jobtask.JobTask" id="up42.jobtask.JobTask" style="visibility: hidden; width: 0; height: 0;">
-<a class="headerlink" href="#up42.jobtask.JobTask" title="Permanent link">¶</a></h2>
-<div class="doc doc-contents first">
-<div class="doc doc-children">
-<div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.jobtask.JobTask.__init__">
-<code class="highlight language-python">
-__init__<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">auth</span><span class="p">,</span> <span class="n">project_id</span><span class="p">,</span> <span class="n">job_id</span><span class="p">,</span> <span class="n">jobtask_id</span><span class="p">)</span> </code>
-<span class="doc doc-properties">
-<small class="doc doc-property doc-property-special"><code>special</code></small>
-</span>
-<a class="headerlink" href="#up42.jobtask.JobTask.__init__" title="Permanent link">¶</a></h2>
-<div class="doc doc-contents">
-<p>The JobTask class provides access to the results and parameters of single
-Tasks of UP42 Jobs (each Job contains one or multiple Jobtasks, one for each
-block in the workflow).</p>
-<details class="quote">
-<summary>Source code in <code>up42/jobtask.py</code></summary>
-<table class="highlighttable">
-<tr>
-<td class="linenos">
-<div class="linenodiv">
-<pre><span></span>16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31</pre>
-</div>
-</td>
-<td class="code">
-<div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
-    <span class="bp">self</span><span class="p">,</span> <span class="n">auth</span><span class="p">:</span> <span class="n">Auth</span><span class="p">,</span> <span class="n">project_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">job_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">jobtask_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-<span class="p">):</span>
-    <span class="sd">"""</span>
-<span class="sd">    The JobTask class provides access to the results and parameters of single</span>
-<span class="sd">    Tasks of UP42 Jobs (each Job contains one or multiple Jobtasks, one for each</span>
-<span class="sd">    block in the workflow).</span>
-<span class="sd">    """</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">auth</span> <span class="o">=</span> <span class="n">auth</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">project_id</span> <span class="o">=</span> <span class="n">project_id</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">job_id</span> <span class="o">=</span> <span class="n">job_id</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">jobtask_id</span> <span class="o">=</span> <span class="n">jobtask_id</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">quicklooks</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">results</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">get_info</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_info</span><span class="p">()</span>
-</code></pre>
-</div>
-</td>
-</tr>
-</table>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.jobtask.JobTask.download_quicklooks">
-<code class="highlight language-python">
-download_quicklooks<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_directory</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.jobtask.JobTask.download_quicklooks" title="Permanent link">¶</a></h2>
-<div class="doc doc-contents">
-<p>Downloads quicklooks of the job task to disk.</p>
-<p>After download, can be plotted via jobtask.plot_quicklooks().</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>output_directory</code></td>
-<td><code>Optional[Union[str, pathlib.Path]]</code></td>
-<td>
-<p>The file output directory, defaults to the current working
-directory.</p>
-</td>
-<td><code>None</code></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>List[str]</code></td>
-<td>
-<p>The quicklooks filepaths.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<details class="quote">
-<summary>Source code in <code>up42/jobtask.py</code></summary>
-<table class="highlighttable">
-<tr>
-<td class="linenos">
-<div class="linenodiv">
-<pre><span></span>114
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124
-125
-126
-127
-128
-129
-130
-131
-132
-133
-134
-135
-136
-137
-138
-139
-140
-141
-142
-143
-144
-145
-146
-147
-148
-149
-150
-151
-152
-153
-154
-155
-156
-157
-158
-159
-160
-161
-162
-163</pre>
-</div>
-</td>
-<td class="code">
-<div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">download_quicklooks</span><span class="p">(</span>
-    <span class="bp">self</span><span class="p">,</span> <span class="n">output_directory</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-    <span class="sd">"""</span>
-<span class="sd">    Downloads quicklooks of the job task to disk.</span>
+<h1 id="command-line-interface-cli">Command Line Interface (CLI)<a class="headerlink" href="#command-line-interface-cli" title="Permanent link">¶</a></h1>
+<p><br/></p>
+<h2 id="main">main<a class="headerlink" href="#main" title="Permanent link">¶</a></h2>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main [OPTIONS] COMMAND [ARGS]...
+</code></pre></div>
+<p>Options:</p>
+<div class="highlight"><pre><span></span><code>  -pid, --project-id TEXT        Your project ID, get it in the Project
+                                 settings in the console.
 
-<span class="sd">    After download, can be plotted via jobtask.plot_quicklooks().</span>
+  -pkey, --project-api-key TEXT  Your project API KEY, get in the Project
+                                 settings in the console.
 
-<span class="sd">    Args:</span>
-<span class="sd">        output_directory: The file output directory, defaults to the current working</span>
-<span class="sd">            directory.</span>
+  -cfg, --config-file PATH       File path to the config.json with
+                                 {project_id: '...', project_api_key: '...'}
 
-<span class="sd">    Returns:</span>
-<span class="sd">        The quicklooks filepaths.</span>
-<span class="sd">    """</span>
-    <span class="k">if</span> <span class="n">output_directory</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">output_directory</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">"project_</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">project_id</span><span class="si">}</span><span class="s2">"</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">"job_</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="si">}</span><span class="s2">"</span>
-        <span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">output_directory</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">output_directory</span><span class="p">)</span>
-    <span class="n">output_directory</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Download directory: </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">output_directory</span><span class="p">))</span>
+  --env TEXT
+</code></pre></div>
+<h3 id="auth">auth<a class="headerlink" href="#auth" title="Permanent link">¶</a></h3>
+<p>Check authentication.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main auth [OPTIONS]
+</code></pre></div>
+<h3 id="catalog">catalog<a class="headerlink" href="#catalog" title="Permanent link">¶</a></h3>
+<p>UP42 catalog search. You can search for satellite image scenes
+for different sensors and criteria like cloud cover.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main catalog [OPTIONS] COMMAND [ARGS]...
+</code></pre></div>
+<h4 id="construct-parameters">construct-parameters<a class="headerlink" href="#construct-parameters" title="Permanent link">¶</a></h4>
+<p>Follows STAC principles and property names to create a filter for
+catalog search.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main catalog construct-parameters [OPTIONS] GEOM_FILE
+</code></pre></div>
+<p>Options:</p>
+<div class="highlight"><pre><span></span><code>  --start-date [%Y-%m-%d]         Query period starting day, format
+                                  '2020-01-01'.
 
-    <span class="n">url</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_endpoint</span><span class="p">()</span><span class="si">}</span><span class="s2">/projects/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">project_id</span><span class="si">}</span><span class="s2">/jobs/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="si">}</span><span class="s2">"</span>
-        <span class="sa">f</span><span class="s2">"/tasks/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jobtask_id</span><span class="si">}</span><span class="s2">/outputs/quicklooks/"</span>
-    <span class="p">)</span>
-    <span class="n">response_json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="n">request_type</span><span class="o">=</span><span class="s2">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>
-    <span class="n">quicklooks_ids</span> <span class="o">=</span> <span class="n">response_json</span><span class="p">[</span><span class="s2">"data"</span><span class="p">]</span>
+  --end-date [%Y-%m-%d]           Query period ending day, format
+                                  '2020-01-01'.
 
-    <span class="n">out_paths</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">ql_id</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">quicklooks_ids</span><span class="p">):</span>
-        <span class="n">out_path</span> <span class="o">=</span> <span class="n">output_directory</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">"quicklook_</span><span class="si">{</span><span class="n">ql_id</span><span class="si">}</span><span class="s2">"</span>  <span class="c1"># No suffix required.</span>
-        <span class="n">out_paths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">out_path</span><span class="p">))</span>
+  --sensors [pleiades|spot|sentinel1|sentinel2|sentinel3|sentinel5p]
+                                  Imagery sensors to search for.
+  --max-cloud-cover INTEGER RANGE
+                                  Maximum cloudcover percentage. 100 will
+                                  return all scenes,8.4 will return all scenes
+                                  with 8.4 or less cloudcover.
 
-        <span class="n">url</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_endpoint</span><span class="p">()</span><span class="si">}</span><span class="s2">/projects/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">project_id</span><span class="si">}</span><span class="s2">/jobs/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="si">}</span><span class="s2">"</span>
-            <span class="sa">f</span><span class="s2">"/tasks/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jobtask_id</span><span class="si">}</span><span class="s2">/outputs/quicklooks/</span><span class="si">{</span><span class="n">ql_id</span><span class="si">}</span><span class="s2">"</span>
-        <span class="p">)</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span>
-            <span class="n">request_type</span><span class="o">=</span><span class="s2">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">return_text</span><span class="o">=</span><span class="kc">False</span>
-        <span class="p">)</span>
+  --limit INTEGER                 The maximum number of search results.
+</code></pre></div>
+<h4 id="search">search<a class="headerlink" href="#search" title="Permanent link">¶</a></h4>
+<p>Searches the catalog for the search parameters and returns the metadata of
+the matching scenes. Generate search parameters with
+'up42 catalog construct-parameters'.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main catalog search [OPTIONS] SEARCH_PARAMETERS_JSON
+</code></pre></div>
+<h3 id="config">config<a class="headerlink" href="#config" title="Permanent link">¶</a></h3>
+<p>Create a config file.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main config [OPTIONS]
+</code></pre></div>
+<p>Options:</p>
+<div class="highlight"><pre><span></span><code>  --env TEXT
+</code></pre></div>
+<h3 id="get-block-details">get-block-details<a class="headerlink" href="#get-block-details" title="Permanent link">¶</a></h3>
+<p>Get details of block by block name.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main get-block-details [OPTIONS]
+</code></pre></div>
+<p>Options:</p>
+<div class="highlight"><pre><span></span><code>  -n, --block-name TEXT  Block name to get details.  [required]
+</code></pre></div>
+<h3 id="get-blocks">get-blocks<a class="headerlink" href="#get-blocks" title="Permanent link">¶</a></h3>
+<p>Get public blocks information.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main get-blocks [OPTIONS]
+</code></pre></div>
+<p>Options:</p>
+<div class="highlight"><pre><span></span><code>  -t, --block-type [data|processing]
+                                  Filter by block type.
+  --basic / --full                Show basic or full block information.
+</code></pre></div>
+<h3 id="job">job<a class="headerlink" href="#job" title="Permanent link">¶</a></h3>
+<p>Get job status, results and more.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main job [OPTIONS] COMMAND [ARGS]...
+</code></pre></div>
+<p>Options:</p>
+<div class="highlight"><pre><span></span><code>  -jid, --job-id TEXT  Your job ID, get it by creating a job or running 'up42
+                       project workflow get-jobs'  [required]
+</code></pre></div>
+<h4 id="cancel-job">cancel-job<a class="headerlink" href="#cancel-job" title="Permanent link">¶</a></h4>
+<p>Cancel a job that is running.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main job cancel-job [OPTIONS]
+</code></pre></div>
+<h4 id="download-quicklooks">download-quicklooks<a class="headerlink" href="#download-quicklooks" title="Permanent link">¶</a></h4>
+<p>Download a job's quicklooks.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main job download-quicklooks [OPTIONS] OUTPUT_DIRECTORY
+</code></pre></div>
+<h4 id="download-results">download-results<a class="headerlink" href="#download-results" title="Permanent link">¶</a></h4>
+<p>Download and unpack the job results.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main job download-results [OPTIONS] OUTPUT_DIRECTORY
+</code></pre></div>
+<h4 id="get-info">get-info<a class="headerlink" href="#get-info" title="Permanent link">¶</a></h4>
+<p>Get information about the job.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main job get-info [OPTIONS]
+</code></pre></div>
+<h4 id="get-jobtasks">get-jobtasks<a class="headerlink" href="#get-jobtasks" title="Permanent link">¶</a></h4>
+<p>Get the individual items of the job.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main job get-jobtasks [OPTIONS]
+</code></pre></div>
+<h4 id="get-jobtasks-results-json">get-jobtasks-results-json<a class="headerlink" href="#get-jobtasks-results-json" title="Permanent link">¶</a></h4>
+<p>Convenience function to get the resulting data.json of all job tasks.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main job get-jobtasks-results-json [OPTIONS]
+</code></pre></div>
+<h4 id="get-logs">get-logs<a class="headerlink" href="#get-logs" title="Permanent link">¶</a></h4>
+<p>Convenience function to print or return the logs of all job tasks.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main job get-logs [OPTIONS]
+</code></pre></div>
+<h4 id="get-results-json">get-results-json<a class="headerlink" href="#get-results-json" title="Permanent link">¶</a></h4>
+<p>Get the job results data.json.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main job get-results-json [OPTIONS]
+</code></pre></div>
+<h4 id="get-status">get-status<a class="headerlink" href="#get-status" title="Permanent link">¶</a></h4>
+<p>Get the job status.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main job get-status [OPTIONS]
+</code></pre></div>
+<h4 id="track-status">track-status<a class="headerlink" href="#track-status" title="Permanent link">¶</a></h4>
+<p>Track the job status with regular time intervals.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main job track-status [OPTIONS]
+</code></pre></div>
+<p>Options:</p>
+<div class="highlight"><pre><span></span><code>  -i, --interval INTEGER RANGE  Interval between getting job status in
+                                seconds.
+</code></pre></div>
+<h3 id="project">project<a class="headerlink" href="#project" title="Permanent link">¶</a></h3>
+<p>Create and get workflows, manage project settings and more.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main project [OPTIONS] COMMAND [ARGS]...
+</code></pre></div>
+<h4 id="create-workflow">create-workflow<a class="headerlink" href="#create-workflow" title="Permanent link">¶</a></h4>
+<p>Create a workflow.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main project create-workflow [OPTIONS] NAME
+</code></pre></div>
+<h4 id="get-project-settings">get-project-settings<a class="headerlink" href="#get-project-settings" title="Permanent link">¶</a></h4>
+<p>Get the project settings.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main project get-project-settings [OPTIONS]
+</code></pre></div>
+<h4 id="get-workflows">get-workflows<a class="headerlink" href="#get-workflows" title="Permanent link">¶</a></h4>
+<p>Get the project workflows.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main project get-workflows [OPTIONS]
+</code></pre></div>
+<h4 id="update-project-settings">update-project-settings<a class="headerlink" href="#update-project-settings" title="Permanent link">¶</a></h4>
+<p>Update project settings.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main project update-project-settings [OPTIONS]
+</code></pre></div>
+<p>Options:</p>
+<div class="highlight"><pre><span></span><code>  --max-aoi-size INTEGER RANGE    The maximum area of interest geometry size,
+                                  from 1-1000 sqkm, default 10 sqkm.
 
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">out_path</span><span class="p">,</span> <span class="s2">"wb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">dst</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">response</span><span class="p">:</span>
-                <span class="n">dst</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+  --max-concurrent-jobs INTEGER RANGE
+                                  The maximum number of concurrent jobs, from
+                                  1-10, default 1.
 
-    <span class="bp">self</span><span class="o">.</span><span class="n">quicklooks</span> <span class="o">=</span> <span class="n">out_paths</span>  <span class="c1"># pylint: disable=attribute-defined-outside-init</span>
-    <span class="k">return</span> <span class="n">out_paths</span>
-</code></pre>
-</div>
-</td>
-</tr>
-</table>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.jobtask.JobTask.download_results">
-<code class="highlight language-python">
-download_results<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_directory</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.jobtask.JobTask.download_results" title="Permanent link">¶</a></h2>
-<div class="doc doc-contents">
-<p>Downloads and unpacks the jobtask results. Default download to Desktop.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>output_directory</code></td>
-<td><code>Optional[Union[str, pathlib.Path]]</code></td>
-<td>
-<p>The file output directory, defaults to the current working
-directory.</p>
-</td>
-<td><code>None</code></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>List[str]</code></td>
-<td>
-<p>List of the downloaded results' filepaths.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<details class="quote">
-<summary>Source code in <code>up42/jobtask.py</code></summary>
-<table class="highlighttable">
-<tr>
-<td class="linenos">
-<div class="linenodiv">
-<pre><span></span> 82
- 83
- 84
- 85
- 86
- 87
- 88
- 89
- 90
- 91
- 92
- 93
- 94
- 95
- 96
- 97
- 98
- 99
-100
-101
-102
-103
-104
-105
-106
-107
-108
-109
-110
-111
-112</pre>
-</div>
-</td>
-<td class="code">
-<div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">download_results</span><span class="p">(</span>
-    <span class="bp">self</span><span class="p">,</span> <span class="n">output_directory</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-    <span class="sd">"""</span>
-<span class="sd">    Downloads and unpacks the jobtask results. Default download to Desktop.</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        output_directory: The file output directory, defaults to the current working</span>
-<span class="sd">            directory.</span>
-<span class="sd">    Returns:</span>
-<span class="sd">        List of the downloaded results' filepaths.</span>
-<span class="sd">    """</span>
-    <span class="c1"># TODO: Overwrite argument</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Downloading results of jobtask </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">jobtask_id</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">output_directory</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">output_directory</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">"project_</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">project_id</span><span class="si">}</span><span class="s2">"</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">"job_</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="si">}</span><span class="s2">"</span>
-        <span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">output_directory</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">output_directory</span><span class="p">)</span>
-    <span class="n">output_directory</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Download directory: </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">output_directory</span><span class="p">))</span>
-
-    <span class="n">download_url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_download_url</span><span class="p">()</span>
-    <span class="n">out_filepaths</span> <span class="o">=</span> <span class="n">download_results_from_gcs</span><span class="p">(</span>
-        <span class="n">download_url</span><span class="o">=</span><span class="n">download_url</span><span class="p">,</span> <span class="n">output_directory</span><span class="o">=</span><span class="n">output_directory</span><span class="p">,</span>
-    <span class="p">)</span>
-
-    <span class="bp">self</span><span class="o">.</span><span class="n">results</span> <span class="o">=</span> <span class="n">out_filepaths</span>
-    <span class="k">return</span> <span class="n">out_filepaths</span>
-</code></pre>
-</div>
-</td>
-</tr>
-</table>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.jobtask.JobTask.get_results_json">
-<code class="highlight language-python">
-get_results_json<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">as_dataframe</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.jobtask.JobTask.get_results_json" title="Permanent link">¶</a></h2>
-<div class="doc doc-contents">
-<p>Gets the Jobtask results data.json.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>as_dataframe</code></td>
-<td><code>bool</code></td>
-<td>
-<p>"fc" for FeatureCollection dict, "df" for GeoDataFrame.</p>
-</td>
-<td><code>False</code></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Union[Dict, geopandas.geodataframe.GeoDataFrame]</code></td>
-<td>
-<p>Json of the results, alternatively geodataframe.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<details class="quote">
-<summary>Source code in <code>up42/jobtask.py</code></summary>
-<table class="highlighttable">
-<tr>
-<td class="linenos">
-<div class="linenodiv">
-<pre><span></span>49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71</pre>
-</div>
-</td>
-<td class="code">
-<div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">get_results_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">as_dataframe</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">Dict</span><span class="p">,</span> <span class="n">GeoDataFrame</span><span class="p">]:</span>
-    <span class="sd">"""</span>
-<span class="sd">    Gets the Jobtask results data.json.</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        as_dataframe: "fc" for FeatureCollection dict, "df" for GeoDataFrame.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        Json of the results, alternatively geodataframe.</span>
-<span class="sd">    """</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_endpoint</span><span class="p">()</span><span class="si">}</span><span class="s2">/projects/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">project_id</span><span class="si">}</span><span class="s2">/jobs/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="si">}</span><span class="s2">"</span>
-        <span class="sa">f</span><span class="s2">"/tasks/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">jobtask_id</span><span class="si">}</span><span class="s2">/outputs/data-json/"</span>
-    <span class="p">)</span>
-    <span class="n">response_json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="n">request_type</span><span class="o">=</span><span class="s2">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Retrieved </span><span class="si">%s</span><span class="s2"> features."</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">response_json</span><span class="p">[</span><span class="s2">"features"</span><span class="p">]))</span>
-
-    <span class="k">if</span> <span class="n">as_dataframe</span><span class="p">:</span>
-        <span class="c1"># UP42 results are always in EPSG 4326</span>
-        <span class="n">df</span> <span class="o">=</span> <span class="n">GeoDataFrame</span><span class="o">.</span><span class="n">from_features</span><span class="p">(</span><span class="n">response_json</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="mi">4326</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">df</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">response_json</span>
-</code></pre>
-</div>
-</td>
-</tr>
-</table>
-</details>
-</div>
-</div>
-</div>
-</div>
-</div>
+  --number-of-images INTEGER RANGE
+                                  The maximum number of images returned with
+                                  each job, from 1-20, default 10.
+</code></pre></div>
+<h4 id="workflow-from-name">workflow-from-name<a class="headerlink" href="#workflow-from-name" title="Permanent link">¶</a></h4>
+<p>Use a workflow from name.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main project workflow-from-name [OPTIONS]
+</code></pre></div>
+<p>Options:</p>
+<div class="highlight"><pre><span></span><code>  -n, --workflow-name TEXT  Workflow name to use.  [required]
+</code></pre></div>
+<h3 id="validate-manifest">validate-manifest<a class="headerlink" href="#validate-manifest" title="Permanent link">¶</a></h3>
+<p>Validate a block manifest.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main validate-manifest [OPTIONS] MANIFEST_JSON
+</code></pre></div>
+<h3 id="workflow">workflow<a class="headerlink" href="#workflow" title="Permanent link">¶</a></h3>
+<p>Add workflow tasks, run a job and more.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main workflow [OPTIONS] COMMAND [ARGS]...
+</code></pre></div>
+<p>Options:</p>
+<div class="highlight"><pre><span></span><code>  -wid, --workflow-id TEXT  Your workflow ID, get it by creating a workflow or
+                            running 'up42 project get-workflows'  [required]
+</code></pre></div>
+<h4 id="add-workflow-tasks">add-workflow-tasks<a class="headerlink" href="#add-workflow-tasks" title="Permanent link">¶</a></h4>
+<p>Adds or overwrites workflow tasks.
+- Name is arbitrary but best use the block name. Always use :1 to be able to
+identify the order when two times the same workflow task is used.
+- API by itself validates if the underlying block for the selected block-id
+is available.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main workflow add-workflow-tasks [OPTIONS] INPUT_TASKS_JSON
+</code></pre></div>
+<h4 id="delete">delete<a class="headerlink" href="#delete" title="Permanent link">¶</a></h4>
+<p>Delete the workflow.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main workflow delete [OPTIONS]
+</code></pre></div>
+<h4 id="get-compatible-blocks">get-compatible-blocks<a class="headerlink" href="#get-compatible-blocks" title="Permanent link">¶</a></h4>
+<p>Get all compatible blocks for the current workflow.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main workflow get-compatible-blocks [OPTIONS]
+</code></pre></div>
+<h4 id="get-info_1">get-info<a class="headerlink" href="#get-info_1" title="Permanent link">¶</a></h4>
+<p>Get information about the workflow.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main workflow get-info [OPTIONS]
+</code></pre></div>
+<h4 id="get-jobs">get-jobs<a class="headerlink" href="#get-jobs" title="Permanent link">¶</a></h4>
+<p>Get the jobs ran with this workflow.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main workflow get-jobs [OPTIONS]
+</code></pre></div>
+<h4 id="get-parameters-info">get-parameters-info<a class="headerlink" href="#get-parameters-info" title="Permanent link">¶</a></h4>
+<p>Get info about the parameters of each task in the workflow to make it easy to construct the desired parameters.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main workflow get-parameters-info [OPTIONS]
+</code></pre></div>
+<h4 id="get-workflow-tasks">get-workflow-tasks<a class="headerlink" href="#get-workflow-tasks" title="Permanent link">¶</a></h4>
+<p>Get the workflow tasks list (DAG).</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main workflow get-workflow-tasks [OPTIONS]
+</code></pre></div>
+<p>Options:</p>
+<div class="highlight"><pre><span></span><code>  --basic / --full  Show basic or full task information.
+</code></pre></div>
+<h4 id="run-job">run-job<a class="headerlink" href="#run-job" title="Permanent link">¶</a></h4>
+<p>Creates and runs a new job.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main workflow run-job [OPTIONS] INPUT_PARAMETERS_JSON
+</code></pre></div>
+<p>Options:</p>
+<div class="highlight"><pre><span></span><code>  --track  Track status of job in shell.
+</code></pre></div>
+<h4 id="test-job">test-job<a class="headerlink" href="#test-job" title="Permanent link">¶</a></h4>
+<p>Create a run a new test job (Test Query). With this test query you will not be
+charged with any data or processing credits, but have a preview of the job result.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main workflow test-job [OPTIONS] INPUT_PARAMETERS_JSON
+</code></pre></div>
+<p>Options:</p>
+<div class="highlight"><pre><span></span><code>  --track  Track status of job in shell.
+</code></pre></div>
+<h4 id="update-name">update-name<a class="headerlink" href="#update-name" title="Permanent link">¶</a></h4>
+<p>Update the workflow name.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>main workflow update-name [OPTIONS]
+</code></pre></div>
+<p>Options:</p>
+<div class="highlight"><pre><span></span><code>  -n, --workflow-name TEXT  New name for the workflow.  [required]
+  --description TEXT        An optional description for the workflow.
+</code></pre></div>
 </article>
 </div>
 </div>
@@ -966,7 +1129,7 @@ get_results_json<span class="p">(</span><span class="bp">self</span><span class=
 <footer class="md-footer">
 <div class="md-footer-nav">
 <nav aria-label="Footer" class="md-footer-nav__inner md-grid">
-<a class="md-footer-nav__link md-footer-nav__link--prev" href="../job/" rel="prev" title="Job">
+<a class="md-footer-nav__link md-footer-nav__link--prev" href="../tools/" rel="prev" title="Tools">
 <div class="md-footer-nav__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -975,17 +1138,17 @@ get_results_json<span class="p">(</span><span class="bp">self</span><span class=
 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Job
+                Tools
               </div>
 </div>
 </a>
-<a class="md-footer-nav__link md-footer-nav__link--next" href="../catalog/" rel="next" title="Catalog">
+<a class="md-footer-nav__link md-footer-nav__link--next" href="../../CHANGELOG/" rel="next" title="Releases">
 <div class="md-footer-nav__title">
 <div class="md-ellipsis">
 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Catalog
+                Releases
               </div>
 </div>
 <div class="md-footer-nav__button md-icon">
