@@ -33,8 +33,8 @@
 <aside class="md-announce">
 <div class="md-announce__inner md-grid md-typeset">
 <style>.md-announce a,.md-announce a:focus,.md-announce a:hover{color:currentColor}.md-announce strong{white-space:nowrap}.md-announce .twitter{margin-left:.2em;color:#00acee}</style>
-<a href="https://up42.github.io/up42-py/release-notes/"><strong>New:</strong> Find recent changes &amp; new features in the 📅
-      <strong>Release Notes</strong>!
+<a href="https://up42.github.io/up42-py/CHANGELOG/"><strong>New version 0.10:</strong> Adds parallel jobs feature &amp; more, see the 📅
+      <strong>release notes</strong>!
     </a>
 </div>
 </aside>
@@ -328,6 +328,11 @@
     </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../reference/jobcollection/" title="JobCollection">
+      JobCollection
+    </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../reference/jobtask/" title="JobTask">
       JobTask
     </a>
@@ -396,6 +401,16 @@
   </a>
 <nav aria-label="Versions" class="md-nav">
 <ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#0100-2020-08-07">
+    0.10.0 (2020-08-07)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#093-2020-07-15">
+    0.9.3 (2020-07-15)
+  </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#092-2020-07-04">
     0.9.2 (2020-07-04)
@@ -482,6 +497,16 @@
 <nav aria-label="Versions" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#0100-2020-08-07">
+    0.10.0 (2020-08-07)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#093-2020-07-15">
+    0.9.3 (2020-07-15)
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#092-2020-07-04">
     0.9.2 (2020-07-04)
   </a>
@@ -525,6 +550,25 @@
 <div class="highlight"><pre><span></span><code>pip show up42-py
 </code></pre></div>
 <h2 id="versions">Versions<a class="headerlink" href="#versions" title="Permanent link">¶</a></h2>
+<h3 id="0100-2020-08-07"><a href="https://pypi.org/project/up42-py/">0.10.0</a> (2020-08-07)<a class="headerlink" href="#0100-2020-08-07" title="Permanent link">¶</a></h3>
+<ul>
+<li>Add parallel jobs feature. Allows running jobs for multiple geometries, scene_ids or
+ timeperiods in parallel. Adds <code>workflow.construct_parameters_parallel</code>, 
+ <code>workflow.test_job_parallel</code>, <code>workflow.run_job_parallel</code> and the new <code>JobCollection</code> object.</li>
+<li>Adjusts <code>workflow.get_jobs</code> and <code>project.get_jobs</code> to return JobCollections.</li>
+<li>Adjusts airports-parallel example notebook to use the parallel jobs feature.</li>
+<li>Adjusts flood mapping example notebook to use OSM block.</li>
+<li>Adds option to not unpack results in <code>job.download_results</code>.</li>
+<li>Now allows passing only scene_ids to <code>workflow.construct_parameters</code>.</li>
+<li>Improves layout of image results plots for multiple results.</li>
+<li>Added binder links.</li>
+<li>Now truncates log messages &gt; 2k characters.</li>
+<li>Various small improvements &amp; code refactorings.</li>
+</ul>
+<h3 id="093-2020-07-15"><a href="https://pypi.org/project/up42-py/">0.9.3</a> (2020-07-15)<a class="headerlink" href="#093-2020-07-15" title="Permanent link">¶</a></h3>
+<ul>
+<li>Add support for secondary geojson file to <code>job.map_results</code></li>
+</ul>
 <h3 id="092-2020-07-04"><a href="https://pypi.org/project/up42-py/">0.9.2</a> (2020-07-04)<a class="headerlink" href="#092-2020-07-04" title="Permanent link">¶</a></h3>
 <ul>
 <li>Fix inconsistency with <code>job.map_results</code> selecting the json instead of the image</li>

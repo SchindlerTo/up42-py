@@ -33,8 +33,8 @@
 <aside class="md-announce">
 <div class="md-announce__inner md-grid md-typeset">
 <style>.md-announce a,.md-announce a:focus,.md-announce a:hover{color:currentColor}.md-announce strong{white-space:nowrap}.md-announce .twitter{margin-left:.2em;color:#00acee}</style>
-<a href="https://up42.github.io/up42-py/release-notes/"><strong>New:</strong> Find recent changes &amp; new features in the 📅
-      <strong>Release Notes</strong>!
+<a href="https://up42.github.io/up42-py/CHANGELOG/"><strong>New version 0.10:</strong> Adds parallel jobs feature &amp; more, see the 📅
+      <strong>release notes</strong>!
     </a>
 </div>
 </aside>
@@ -328,6 +328,11 @@
     </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../jobcollection/" title="JobCollection">
+      JobCollection
+    </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../jobtask/" title="JobTask">
       JobTask
     </a>
@@ -354,11 +359,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#up42.catalog.Catalog">
     up42.catalog.Catalog
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#up42.catalog.Catalog.__init__">
-    __init__()
   </a>
 </li>
 <li class="md-nav__item">
@@ -462,11 +462,6 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#up42.catalog.Catalog.__init__">
-    __init__()
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#up42.catalog.Catalog.construct_parameters">
     construct_parameters()
   </a>
@@ -489,58 +484,18 @@
 <div class="md-content">
 <article class="md-content__inner md-typeset">
 <h1 id="catalog-class">Catalog class<a class="headerlink" href="#catalog-class" title="Permanent link">¶</a></h1>
+<p>The Catalog class enables access to the UP42 catalog search. You can search
+for satellite image scenes (for different sensors and criteria like cloud cover),
+plot the scene coverage and download and plot the scene quicklooks.</p>
 <div class="doc doc-object doc-class">
 <h2 class="hidden-toc" href="#up42.catalog.Catalog" id="up42.catalog.Catalog" style="visibility: hidden; width: 0; height: 0;">
 <a class="headerlink" href="#up42.catalog.Catalog" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents first">
 <div class="doc doc-children">
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.catalog.Catalog.__init__">
-<code class="highlight language-python">
-__init__<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">auth</span><span class="p">)</span> </code>
-<span class="doc doc-properties">
-<small class="doc doc-property doc-property-special"><code>special</code></small>
-</span>
-<a class="headerlink" href="#up42.catalog.Catalog.__init__" title="Permanent link">¶</a></h2>
-<div class="doc doc-contents">
-<p>The Catalog class enables access to the UP42 catalog search. You can search
-for satellite image scenes for different sensors and criteria like cloud cover etc.</p>
-<details class="quote">
-<summary>Source code in <code>up42/catalog.py</code></summary>
-<table class="highlighttable">
-<tr>
-<td class="linenos">
-<div class="linenodiv">
-<pre><span></span>54
-55
-56
-57
-58
-59
-60</pre>
-</div>
-</td>
-<td class="code">
-<div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">auth</span><span class="p">:</span> <span class="n">Auth</span><span class="p">):</span>
-    <span class="sd">"""</span>
-<span class="sd">    The Catalog class enables access to the UP42 catalog search. You can search</span>
-<span class="sd">    for satellite image scenes for different sensors and criteria like cloud cover etc.</span>
-<span class="sd">    """</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">auth</span> <span class="o">=</span> <span class="n">auth</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">quicklooks</span> <span class="o">=</span> <span class="kc">None</span>
-</code></pre>
-</div>
-</td>
-</tr>
-</table>
-</details>
-</div>
-</div>
-<div class="doc doc-object doc-method">
 <h2 class="doc doc-heading" id="up42.catalog.Catalog.construct_parameters">
 <code class="highlight language-python">
-construct_parameters<span class="p">(</span><span class="n">geometry</span><span class="p">,</span> <span class="n">start_date</span><span class="o">=</span><span class="s1">'2020-01-01'</span><span class="p">,</span> <span class="n">end_date</span><span class="o">=</span><span class="s1">'2020-01-30'</span><span class="p">,</span> <span class="n">sensors</span><span class="o">=</span><span class="p">[</span><span class="s1">'pleiades'</span><span class="p">,</span> <span class="s1">'spot'</span><span class="p">,</span> <span class="s1">'sentinel1'</span><span class="p">,</span> <span class="s1">'sentinel2'</span><span class="p">,</span> <span class="s1">'sentinel3'</span><span class="p">,</span> <span class="s1">'sentinel5p'</span><span class="p">],</span> <span class="n">limit</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_cloudcover</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">sortby</span><span class="o">=</span><span class="s1">'cloudCoverage'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> </code>
+construct_parameters<span class="p">(</span><span class="n">geometry</span><span class="p">,</span> <span class="n">start_date</span><span class="o">=</span><span class="s1">'2020-01-01'</span><span class="p">,</span> <span class="n">end_date</span><span class="o">=</span><span class="s1">'2020-01-30'</span><span class="p">,</span> <span class="n">sensors</span><span class="o">=</span><span class="p">[</span><span class="s1">'pleiades'</span><span class="p">,</span> <span class="s1">'spot'</span><span class="p">,</span> <span class="s1">'sentinel1'</span><span class="p">,</span> <span class="s1">'sentinel2'</span><span class="p">,</span> <span class="s1">'sentinel3'</span><span class="p">,</span> <span class="s1">'sentinel5p'</span><span class="p">],</span> <span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">max_cloudcover</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">sortby</span><span class="o">=</span><span class="s1">'acquisitionDate'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> </code>
 <span class="doc doc-properties">
 <small class="doc doc-property doc-property-staticmethod"><code>staticmethod</code></small>
 </span>
@@ -596,16 +551,17 @@ List, GeoDataFrame, Point, Polygon.</p>
 <td><code>limit</code></td>
 <td><code>int</code></td>
 <td>
-<p>The maximum number of search results to return.</p>
+<p>The maximum number of search results to return (1-max.500).</p>
 </td>
-<td><code>1</code></td>
+<td><code>10</code></td>
 </tr>
 <tr>
 <td><code>max_cloudcover</code></td>
 <td><code>float</code></td>
 <td>
-<p>Maximum cloudcover % - 100 will return all scenes, 8.4 will return all
-scenes with 8.4 or less cloudcover.</p>
+<p>Maximum cloudcover % - e.g. 100 will return all scenes,
+8.4 will return all scenes with 8.4 or less cloudcover.
+Ignored for sensors that have no cloudcover (e.g. sentinel1).</p>
 </td>
 <td><code>100</code></td>
 </tr>
@@ -614,9 +570,9 @@ scenes with 8.4 or less cloudcover.</p>
 <td><code>str</code></td>
 <td>
 <p>The property to sort by, "cloudCoverage", "acquisitionDate",
-"acquisitionIdentifier", "incidenceAngle", "snowCover"</p>
+"acquisitionIdentifier", "incidenceAngle", "snowCover".</p>
 </td>
-<td><code>'cloudCoverage'</code></td>
+<td><code>'acquisitionDate'</code></td>
 </tr>
 <tr>
 <td><code>ascending</code></td>
@@ -651,7 +607,9 @@ scenes with 8.4 or less cloudcover.</p>
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span> 66
+<pre><span></span> 64
+ 65
+ 66
  67
  68
  69
@@ -719,14 +677,7 @@ scenes with 8.4 or less cloudcover.</p>
 131
 132
 133
-134
-135
-136
-137
-138
-139
-140
-141</pre>
+134</pre>
 </div>
 </td>
 <td class="code">
@@ -746,9 +697,9 @@ scenes with 8.4 or less cloudcover.</p>
         <span class="s2">"sentinel3"</span><span class="p">,</span>
         <span class="s2">"sentinel5p"</span><span class="p">,</span>
     <span class="p">],</span>
-    <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
     <span class="n">max_cloudcover</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span>
-    <span class="n">sortby</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"cloudCoverage"</span><span class="p">,</span>
+    <span class="n">sortby</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"acquisitionDate"</span><span class="p">,</span>
     <span class="n">ascending</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
     <span class="sd">"""</span>
@@ -761,11 +712,12 @@ scenes with 8.4 or less cloudcover.</p>
 <span class="sd">        end_date: Query period ending day, format "2020-01-01".</span>
 <span class="sd">        sensors: The satellite sensors to search for, one or multiple of</span>
 <span class="sd">            ["pleiades", "spot", "sentinel1", "sentinel2", "sentinel3", "sentinel5p"]</span>
-<span class="sd">        limit: The maximum number of search results to return.</span>
-<span class="sd">        max_cloudcover: Maximum cloudcover % - 100 will return all scenes, 8.4 will return all</span>
-<span class="sd">            scenes with 8.4 or less cloudcover.</span>
+<span class="sd">        limit: The maximum number of search results to return (1-max.500).</span>
+<span class="sd">        max_cloudcover: Maximum cloudcover % - e.g. 100 will return all scenes,</span>
+<span class="sd">            8.4 will return all scenes with 8.4 or less cloudcover.</span>
+<span class="sd">            Ignored for sensors that have no cloudcover (e.g. sentinel1).</span>
 <span class="sd">        sortby: The property to sort by, "cloudCoverage", "acquisitionDate",</span>
-<span class="sd">            "acquisitionIdentifier", "incidenceAngle", "snowCover"</span>
+<span class="sd">            "acquisitionIdentifier", "incidenceAngle", "snowCover".</span>
 <span class="sd">        ascending: Ascending sort order by default, descending if False.</span>
 
 <span class="sd">    Returns:</span>
@@ -780,15 +732,6 @@ scenes with 8.4 or less cloudcover.</p>
                 <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">supported_sensors</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s2">"</span>
             <span class="p">)</span>
         <span class="n">block_filters</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">supported_sensors</span><span class="p">[</span><span class="n">sensor</span><span class="p">][</span><span class="s2">"blocks"</span><span class="p">])</span>
-    <span class="n">query_filters</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">"cloudCoverage"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"lte"</span><span class="p">:</span> <span class="n">max_cloudcover</span><span class="p">},</span>
-        <span class="s2">"dataBlock"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"in"</span><span class="p">:</span> <span class="n">block_filters</span><span class="p">},</span>
-    <span class="p">}</span>
-
-    <span class="k">if</span> <span class="n">ascending</span><span class="p">:</span>
-        <span class="n">sort_order</span> <span class="o">=</span> <span class="s2">"asc"</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">sort_order</span> <span class="o">=</span> <span class="s2">"desc"</span>
 
     <span class="n">aoi_fc</span> <span class="o">=</span> <span class="n">any_vector_to_fc</span><span class="p">(</span><span class="n">vector</span><span class="o">=</span><span class="n">geometry</span><span class="p">,)</span>
     <span class="n">aoi_geometry</span> <span class="o">=</span> <span class="n">fc_to_query_geometry</span><span class="p">(</span>
@@ -797,7 +740,11 @@ scenes with 8.4 or less cloudcover.</p>
         <span class="n">squash_multiple_features</span><span class="o">=</span><span class="s2">"footprint"</span><span class="p">,</span>
     <span class="p">)</span>
 
-    <span class="c1"># TODO: cc also contains nan with sentinel 1 etc. ignore?</span>
+    <span class="n">sort_order</span> <span class="o">=</span> <span class="s2">"asc"</span> <span class="k">if</span> <span class="n">ascending</span> <span class="k">else</span> <span class="s2">"desc"</span>
+    <span class="n">query_filters</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"dataBlock"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"in"</span><span class="p">:</span> <span class="n">block_filters</span><span class="p">}}</span>
+    <span class="k">if</span> <span class="n">sensors</span> <span class="o">!=</span> <span class="p">[</span><span class="s2">"sentinel1"</span><span class="p">]:</span>
+        <span class="n">query_filters</span><span class="p">[</span><span class="s2">"cloudCoverage"</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"lte"</span><span class="p">:</span> <span class="n">max_cloudcover</span><span class="p">}</span>  <span class="c1"># type: ignore</span>
+
     <span class="n">search_parameters</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s2">"datetime"</span><span class="p">:</span> <span class="n">datetime</span><span class="p">,</span>
         <span class="s2">"intersects"</span><span class="p">:</span> <span class="n">aoi_geometry</span><span class="p">,</span>
@@ -805,7 +752,6 @@ scenes with 8.4 or less cloudcover.</p>
         <span class="s2">"query"</span><span class="p">:</span> <span class="n">query_filters</span><span class="p">,</span>
         <span class="s2">"sortby"</span><span class="p">:</span> <span class="p">[{</span><span class="s2">"field"</span><span class="p">:</span> <span class="sa">f</span><span class="s2">"properties.</span><span class="si">{</span><span class="n">sortby</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"direction"</span><span class="p">:</span> <span class="n">sort_order</span><span class="p">}],</span>
     <span class="p">}</span>
-
     <span class="k">return</span> <span class="n">search_parameters</span>
 </code></pre>
 </div>
@@ -838,7 +784,8 @@ be plotted via catalog.plot_quicklooks().</p>
 <td><code>image_ids</code></td>
 <td><code>List[str]</code></td>
 <td>
-<p>provider image_id in the form "6dffb8be-c2ab-46e3-9c1c-6958a54e4527"</p>
+<p>List of provider image_ids e.g. ["6dffb8be-c2ab-46e3-9c1c-6958a54e4527"].
+Access the search results id column via <code>list(search_results.id)</code>.</p>
 </td>
 <td><em>required</em></td>
 </tr>
@@ -853,7 +800,7 @@ be plotted via catalog.plot_quicklooks().</p>
 </tr>
 <tr>
 <td><code>output_directory</code></td>
-<td><code>Optional[Union[str, pathlib.Path]]</code></td>
+<td><code>Union[str, pathlib.Path]</code></td>
 <td>
 <p>The file output directory, defaults to the current working
 directory.</p>
@@ -885,7 +832,14 @@ directory.</p>
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>211
+<pre><span></span>204
+205
+206
+207
+208
+209
+210
+211
 212
 213
 214
@@ -943,12 +897,7 @@ directory.</p>
 266
 267
 268
-269
-270
-271
-272
-273
-274</pre>
+269</pre>
 </div>
 </td>
 <td class="code">
@@ -957,14 +906,15 @@ directory.</p>
     <span class="bp">self</span><span class="p">,</span>
     <span class="n">image_ids</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
     <span class="n">sensor</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
-    <span class="n">output_directory</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">output_directory</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
     <span class="sd">"""</span>
 <span class="sd">    Gets the quicklooks of scenes from a single sensor. After download, can</span>
 <span class="sd">    be plotted via catalog.plot_quicklooks().</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        image_ids: provider image_id in the form "6dffb8be-c2ab-46e3-9c1c-6958a54e4527"</span>
+<span class="sd">        image_ids: List of provider image_ids e.g. ["6dffb8be-c2ab-46e3-9c1c-6958a54e4527"].</span>
+<span class="sd">            Access the search results id column via `list(search_results.id)`.</span>
 <span class="sd">        sensor: The satellite sensor of the image_ids, one of "pleiades", "spot",</span>
 <span class="sd">            "sentinel1", "sentinel2", "sentinel3", "sentinel5p".</span>
 <span class="sd">        output_directory: The file output directory, defaults to the current working</span>
@@ -980,7 +930,8 @@ directory.</p>
         <span class="p">)</span>
     <span class="n">provider</span> <span class="o">=</span> <span class="n">supported_sensors</span><span class="p">[</span><span class="n">sensor</span><span class="p">][</span><span class="s2">"provider"</span><span class="p">]</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
-        <span class="s2">"Getting quicklooks from provider </span><span class="si">%s</span><span class="s2"> for image_ids: </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="n">provider</span><span class="p">,</span> <span class="n">image_ids</span>
+        <span class="sa">f</span><span class="s2">"Getting quicklooks from provider </span><span class="si">{</span><span class="n">provider</span><span class="si">}</span><span class="s2"> for image_ids: "</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">image_ids</span><span class="si">}</span><span class="s2">"</span>
     <span class="p">)</span>
 
     <span class="k">if</span> <span class="n">output_directory</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -990,7 +941,7 @@ directory.</p>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">output_directory</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">output_directory</span><span class="p">)</span>
     <span class="n">output_directory</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Download directory: </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">output_directory</span><span class="p">))</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Download directory: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">output_directory</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image_ids</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
         <span class="n">image_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">image_ids</span><span class="p">]</span>
@@ -1088,8 +1039,8 @@ the matching scenes.</p>
             <span class="s2">"coordinates"</span><span class="p">:</span> <span class="p">[[[</span><span class="mf">13.32113746</span><span class="p">,</span><span class="mf">52.73971768</span><span class="p">],[</span><span class="mf">13.15981158</span><span class="p">,</span><span class="mf">52.2092959</span><span class="p">],</span>
             <span class="p">[</span><span class="mf">13.62204483</span><span class="p">,</span><span class="mf">52.15632025</span><span class="p">],[</span><span class="mf">13.78859517</span><span class="p">,</span><span class="mf">52.68655119</span><span class="p">],[</span><span class="mf">13.32113746</span><span class="p">,</span>
             <span class="mf">52.73971768</span><span class="p">]]]},</span>
-        <span class="s2">"limit"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">"sortby"</span><span class="p">:</span> <span class="p">[{</span><span class="s2">"field"</span> <span class="p">:</span> <span class="s2">"properties.cloudCoverage"</span><span class="p">,</span><span class="s2">"direction"</span> <span class="p">:</span> <span class="s2">"asc"</span><span class="p">}]</span>
+        <span class="s2">"limit"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">"sortby"</span><span class="p">:</span> <span class="p">[{</span><span class="s2">"field"</span> <span class="p">:</span> <span class="s2">"properties.acquisitionDate"</span><span class="p">,</span> <span class="s2">"direction"</span> <span class="p">:</span> <span class="s2">"asc"</span><span class="p">}]</span>
         <span class="p">}</span>
 </code></pre>
 </div>
@@ -1099,7 +1050,14 @@ the matching scenes.</p>
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>143
+<pre><span></span>136
+137
+138
+139
+140
+141
+142
+143
 144
 145
 146
@@ -1158,14 +1116,7 @@ the matching scenes.</p>
 199
 200
 201
-202
-203
-204
-205
-206
-207
-208
-209</pre>
+202</pre>
 </div>
 </td>
 <td class="code">
@@ -1193,15 +1144,15 @@ the matching scenes.</p>
 <span class="sd">                    "coordinates": [[[13.32113746,52.73971768],[13.15981158,52.2092959],</span>
 <span class="sd">                    [13.62204483,52.15632025],[13.78859517,52.68655119],[13.32113746,</span>
 <span class="sd">                    52.73971768]]]},</span>
-<span class="sd">                "limit": 1,</span>
-<span class="sd">                "sortby": [{"field" : "properties.cloudCoverage","direction" : "asc"}]</span>
+<span class="sd">                "limit": 10,</span>
+<span class="sd">                "sortby": [{"field" : "properties.acquisitionDate", "direction" : "asc"}]</span>
 <span class="sd">                }</span>
 <span class="sd">        ```</span>
 <span class="sd">    """</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Searching catalog with: </span><span class="si">%r</span><span class="s2">"</span><span class="p">,</span> <span class="n">search_parameters</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Searching catalog with search_parameters: </span><span class="si">{</span><span class="n">search_parameters</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_endpoint</span><span class="p">()</span><span class="si">}</span><span class="s2">/catalog/stac/search"</span>
     <span class="n">response_json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="s2">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">search_parameters</span><span class="p">)</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="s2"> results returned."</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">response_json</span><span class="p">[</span><span class="s2">"features"</span><span class="p">]))</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">response_json</span><span class="p">[</span><span class="s1">'features'</span><span class="p">])</span><span class="si">}</span><span class="s2"> results returned."</span><span class="p">)</span>
     <span class="n">dst_crs</span> <span class="o">=</span> <span class="s2">"EPSG:4326"</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">GeoDataFrame</span><span class="o">.</span><span class="n">from_features</span><span class="p">(</span><span class="n">response_json</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">dst_crs</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">df</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
@@ -1217,10 +1168,9 @@ the matching scenes.</p>
     <span class="n">geometry</span> <span class="o">=</span> <span class="n">search_parameters</span><span class="p">[</span><span class="s2">"intersects"</span><span class="p">]</span>
     <span class="n">poly</span> <span class="o">=</span> <span class="n">shape</span><span class="p">(</span><span class="n">geometry</span><span class="p">)</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">intersects</span><span class="p">(</span><span class="n">poly</span><span class="p">)]</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="c1"># Make scene_id more easily accessible</span>
-    <span class="c1"># TODO: Add by default to results, independent of sensor.</span>
     <span class="k">def</span> <span class="nf">_get_scene_id</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s2">"providerName"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"oneatlas"</span><span class="p">:</span>
             <span class="n">row</span><span class="p">[</span><span class="s2">"scene_id"</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">"providerProperties"</span><span class="p">][</span><span class="s2">"parentIdentifier"</span><span class="p">]</span>
@@ -1230,6 +1180,7 @@ the matching scenes.</p>
             <span class="p">]</span>
         <span class="k">return</span> <span class="n">row</span>
 
+    <span class="c1"># Search result dataframe can contain scenes of multiple sensors, need to apply row by row.</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">_get_scene_id</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">df</span><span class="o">.</span><span class="n">crs</span> <span class="o">=</span> <span class="n">dst_crs</span>  <span class="c1"># apply resets the crs</span>
 

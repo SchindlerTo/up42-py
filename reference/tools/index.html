@@ -33,8 +33,8 @@
 <aside class="md-announce">
 <div class="md-announce__inner md-grid md-typeset">
 <style>.md-announce a,.md-announce a:focus,.md-announce a:hover{color:currentColor}.md-announce strong{white-space:nowrap}.md-announce .twitter{margin-left:.2em;color:#00acee}</style>
-<a href="https://up42.github.io/up42-py/release-notes/"><strong>New:</strong> Find recent changes &amp; new features in the 📅
-      <strong>Release Notes</strong>!
+<a href="https://up42.github.io/up42-py/CHANGELOG/"><strong>New version 0.10:</strong> Adds parallel jobs feature &amp; more, see the 📅
+      <strong>release notes</strong>!
     </a>
 </div>
 </aside>
@@ -328,6 +328,11 @@
     </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../jobcollection/" title="JobCollection">
+      JobCollection
+    </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../jobtask/" title="JobTask">
       JobTask
     </a>
@@ -359,11 +364,6 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#up42.tools.Tools">
     up42.tools.Tools
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#up42.tools.Tools.__init__">
-    __init__()
   </a>
 </li>
 <li class="md-nav__item">
@@ -492,11 +492,6 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#up42.tools.Tools.__init__">
-    __init__()
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#up42.tools.Tools.draw_aoi">
     draw_aoi()
   </a>
@@ -549,61 +544,14 @@
 <div class="md-content">
 <article class="md-content__inner md-typeset">
 <h1 id="tools-class">Tools class<a class="headerlink" href="#tools-class" title="Permanent link">¶</a></h1>
+<p>The tools class contains functionality that is not bound to a specific UP42 object,
+e.g. for aoi handling etc., UP42 block information, validatin a block manifest etc.
+They can be accessed from every object and also from the imported up42 package directly.</p>
 <div class="doc doc-object doc-class">
 <h2 class="hidden-toc" href="#up42.tools.Tools" id="up42.tools.Tools" style="visibility: hidden; width: 0; height: 0;">
 <a class="headerlink" href="#up42.tools.Tools" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents first">
 <div class="doc doc-children">
-<div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.tools.Tools.__init__">
-<code class="highlight language-python">
-__init__<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> </code>
-<span class="doc doc-properties">
-<small class="doc doc-property doc-property-special"><code>special</code></small>
-</span>
-<a class="headerlink" href="#up42.tools.Tools.__init__" title="Permanent link">¶</a></h2>
-<div class="doc doc-contents">
-<p>The tools class contains functionality that is not bound to a specific UP42 object,
-e.g. for aoi handling etc., UP42 block information, validatin a block manifest etc.
-They can be accessed from every object and also from the imported up42 package directly.</p>
-<details class="quote">
-<summary>Source code in <code>up42/tools.py</code></summary>
-<table class="highlighttable">
-<tr>
-<td class="linenos">
-<div class="linenodiv">
-<pre><span></span>29
-30
-31
-32
-33
-34
-35
-36
-37
-38</pre>
-</div>
-</td>
-<td class="code">
-<div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="sd">"""</span>
-<span class="sd">    The tools class contains functionality that is not bound to a specific UP42 object,</span>
-<span class="sd">    e.g. for aoi handling etc., UP42 block information, validatin a block manifest etc.</span>
-<span class="sd">    They can be accessed from every object and also from the imported up42 package directly.</span>
-<span class="sd">    """</span>
-    <span class="k">if</span> <span class="n">auth</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">auth</span> <span class="o">=</span> <span class="n">auth</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">quicklooks</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">results</span> <span class="o">=</span> <span class="kc">None</span>
-</code></pre>
-</div>
-</td>
-</tr>
-</table>
-</details>
-</div>
-</div>
 <div class="doc doc-object doc-method">
 <h2 class="doc doc-heading" id="up42.tools.Tools.draw_aoi">
 <code class="highlight language-python">
@@ -620,7 +568,9 @@ read_aoi_file().</p>
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>119
+<pre><span></span>117
+118
+119
 120
 121
 122
@@ -650,9 +600,7 @@ read_aoi_file().</p>
 146
 147
 148
-149
-150
-151</pre>
+149</pre>
 </div>
 </td>
 <td class="code">
@@ -758,10 +706,7 @@ the server, includes all manifest.json and marketplace.json contents.</p>
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>313
-314
-315
-316
+<pre><span></span>316
 317
 318
 319
@@ -781,7 +726,10 @@ the server, includes all manifest.json and marketplace.json contents.</p>
 333
 334
 335
-336</pre>
+336
+337
+338
+339</pre>
 </div>
 </td>
 <td class="code">
@@ -886,10 +834,7 @@ dict.</p>
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>257
-258
-259
-260
+<pre><span></span>260
 261
 262
 263
@@ -940,7 +885,10 @@ dict.</p>
 308
 309
 310
-311</pre>
+311
+312
+313
+314</pre>
 </div>
 </td>
 <td class="code">
@@ -1068,7 +1016,9 @@ get_example_aoi<span class="p">(</span><span class="bp">self</span><span class="
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span> 84
+<pre><span></span> 82
+ 83
+ 84
  85
  86
  87
@@ -1098,9 +1048,7 @@ get_example_aoi<span class="p">(</span><span class="bp">self</span><span class="
 111
 112
 113
-114
-115
-116</pre>
+114</pre>
 </div>
 </td>
 <td class="code">
@@ -1119,7 +1067,7 @@ get_example_aoi<span class="p">(</span><span class="bp">self</span><span class="
 <span class="sd">    Returns:</span>
 <span class="sd">        Feature collection json with the selected aoi.</span>
 <span class="sd">    """</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Getting small example aoi in </span><span class="si">%s</span><span class="s2">."</span><span class="p">,</span> <span class="n">location</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Getting small example aoi in location '</span><span class="si">{</span><span class="n">location</span><span class="si">}</span><span class="s2">'."</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">location</span> <span class="o">==</span> <span class="s2">"Berlin"</span><span class="p">:</span>
         <span class="n">example_aoi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_vector_file</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span><span class="p">)</span><span class="si">}</span><span class="s2">/data/aoi_berlin.geojson"</span>
@@ -1130,7 +1078,7 @@ get_example_aoi<span class="p">(</span><span class="bp">self</span><span class="
         <span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-            <span class="s2">"Please select one of 'Berlin' or 'Washington' as the "</span> <span class="s2">"location!"</span>
+            <span class="s2">"Please select one of 'Berlin' or 'Washington' as the location!"</span>
         <span class="p">)</span>
 
     <span class="k">if</span> <span class="n">as_dataframe</span><span class="p">:</span>
@@ -1208,7 +1156,9 @@ Legend entries are sorted and this determines plotting order.</p>
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>153
+<pre><span></span>151
+152
+153
 154
 155
 156
@@ -1247,9 +1197,7 @@ Legend entries are sorted and this determines plotting order.</p>
 189
 190
 191
-192
-193
-194</pre>
+192</pre>
 </div>
 </td>
 <td class="code">
@@ -1356,7 +1304,9 @@ downloaded results.</p>
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>196
+<pre><span></span>194
+195
+196
 197
 198
 199
@@ -1385,9 +1335,7 @@ downloaded results.</p>
 222
 223
 224
-225
-226
-227</pre>
+225</pre>
 </div>
 </td>
 <td class="code">
@@ -1435,7 +1383,7 @@ downloaded results.</p>
 <div class="doc doc-object doc-method">
 <h2 class="doc doc-heading" id="up42.tools.Tools.plot_results">
 <code class="highlight language-python">
-plot_results<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">filepaths</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">titles</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> </code>
+plot_results<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">filepaths</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">titles</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> </code>
 <a class="headerlink" href="#up42.tools.Tools.plot_results" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents">
 <p>Plots the downloaded results data.</p>
@@ -1456,7 +1404,7 @@ plot_results<span class="p">(</span><span class="bp">self</span><span class="p">
 <td>
 <p>matplotlib figure size.</p>
 </td>
-<td><code>(8, 8)</code></td>
+<td><code>(14, 8)</code></td>
 </tr>
 <tr>
 <td><code>filepaths</code></td>
@@ -1483,7 +1431,9 @@ downloaded results.</p>
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>229
+<pre><span></span>227
+228
+229
 230
 231
 232
@@ -1509,14 +1459,17 @@ downloaded results.</p>
 252
 253
 254
-255</pre>
+255
+256
+257
+258</pre>
 </div>
 </td>
 <td class="code">
 <div class="highlight">
 <pre><span></span><code><span class="k">def</span> <span class="nf">plot_results</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
-    <span class="n">figsize</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span>
+    <span class="n">figsize</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span>
     <span class="n">filepaths</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">titles</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
@@ -1533,6 +1486,11 @@ downloaded results.</p>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">results</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"You first need to download the results!"</span><span class="p">)</span>
         <span class="n">filepaths</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">results</span>
+        <span class="c1"># Unpack results path dict in case of jobcollection.</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">filepaths</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="n">filepaths</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="n">item</span> <span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">filepaths</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">sublist</span>  <span class="c1"># type: ignore</span>
+            <span class="p">]</span>
 
     <span class="n">plot_file_format</span> <span class="o">=</span> <span class="p">[</span><span class="s2">".tif"</span><span class="p">]</span>  <span class="c1"># TODO: Add other fileformats.</span>
     <span class="n">_plot_images</span><span class="p">(</span>
@@ -1650,9 +1608,7 @@ for use as the aoi geometry in the workflow input parameters
 77
 78
 79
-80
-81
-82</pre>
+80</pre>
 </div>
 </td>
 <td class="code">
@@ -1692,9 +1648,7 @@ for use as the aoi geometry in the workflow input parameters
         <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">epsg</span><span class="o">=</span><span class="mi">4326</span><span class="p">)</span>
     <span class="n">df</span><span class="o">.</span><span class="n">geometry</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">buffer</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
     <span class="c1"># TODO: Explode multipolygons (if neccessary as union in aoi anyway most often).</span>
-
     <span class="c1"># TODO: Have both bboxes for each feature and overall?</span>
-
     <span class="k">if</span> <span class="n">as_dataframe</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">df</span>
     <span class="k">else</span><span class="p">:</span>
@@ -1799,10 +1753,7 @@ validate_manifest<span class="p">(</span><span class="bp">self</span><span class
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>338
-339
-340
-341
+<pre><span></span>341
 342
 343
 344
@@ -1864,7 +1815,10 @@ validate_manifest<span class="p">(</span><span class="bp">self</span><span class
 400
 401
 402
-403</pre>
+403
+404
+405
+406</pre>
 </div>
 </td>
 <td class="code">

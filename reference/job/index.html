@@ -33,8 +33,8 @@
 <aside class="md-announce">
 <div class="md-announce__inner md-grid md-typeset">
 <style>.md-announce a,.md-announce a:focus,.md-announce a:hover{color:currentColor}.md-announce strong{white-space:nowrap}.md-announce .twitter{margin-left:.2em;color:#00acee}</style>
-<a href="https://up42.github.io/up42-py/release-notes/"><strong>New:</strong> Find recent changes &amp; new features in the 📅
-      <strong>Release Notes</strong>!
+<a href="https://up42.github.io/up42-py/CHANGELOG/"><strong>New version 0.10:</strong> Adds parallel jobs feature &amp; more, see the 📅
+      <strong>release notes</strong>!
     </a>
 </div>
 </aside>
@@ -347,8 +347,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#up42.job.Job.__init__">
-    __init__()
+<a class="md-nav__link" href="#up42.job.Job.is_succeeded">
+    is_succeeded
   </a>
 </li>
 <li class="md-nav__item">
@@ -396,8 +396,23 @@
     map_results()
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#up42.job.Job.track_status">
+    track_status()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#up42.job.Job.upload_results_to_bucket">
+    upload_results_to_bucket()
+  </a>
+</li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../jobcollection/" title="JobCollection">
+      JobCollection
+    </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../jobtask/" title="JobTask">
@@ -492,8 +507,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#up42.job.Job.__init__">
-    __init__()
+<a class="md-nav__link" href="#up42.job.Job.is_succeeded">
+    is_succeeded
   </a>
 </li>
 <li class="md-nav__item">
@@ -541,6 +556,16 @@
     map_results()
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#up42.job.Job.track_status">
+    track_status()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#up42.job.Job.upload_results_to_bucket">
+    upload_results_to_bucket()
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -549,70 +574,24 @@
 <div class="md-content">
 <article class="md-content__inner md-typeset">
 <h1 id="job-class">Job class<a class="headerlink" href="#job-class" title="Permanent link">¶</a></h1>
+<p>The Job class provides access to the results, parameters and tasks of UP42
+Jobs (Workflows that have been run as Jobs).</p>
 <div class="doc doc-object doc-class">
 <h2 class="hidden-toc" href="#up42.job.Job" id="up42.job.Job" style="visibility: hidden; width: 0; height: 0;">
 <a class="headerlink" href="#up42.job.Job" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents first">
 <div class="doc doc-children">
-<div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.job.Job.__init__">
-<code class="highlight language-python">
-__init__<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">auth</span><span class="p">,</span> <span class="n">project_id</span><span class="p">,</span> <span class="n">job_id</span><span class="p">,</span> <span class="n">order_ids</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> </code>
+<div class="doc doc-object doc-attribute">
+<h2 class="doc doc-heading" id="up42.job.Job.is_succeeded">
+<code class="highlight">
+is_succeeded        </code>
 <span class="doc doc-properties">
-<small class="doc doc-property doc-property-special"><code>special</code></small>
+<small class="doc doc-property doc-property-property"><code>property</code></small>
+<small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
 </span>
-<a class="headerlink" href="#up42.job.Job.__init__" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.job.Job.is_succeeded" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents">
-<p>The Job class provides access to the results, parameters and tasks of UP42
-Jobs (Workflows that have been run as Jobs).</p>
-<details class="quote">
-<summary>Source code in <code>up42/job.py</code></summary>
-<table class="highlighttable">
-<tr>
-<td class="linenos">
-<div class="linenodiv">
-<pre><span></span>36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51</pre>
-</div>
-</td>
-<td class="code">
-<div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
-    <span class="bp">self</span><span class="p">,</span> <span class="n">auth</span><span class="p">:</span> <span class="n">Auth</span><span class="p">,</span> <span class="n">project_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">job_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">order_ids</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<span class="p">):</span>
-    <span class="sd">"""</span>
-<span class="sd">    The Job class provides access to the results, parameters and tasks of UP42</span>
-<span class="sd">    Jobs (Workflows that have been run as Jobs).</span>
-<span class="sd">    """</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">auth</span> <span class="o">=</span> <span class="n">auth</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">project_id</span> <span class="o">=</span> <span class="n">project_id</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">job_id</span> <span class="o">=</span> <span class="n">job_id</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">quicklooks</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">results</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="k">if</span> <span class="n">order_ids</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">order_ids</span> <span class="o">=</span> <span class="p">[</span><span class="s2">""</span><span class="p">]</span>
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">get_info</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_info</span><span class="p">()</span>
-</code></pre>
-</div>
-</td>
-</tr>
-</table>
-</details>
+<p>Gets True if the job succeeded, False otherwise</p>
 </div>
 </div>
 <div class="doc doc-object doc-method">
@@ -628,11 +607,11 @@ cancel_job<span class="p">(</span><span class="bp">self</span><span class="p">)<
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>119
-120
-121
-122
-123</pre>
+<pre><span></span>125
+126
+127
+128
+129</pre>
 </div>
 </td>
 <td class="code">
@@ -641,7 +620,7 @@ cancel_job<span class="p">(</span><span class="bp">self</span><span class="p">)<
     <span class="sd">"""Cancels a pending or running job."""</span>
     <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_endpoint</span><span class="p">()</span><span class="si">}</span><span class="s2">/jobs/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="si">}</span><span class="s2">/cancel/"</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="n">request_type</span><span class="o">=</span><span class="s2">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Job canceled: </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Job canceled: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </code></pre>
 </div>
 </td>
@@ -664,13 +643,7 @@ download_quicklooks<span class="p">(</span><span class="bp">self</span><span cla
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>125
-126
-127
-128
-129
-130
-131
+<pre><span></span>131
 132
 133
 134
@@ -681,7 +654,13 @@ download_quicklooks<span class="p">(</span><span class="bp">self</span><span cla
 139
 140
 141
-142</pre>
+142
+143
+144
+145
+146
+147
+148</pre>
 </div>
 </td>
 <td class="code">
@@ -715,10 +694,10 @@ download_quicklooks<span class="p">(</span><span class="bp">self</span><span cla
 <div class="doc doc-object doc-method">
 <h2 class="doc doc-heading" id="up42.job.Job.download_results">
 <code class="highlight language-python">
-download_results<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_directory</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> </code>
+download_results<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_directory</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unpacking</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> </code>
 <a class="headerlink" href="#up42.job.Job.download_results" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents">
-<p>Downloads and unpacks the job results.</p>
+<p>Downloads the job results. Unpacking the final file will happen as default.</p>
 <p><strong>Parameters:</strong></p>
 <table>
 <thead>
@@ -738,6 +717,14 @@ download_results<span class="p">(</span><span class="bp">self</span><span class=
 directory.</p>
 </td>
 <td><code>None</code></td>
+</tr>
+<tr>
+<td><code>unpacking</code></td>
+<td><code>bool</code></td>
+<td>
+<p>By default the final result which is in TAR archive format will be unpacked.</p>
+</td>
+<td><code>True</code></td>
 </tr>
 </tbody>
 </table>
@@ -764,13 +751,7 @@ directory.</p>
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>177
-178
-179
-180
-181
-182
-183
+<pre><span></span>183
 184
 185
 186
@@ -795,26 +776,37 @@ directory.</p>
 205
 206
 207
-208</pre>
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219</pre>
 </div>
 </td>
 <td class="code">
 <div class="highlight">
 <pre><span></span><code><span class="k">def</span> <span class="nf">download_results</span><span class="p">(</span>
-    <span class="bp">self</span><span class="p">,</span> <span class="n">output_directory</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">output_directory</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">unpacking</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
     <span class="sd">"""</span>
-<span class="sd">    Downloads and unpacks the job results.</span>
+<span class="sd">    Downloads the job results. Unpacking the final file will happen as default.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        output_directory: The file output directory, defaults to the current working</span>
 <span class="sd">            directory.</span>
+<span class="sd">        unpacking: By default the final result which is in TAR archive format will be unpacked.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        List of the downloaded results' filepaths.</span>
 <span class="sd">    """</span>
-    <span class="c1"># TODO: Overwrite argument</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Downloading results of job </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Downloading results of job </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">output_directory</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">output_directory</span> <span class="o">=</span> <span class="p">(</span>
@@ -823,12 +815,17 @@ directory.</p>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">output_directory</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">output_directory</span><span class="p">)</span>
     <span class="n">output_directory</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Download directory: </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">output_directory</span><span class="p">))</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Download directory: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">output_directory</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
     <span class="n">download_url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_download_url</span><span class="p">()</span>
-    <span class="n">out_filepaths</span> <span class="o">=</span> <span class="n">download_results_from_gcs</span><span class="p">(</span>
-        <span class="n">download_url</span><span class="o">=</span><span class="n">download_url</span><span class="p">,</span> <span class="n">output_directory</span><span class="o">=</span><span class="n">output_directory</span><span class="p">,</span>
-    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">unpacking</span><span class="p">:</span>
+        <span class="n">out_filepaths</span> <span class="o">=</span> <span class="n">download_results_from_gcs</span><span class="p">(</span>
+            <span class="n">download_url</span><span class="o">=</span><span class="n">download_url</span><span class="p">,</span> <span class="n">output_directory</span><span class="o">=</span><span class="n">output_directory</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">out_filepaths</span> <span class="o">=</span> <span class="n">download_results_from_gcs_without_unpacking</span><span class="p">(</span>
+            <span class="n">download_url</span><span class="o">=</span><span class="n">download_url</span><span class="p">,</span> <span class="n">output_directory</span><span class="o">=</span><span class="n">output_directory</span><span class="p">,</span>
+        <span class="p">)</span>
 
     <span class="bp">self</span><span class="o">.</span><span class="n">results</span> <span class="o">=</span> <span class="n">out_filepaths</span>
     <span class="k">return</span> <span class="n">out_filepaths</span>
@@ -891,28 +888,7 @@ get_jobtasks<span class="p">(</span><span class="bp">self</span><span class="p">
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>374
-375
-376
-377
-378
-379
-380
-381
-382
-383
-384
-385
-386
-387
-388
-389
-390
-391
-392
-393
-394
-395
+<pre><span></span>395
 396
 397
 398
@@ -923,7 +899,28 @@ get_jobtasks<span class="p">(</span><span class="bp">self</span><span class="p">
 403
 404
 405
-406</pre>
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427</pre>
 </div>
 </td>
 <td class="code">
@@ -944,7 +941,7 @@ get_jobtasks<span class="p">(</span><span class="bp">self</span><span class="p">
         <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_endpoint</span><span class="p">()</span><span class="si">}</span><span class="s2">/projects/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">project_id</span><span class="si">}</span><span class="s2">/jobs/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="si">}</span><span class="s2">"</span>
         <span class="sa">f</span><span class="s2">"/tasks/"</span>
     <span class="p">)</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Getting job tasks: </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Getting job tasks: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="n">response_json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="n">request_type</span><span class="o">=</span><span class="s2">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>
     <span class="n">jobtasks_json</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="n">response_json</span><span class="p">[</span><span class="s2">"data"</span><span class="p">]</span>
 
@@ -1000,26 +997,26 @@ in a dictionary of strings.</p>
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>408
-409
-410
-411
-412
-413
-414
-415
-416
-417
-418
-419
-420
-421
-422
-423
-424
-425
-426
-427</pre>
+<pre><span></span>429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448</pre>
 </div>
 </td>
 <td class="code">
@@ -1098,7 +1095,7 @@ get_logs<span class="p">(</span><span class="bp">self</span><span class="p">,</s
 </thead>
 <tbody>
 <tr>
-<td><code></code></td>
+<td><code>Optional[Dict]</code></td>
 <td>
 <p>The log strings (only if as_return was selected).</p>
 </td>
@@ -1111,26 +1108,7 @@ get_logs<span class="p">(</span><span class="bp">self</span><span class="p">,</s
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>333
-334
-335
-336
-337
-338
-339
-340
-341
-342
-343
-344
-345
-346
-347
-348
-349
-350
-351
-352
+<pre><span></span>352
 353
 354
 355
@@ -1150,12 +1128,35 @@ get_logs<span class="p">(</span><span class="bp">self</span><span class="p">,</s
 369
 370
 371
-372</pre>
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393</pre>
 </div>
 </td>
 <td class="code">
 <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">get_logs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">as_print</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">as_return</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+<pre><span></span><code><span class="k">def</span> <span class="nf">get_logs</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">as_print</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">as_return</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">]:</span>
     <span class="sd">"""</span>
 <span class="sd">    Convenience function to print or return the logs of all job tasks.</span>
 
@@ -1166,14 +1167,12 @@ get_logs<span class="p">(</span><span class="bp">self</span><span class="p">,</s
 <span class="sd">    Returns:</span>
 <span class="sd">        The log strings (only if as_return was selected).</span>
 <span class="sd">    """</span>
+    <span class="n">job_logs</span> <span class="o">=</span> <span class="p">{}</span>
+
     <span class="n">jobtasks</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_jobtasks</span><span class="p">(</span><span class="n">return_json</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
     <span class="n">jobtasks_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">task</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]</span> <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">jobtasks</span><span class="p">]</span>
 
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
-        <span class="s2">"Getting logs for </span><span class="si">%s</span><span class="s2"> job tasks: </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">jobtasks_ids</span><span class="p">),</span> <span class="n">jobtasks_ids</span>
-    <span class="p">)</span>
-    <span class="n">job_logs</span> <span class="o">=</span> <span class="p">{}</span>
-
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Getting logs for </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">jobtasks_ids</span><span class="p">)</span><span class="si">}</span><span class="s2"> job tasks: </span><span class="si">{</span><span class="n">jobtasks_ids</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">as_print</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span>
             <span class="sa">f</span><span class="s2">"Printing logs of </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">jobtasks_ids</span><span class="p">)</span><span class="si">}</span><span class="s2"> JobTasks in Job with job_id "</span>
@@ -1193,8 +1192,10 @@ get_logs<span class="p">(</span><span class="bp">self</span><span class="p">,</s
             <span class="nb">print</span><span class="p">(</span><span class="s2">"----------------------------------------------------------"</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"JobTask </span><span class="si">{</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2"> with jobtask_id </span><span class="si">{</span><span class="n">jobtask_id</span><span class="si">}</span><span class="s2">:</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
             <span class="nb">print</span><span class="p">(</span><span class="n">response_json</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">as_return</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">job_logs</span>
+    <span class="k">if</span> <span class="n">as_return</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">job_logs</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
 </code></pre>
 </div>
 </td>
@@ -1254,13 +1255,7 @@ get_results_json<span class="p">(</span><span class="bp">self</span><span class=
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>144
-145
-146
-147
-148
-149
-150
+<pre><span></span>150
 151
 152
 153
@@ -1276,7 +1271,13 @@ get_results_json<span class="p">(</span><span class="bp">self</span><span class=
 163
 164
 165
-166</pre>
+166
+167
+168
+169
+170
+171
+172</pre>
 </div>
 </td>
 <td class="code">
@@ -1296,7 +1297,7 @@ get_results_json<span class="p">(</span><span class="bp">self</span><span class=
         <span class="sa">f</span><span class="s2">"/outputs/data-json/"</span>
     <span class="p">)</span>
     <span class="n">response_json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="n">request_type</span><span class="o">=</span><span class="s2">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Retrieved </span><span class="si">%s</span><span class="s2"> features."</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">response_json</span><span class="p">[</span><span class="s2">"features"</span><span class="p">]))</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Retrieved </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">response_json</span><span class="p">[</span><span class="s1">'features'</span><span class="p">])</span><span class="si">}</span><span class="s2"> features."</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">as_dataframe</span><span class="p">:</span>
         <span class="c1"># UP42 results are always in EPSG 4326</span>
@@ -1331,7 +1332,8 @@ get_status<span class="p">(</span><span class="bp">self</span><span class="p">)<
 <tr>
 <td><code>str</code></td>
 <td>
-<p>The job status.</p>
+<p>The job status, one of "SUCCEEDED", "NOT STARTED", "PENDING", "RUNNING",
+"CANCELLED", "CANCELLING", "FAILED", "ERROR"</p>
 </td>
 </tr>
 </tbody>
@@ -1342,8 +1344,7 @@ get_status<span class="p">(</span><span class="bp">self</span><span class="p">)<
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>66
-67
+<pre><span></span>67
 68
 69
 70
@@ -1353,7 +1354,8 @@ get_status<span class="p">(</span><span class="bp">self</span><span class="p">)<
 74
 75
 76
-77</pre>
+77
+78</pre>
 </div>
 </td>
 <td class="code">
@@ -1363,12 +1365,12 @@ get_status<span class="p">(</span><span class="bp">self</span><span class="p">)<
 <span class="sd">    Gets the job status.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        The job status.</span>
+<span class="sd">        The job status, one of "SUCCEEDED", "NOT STARTED", "PENDING", "RUNNING",</span>
+<span class="sd">        "CANCELLED", "CANCELLING", "FAILED", "ERROR"</span>
 <span class="sd">    """</span>
-    <span class="c1"># logger.info("Getting job status: %s", self.job_id)</span>
     <span class="n">info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_info</span><span class="p">()</span>
     <span class="n">status</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s2">"status"</span><span class="p">]</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Job is </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="n">status</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Job is </span><span class="si">{</span><span class="n">status</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">status</span>
 </code></pre>
 </div>
@@ -1408,34 +1410,19 @@ map_results<span class="p">(</span><span class="bp">self</span><span class="p">,
 <td><code>name_column</code></td>
 <td><code>str</code></td>
 <td>
-<p>Name of the column that provides the Feature/Layer name.</p>
+<p>Name of the feature property that provides the Feature/Layer name.</p>
 </td>
 <td><code>'uid'</code></td>
 </tr>
 </tbody>
 </table>
-<h1 id="todo-make-generic-with-scene_id-column-integrated">TODO: Make generic with scene_id column integrated.<a class="headerlink" href="#todo-make-generic-with-scene_id-column-integrated" title="Permanent link">¶</a></h1>
 <details class="quote">
 <summary>Source code in <code>up42/job.py</code></summary>
 <table class="highlighttable">
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>234
-235
-236
-237
-238
-239
-240
-241
-242
-243
-244
-245
-246
-247
-248
+<pre><span></span>248
 249
 250
 251
@@ -1518,7 +1505,26 @@ map_results<span class="p">(</span><span class="bp">self</span><span class="p">,
 328
 329
 330
-331</pre>
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350</pre>
 </div>
 </td>
 <td class="code">
@@ -1529,8 +1535,7 @@ map_results<span class="p">(</span><span class="bp">self</span><span class="p">,
 
 <span class="sd">    Args:</span>
 <span class="sd">        show_images: Shows images if True (default), only features if False.</span>
-<span class="sd">        name_column: Name of the column that provides the Feature/Layer name.</span>
-<span class="sd">    # TODO: Make generic with scene_id column integrated.</span>
+<span class="sd">        name_column: Name of the feature property that provides the Feature/Layer name.</span>
 <span class="sd">    """</span>
     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">results</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
@@ -1553,9 +1558,15 @@ map_results<span class="p">(</span><span class="bp">self</span><span class="p">,
             <span class="s2">"dashArray"</span><span class="p">:</span> <span class="s2">"5, 5"</span><span class="p">,</span>
         <span class="p">}</span>
 
-    <span class="c1"># Add feature to map.</span>
-    <span class="c1"># TODO: Blocks that have results in separate json file.</span>
-    <span class="n">df</span><span class="p">:</span> <span class="n">GeoDataFrame</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_results_json</span><span class="p">(</span><span class="n">as_dataframe</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
+    <span class="c1"># Add features to map.</span>
+    <span class="c1"># Some blocks store vector results in an additional geojson file.</span>
+    <span class="n">json_fp</span> <span class="o">=</span> <span class="p">[</span><span class="n">fp</span> <span class="k">for</span> <span class="n">fp</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">results</span> <span class="k">if</span> <span class="n">fp</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".geojson"</span><span class="p">)]</span>
+    <span class="k">if</span> <span class="n">json_fp</span><span class="p">:</span>
+        <span class="n">json_fp</span> <span class="o">=</span> <span class="n">json_fp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">json_fp</span> <span class="o">=</span> <span class="p">[</span><span class="n">fp</span> <span class="k">for</span> <span class="n">fp</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">results</span> <span class="k">if</span> <span class="n">fp</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".json"</span><span class="p">)][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">df</span><span class="p">:</span> <span class="n">GeoDataFrame</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">json_fp</span><span class="p">)</span>
+
     <span class="n">centroid</span> <span class="o">=</span> <span class="n">box</span><span class="p">(</span><span class="o">*</span><span class="n">df</span><span class="o">.</span><span class="n">total_bounds</span><span class="p">)</span><span class="o">.</span><span class="n">centroid</span>
     <span class="n">m</span> <span class="o">=</span> <span class="n">folium_base_map</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="n">centroid</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="n">centroid</span><span class="o">.</span><span class="n">x</span><span class="p">,)</span>
 
@@ -1665,13 +1676,7 @@ time interval given in report_time argument.</p>
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span> 79
- 80
- 81
- 82
- 83
- 84
- 85
+<pre><span></span> 85
  86
  87
  88
@@ -1703,7 +1708,13 @@ time interval given in report_time argument.</p>
 114
 115
 116
-117</pre>
+117
+118
+119
+120
+121
+122
+123</pre>
 </div>
 </td>
 <td class="code">
@@ -1719,8 +1730,7 @@ time interval given in report_time argument.</p>
 <span class="sd">        report_time: The intervall (in seconds) when to query the job status.</span>
 <span class="sd">    """</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
-        <span class="s2">"Tracking job status continuously, reporting every </span><span class="si">%s</span><span class="s2"> seconds..."</span><span class="p">,</span>
-        <span class="n">report_time</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">"Tracking job status continuously, reporting every </span><span class="si">{</span><span class="n">report_time</span><span class="si">}</span><span class="s2"> seconds..."</span><span class="p">,</span>
     <span class="p">)</span>
     <span class="n">status</span> <span class="o">=</span> <span class="s2">"NOT STARTED"</span>
     <span class="n">time_asleep</span> <span class="o">=</span> <span class="mi">0</span>
@@ -1730,18 +1740,19 @@ time interval given in report_time argument.</p>
         <span class="n">status</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_status</span><span class="p">()</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
 
+        <span class="c1"># TODO: Add statuses as constants (maybe objects?)</span>
         <span class="k">if</span> <span class="n">status</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"NOT STARTED"</span><span class="p">,</span> <span class="s2">"PENDING"</span><span class="p">,</span> <span class="s2">"RUNNING"</span><span class="p">]:</span>
             <span class="k">if</span> <span class="n">time_asleep</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">time_asleep</span> <span class="o">%</span> <span class="n">report_time</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Job is </span><span class="si">%s</span><span class="s2">! - </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="p">)</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Job is </span><span class="si">{</span><span class="n">status</span><span class="si">}</span><span class="s2">! - </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
         <span class="k">elif</span> <span class="n">status</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"FAILED"</span><span class="p">,</span> <span class="s2">"ERROR"</span><span class="p">]:</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Job is </span><span class="si">%s</span><span class="s2">! - </span><span class="si">%s</span><span class="s2"> - Printing logs ..."</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Job is </span><span class="si">{</span><span class="n">status</span><span class="si">}</span><span class="s2">! - </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="si">}</span><span class="s2"> - Printing logs ..."</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">get_logs</span><span class="p">(</span><span class="n">as_print</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Job has failed! See the above log."</span><span class="p">)</span>
         <span class="k">elif</span> <span class="n">status</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"CANCELLED"</span><span class="p">,</span> <span class="s2">"CANCELLING"</span><span class="p">]:</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Job is </span><span class="si">%s</span><span class="s2">! - </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Job is </span><span class="si">{</span><span class="n">status</span><span class="si">}</span><span class="s2">! - </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Job has been cancelled!"</span><span class="p">)</span>
         <span class="k">elif</span> <span class="n">status</span> <span class="o">==</span> <span class="s2">"SUCCEEDED"</span><span class="p">:</span>
-            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Job finished successfully! - </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Job finished successfully! - </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
         <span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
         <span class="n">time_asleep</span> <span class="o">+=</span> <span class="mi">5</span>
@@ -1761,25 +1772,14 @@ time interval given in report_time argument.</p>
 upload_results_to_bucket<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gs_client</span><span class="p">,</span> <span class="n">bucket</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="n">extension</span><span class="o">=</span><span class="s1">'.tgz'</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">'v0'</span><span class="p">)</span> </code>
 <a class="headerlink" href="#up42.job.Job.upload_results_to_bucket" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents">
-<p>Uploads the results to a custom google cloud storage bucket.</p>
+<p>Uploads the results of a job directly to a custom google cloud storage bucket.</p>
 <details class="quote">
 <summary>Source code in <code>up42/job.py</code></summary>
 <table class="highlighttable">
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>210
-211
-212
-213
-214
-215
-216
-217
-218
-219
-220
-221
+<pre><span></span>221
 222
 223
 224
@@ -1790,7 +1790,21 @@ upload_results_to_bucket<span class="p">(</span><span class="bp">self</span><spa
 229
 230
 231
-232</pre>
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246</pre>
 </div>
 </td>
 <td class="code">
@@ -1798,22 +1812,25 @@ upload_results_to_bucket<span class="p">(</span><span class="bp">self</span><spa
 <pre><span></span><code><span class="k">def</span> <span class="nf">upload_results_to_bucket</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span> <span class="n">gs_client</span><span class="p">,</span> <span class="n">bucket</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="n">extension</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">".tgz"</span><span class="p">,</span> <span class="n">version</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"v0"</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-    <span class="sd">"""Uploads the results to a custom google cloud storage bucket."""</span>
+    <span class="sd">"""</span>
+<span class="sd">    Uploads the results of a job directly to a custom google cloud storage bucket.</span>
+<span class="sd">    """</span>
     <span class="n">download_url</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_download_url</span><span class="p">()</span>
     <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">download_url</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_ids</span> <span class="o">!=</span> <span class="p">[</span><span class="s2">""</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">order_ids</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">blob</span> <span class="o">=</span> <span class="n">bucket</span><span class="o">.</span><span class="n">blob</span><span class="p">(</span>
             <span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">version</span><span class="p">)</span> <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span> <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">order_ids</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">extension</span><span class="p">))</span>
         <span class="p">)</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
-            <span class="s2">"Upload job </span><span class="si">%s</span><span class="s2"> results with order_ids to </span><span class="si">%s</span><span class="s2">..."</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="p">,</span> <span class="n">blob</span><span class="o">.</span><span class="n">name</span>
+            <span class="sa">f</span><span class="s2">"Upload job </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="si">}</span><span class="s2"> results with order_ids to "</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">blob</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> ..."</span>
         <span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">blob</span> <span class="o">=</span> <span class="n">bucket</span><span class="o">.</span><span class="n">blob</span><span class="p">(</span>
             <span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">version</span><span class="p">)</span> <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span> <span class="o">/</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">job_id</span> <span class="o">+</span> <span class="n">extension</span><span class="p">))</span>
         <span class="p">)</span>
-        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Upload job </span><span class="si">%s</span><span class="s2"> results to </span><span class="si">%s</span><span class="s2">..."</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="p">,</span> <span class="n">blob</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Upload job </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="si">}</span><span class="s2"> results to </span><span class="si">{</span><span class="n">blob</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> ..."</span><span class="p">)</span>
     <span class="n">blob</span><span class="o">.</span><span class="n">upload_from_string</span><span class="p">(</span>
         <span class="n">data</span><span class="o">=</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="n">content_type</span><span class="o">=</span><span class="s2">"application/octet-stream"</span><span class="p">,</span> <span class="n">client</span><span class="o">=</span><span class="n">gs_client</span><span class="p">,</span>
     <span class="p">)</span>
@@ -1849,13 +1866,13 @@ upload_results_to_bucket<span class="p">(</span><span class="bp">self</span><spa
               </div>
 </div>
 </a>
-<a class="md-footer-nav__link md-footer-nav__link--next" href="../jobtask/" rel="next" title="JobTask">
+<a class="md-footer-nav__link md-footer-nav__link--next" href="../jobcollection/" rel="next" title="JobCollection">
 <div class="md-footer-nav__title">
 <div class="md-ellipsis">
 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                JobTask
+                JobCollection
               </div>
 </div>
 <div class="md-footer-nav__button md-icon">

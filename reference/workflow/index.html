@@ -33,8 +33,8 @@
 <aside class="md-announce">
 <div class="md-announce__inner md-grid md-typeset">
 <style>.md-announce a,.md-announce a:focus,.md-announce a:hover{color:currentColor}.md-announce strong{white-space:nowrap}.md-announce .twitter{margin-left:.2em;color:#00acee}</style>
-<a href="https://up42.github.io/up42-py/release-notes/"><strong>New:</strong> Find recent changes &amp; new features in the 📅
-      <strong>Release Notes</strong>!
+<a href="https://up42.github.io/up42-py/CHANGELOG/"><strong>New version 0.10:</strong> Adds parallel jobs feature &amp; more, see the 📅
+      <strong>release notes</strong>!
     </a>
 </div>
 </aside>
@@ -342,8 +342,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#up42.workflow.Workflow.__init__">
-    __init__()
+<a class="md-nav__link" href="#up42.workflow.Workflow.max_concurrent_jobs">
+    max_concurrent_jobs
   </a>
 </li>
 <li class="md-nav__item">
@@ -354,6 +354,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#up42.workflow.Workflow.construct_parameters">
     construct_parameters()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#up42.workflow.Workflow.construct_parameters_parallel">
+    construct_parameters_parallel()
   </a>
 </li>
 <li class="md-nav__item">
@@ -387,8 +392,18 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#up42.workflow.Workflow.run_jobs_parallel">
+    run_jobs_parallel()
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#up42.workflow.Workflow.test_job">
     test_job()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#up42.workflow.Workflow.test_jobs_parallel">
+    test_jobs_parallel()
   </a>
 </li>
 <li class="md-nav__item">
@@ -402,6 +417,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="../job/" title="Job">
       Job
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../jobcollection/" title="JobCollection">
+      JobCollection
     </a>
 </li>
 <li class="md-nav__item">
@@ -497,8 +517,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#up42.workflow.Workflow.__init__">
-    __init__()
+<a class="md-nav__link" href="#up42.workflow.Workflow.max_concurrent_jobs">
+    max_concurrent_jobs
   </a>
 </li>
 <li class="md-nav__item">
@@ -509,6 +529,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#up42.workflow.Workflow.construct_parameters">
     construct_parameters()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#up42.workflow.Workflow.construct_parameters_parallel">
+    construct_parameters_parallel()
   </a>
 </li>
 <li class="md-nav__item">
@@ -542,8 +567,18 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#up42.workflow.Workflow.run_jobs_parallel">
+    run_jobs_parallel()
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#up42.workflow.Workflow.test_job">
     test_job()
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#up42.workflow.Workflow.test_jobs_parallel">
+    test_jobs_parallel()
   </a>
 </li>
 <li class="md-nav__item">
@@ -559,61 +594,24 @@
 <div class="md-content">
 <article class="md-content__inner md-typeset">
 <h1 id="workflow-class">Workflow class<a class="headerlink" href="#workflow-class" title="Permanent link">¶</a></h1>
+<p>The Workflow class can query all available and spawn new jobs for an UP42
+Workflow and helps to find and set the the workflow tasks, parameters and aoi.</p>
 <div class="doc doc-object doc-class">
 <h2 class="hidden-toc" href="#up42.workflow.Workflow" id="up42.workflow.Workflow" style="visibility: hidden; width: 0; height: 0;">
 <a class="headerlink" href="#up42.workflow.Workflow" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents first">
 <div class="doc doc-children">
-<div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.workflow.Workflow.__init__">
-<code class="highlight language-python">
-__init__<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">auth</span><span class="p">,</span> <span class="n">project_id</span><span class="p">,</span> <span class="n">workflow_id</span><span class="p">)</span> </code>
+<div class="doc doc-object doc-attribute">
+<h2 class="doc doc-heading" id="up42.workflow.Workflow.max_concurrent_jobs">
+<code class="highlight">
+max_concurrent_jobs: <span class="nb">int</span> </code>
 <span class="doc doc-properties">
-<small class="doc doc-property doc-property-special"><code>special</code></small>
+<small class="doc doc-property doc-property-property"><code>property</code></small>
+<small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
 </span>
-<a class="headerlink" href="#up42.workflow.Workflow.__init__" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.workflow.Workflow.max_concurrent_jobs" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents">
-<p>The Workflow class can query all available and spawn new jobs for
-an UP42 Workflow and helps to find and set the the workflow tasks, parameters
-and aoi.</p>
-<details class="quote">
-<summary>Source code in <code>up42/workflow.py</code></summary>
-<table class="highlighttable">
-<tr>
-<td class="linenos">
-<div class="linenodiv">
-<pre><span></span>22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32</pre>
-</div>
-</td>
-<td class="code">
-<div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">auth</span><span class="p">:</span> <span class="n">Auth</span><span class="p">,</span> <span class="n">project_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">workflow_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-    <span class="sd">"""</span>
-<span class="sd">    The Workflow class can query all available and spawn new jobs for</span>
-<span class="sd">    an UP42 Workflow and helps to find and set the the workflow tasks, parameters</span>
-<span class="sd">    and aoi.</span>
-<span class="sd">    """</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">auth</span> <span class="o">=</span> <span class="n">auth</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">project_id</span> <span class="o">=</span> <span class="n">project_id</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">workflow_id</span> <span class="o">=</span> <span class="n">workflow_id</span>
-    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">get_info</span><span class="p">:</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_info</span><span class="p">()</span>
-</code></pre>
-</div>
-</td>
-</tr>
-</table>
-</details>
+<p>Gets the maximum number of concurrent jobs allowed by the project settings.</p>
 </div>
 </div>
 <div class="doc doc-object doc-method">
@@ -662,20 +660,9 @@ version of a block will always be added.</p>
 <pre><span></span><code><span class="n">input_tasks</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"sobloo-s2-l1c-aoiclipped"</span><span class="p">,</span> <span class="s2">"tiling"</span><span class="p">]</span>
 </code></pre>
 </div>
-<p>```python
-input_tasks = ["Sentinel-2 L1C MSI AOI clipped",
-               "Raster Tiling"]</p>
-<p>definition (dict of block id, block name and parent block name). Always use :1
-to be able to identify the order when two times the same workflow task is used.
-The name is arbitrary, but best use the block name.</p>
-<p><strong>Examples:</strong></p>
 <div class="highlight">
-<pre><span></span><code><span class="n">input_tasks_full</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">'name'</span><span class="p">:</span> <span class="s1">'sobloo-s2-l1c-aoiclipped:1'</span><span class="p">,</span>
-                     <span class="s1">'parentName'</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
-                     <span class="s1">'blockId'</span><span class="p">:</span> <span class="s1">'a2daaab4-196d-4226-a018-a810444dcad1'</span><span class="p">},</span>
-                    <span class="p">{</span><span class="s1">'name'</span><span class="p">:</span> <span class="s1">'sharpening:1'</span><span class="p">,</span>
-                     <span class="s1">'parentName'</span><span class="p">:</span> <span class="s1">'sobloo-s2-l1c-aoiclipped'</span><span class="p">,</span>
-                     <span class="s1">'blockId'</span><span class="p">:</span> <span class="s1">'4ed70368-d4e1-4462-bef6-14e768049471'</span><span class="p">}]</span>
+<pre><span></span><code><span class="n">input_tasks</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Sentinel-2 L1C MSI AOI clipped"</span><span class="p">,</span>
+               <span class="s2">"Raster Tiling"</span><span class="p">]</span>
 </code></pre>
 </div>
 <details class="quote">
@@ -737,7 +724,8 @@ The name is arbitrary, but best use the block name.</p>
 227
 228
 229
-230</pre>
+230
+231</pre>
 </div>
 </td>
 <td class="code">
@@ -769,23 +757,24 @@ The name is arbitrary, but best use the block name.</p>
 <span class="sd">        ```python</span>
 <span class="sd">        input_tasks = ["Sentinel-2 L1C MSI AOI clipped",</span>
 <span class="sd">                       "Raster Tiling"]</span>
-
-
-<span class="sd">    Optional: The input_tasks can also be provided as the full, detailed workflow task</span>
-<span class="sd">    definition (dict of block id, block name and parent block name). Always use :1</span>
-<span class="sd">    to be able to identify the order when two times the same workflow task is used.</span>
-<span class="sd">    The name is arbitrary, but best use the block name.</span>
-
-<span class="sd">    Example:</span>
-<span class="sd">        ```python</span>
-<span class="sd">        input_tasks_full = [{'name': 'sobloo-s2-l1c-aoiclipped:1',</span>
-<span class="sd">                             'parentName': None,</span>
-<span class="sd">                             'blockId': 'a2daaab4-196d-4226-a018-a810444dcad1'},</span>
-<span class="sd">                            {'name': 'sharpening:1',</span>
-<span class="sd">                             'parentName': 'sobloo-s2-l1c-aoiclipped',</span>
-<span class="sd">                             'blockId': '4ed70368-d4e1-4462-bef6-14e768049471'}]</span>
 <span class="sd">        ```</span>
 <span class="sd">    """</span>
+    <span class="c1"># Relevant when non-linear workflows are introduced:</span>
+    <span class="c1"># Optional:</span>
+    <span class="c1">#     The input_tasks can also be provided as the full, detailed workflow task</span>
+    <span class="c1">#     definition (dict of block id, block name and parent block name). Always use :1</span>
+    <span class="c1">#     to be able to identify the order when two times the same workflow task is used.</span>
+    <span class="c1">#     The name is arbitrary, but best use the block name.</span>
+    <span class="c1">#</span>
+    <span class="c1"># Example:</span>
+    <span class="c1">#     ```python</span>
+    <span class="c1">#     input_tasks_full = [{'name': 'sobloo-s2-l1c-aoiclipped:1',</span>
+    <span class="c1">#                          'parentName': None,</span>
+    <span class="c1">#                          'blockId': 'a2daaab4-196d-4226-a018-a810444dcad1'},</span>
+    <span class="c1">#                         {'name': 'sharpening:1',</span>
+    <span class="c1">#                          'parentName': 'sobloo-s2-l1c-aoiclipped',</span>
+    <span class="c1">#                          'blockId': '4ed70368-d4e1-4462-bef6-14e768049471'}]</span>
+
     <span class="c1"># Construct proper task definition from simplified input.</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">input_tasks</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">input_tasks</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">dict</span><span class="p">):</span>
         <span class="n">input_tasks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_construct_full_workflow_tasks_dict</span><span class="p">(</span><span class="n">input_tasks</span><span class="p">)</span>
@@ -795,7 +784,7 @@ The name is arbitrary, but best use the block name.</p>
         <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">workflow_id</span><span class="si">}</span><span class="s2">/tasks/"</span>
     <span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="n">request_type</span><span class="o">=</span><span class="s2">"POST"</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">input_tasks</span><span class="p">)</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Added tasks to workflow: </span><span class="si">%r</span><span class="s2">"</span><span class="p">,</span> <span class="n">input_tasks</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Added tasks to workflow: </span><span class="si">{</span><span class="n">input_tasks</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </code></pre>
 </div>
 </td>
@@ -826,7 +815,7 @@ via dict.update({key:value}).</p>
 <tbody>
 <tr>
 <td><code>geometry</code></td>
-<td><code>Optional[Union[Dict, geojson.feature.Feature, geojson.feature.FeatureCollection, geojson.geometry.Polygon, List, geopandas.geodataframe.GeoDataFrame, shapely.geometry.polygon.Polygon, shapely.geometry.point.Point]]</code></td>
+<td><code>Union[Dict, geojson.feature.Feature, geojson.feature.FeatureCollection, geojson.geometry.Polygon, List, geopandas.geodataframe.GeoDataFrame, shapely.geometry.polygon.Polygon, shapely.geometry.point.Point]</code></td>
 <td>
 <p>One of Dict, FeatureCollection, Feature, List,
 GeoDataFrame, shapely.geometry.Polygon, shapely.geometry.Point. All
@@ -836,7 +825,7 @@ assume EPSG 4326.</p>
 </tr>
 <tr>
 <td><code>geometry_operation</code></td>
-<td><code>Optional[str]</code></td>
+<td><code>str</code></td>
 <td>
 <p>Desired operation, One of "bbox", "intersects", "contains".</p>
 </td>
@@ -908,8 +897,7 @@ into new workflows.</p>
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>271
-272
+<pre><span></span>272
 273
 274
 275
@@ -979,29 +967,26 @@ into new workflows.</p>
 339
 340
 341
-342
-343</pre>
+342</pre>
 </div>
 </td>
 <td class="code">
 <div class="highlight">
 <pre><span></span><code><span class="k">def</span> <span class="nf">construct_parameters</span><span class="p">(</span>
     <span class="bp">self</span><span class="p">,</span>
-    <span class="n">geometry</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span>
-        <span class="n">Union</span><span class="p">[</span>
-            <span class="n">Dict</span><span class="p">,</span>
-            <span class="n">Feature</span><span class="p">,</span>
-            <span class="n">FeatureCollection</span><span class="p">,</span>
-            <span class="n">geojson_Polygon</span><span class="p">,</span>
-            <span class="n">List</span><span class="p">,</span>
-            <span class="n">GeoDataFrame</span><span class="p">,</span>
-            <span class="n">Polygon</span><span class="p">,</span>
-            <span class="n">Point</span><span class="p">,</span>
-        <span class="p">]</span>
+    <span class="n">geometry</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span>
+        <span class="n">Dict</span><span class="p">,</span>
+        <span class="n">Feature</span><span class="p">,</span>
+        <span class="n">FeatureCollection</span><span class="p">,</span>
+        <span class="n">geojson_Polygon</span><span class="p">,</span>
+        <span class="n">List</span><span class="p">,</span>
+        <span class="n">GeoDataFrame</span><span class="p">,</span>
+        <span class="n">Polygon</span><span class="p">,</span>
+        <span class="n">Point</span><span class="p">,</span>
     <span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="n">geometry_operation</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">geometry_operation</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">handle_multiple_features</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"footprint"</span><span class="p">,</span>
-    <span class="n">start_date</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>  <span class="c1"># TODO: Other format? More time options?</span>
+    <span class="n">start_date</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">end_date</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">scene_ids</span><span class="p">:</span> <span class="n">List</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -1027,37 +1012,264 @@ into new workflows.</p>
 <span class="sd">    Returns:</span>
 <span class="sd">        Dictionary of constructed input parameters.</span>
 <span class="sd">    """</span>
-    <span class="c1"># TODO: Add ipy slide widget option? One for each block.</span>
     <span class="n">input_parameters</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_default_parameters</span><span class="p">()</span>
     <span class="n">data_block_name</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">input_parameters</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
 
     <span class="k">if</span> <span class="n">order_ids</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="c1"># Needs to be handled in this function(not run_job) as it is only</span>
         <span class="c1"># relevant for the data block.</span>
-        <span class="c1"># TODO: Check for order-id correct schema, should be handled on backend?</span>
         <span class="n">input_parameters</span><span class="p">[</span><span class="n">data_block_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"order_ids"</span><span class="p">:</span> <span class="n">order_ids</span><span class="p">}</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">limit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">input_parameters</span><span class="p">[</span><span class="n">data_block_name</span><span class="p">][</span><span class="s2">"limit"</span><span class="p">]</span> <span class="o">=</span> <span class="n">limit</span>
+
         <span class="k">if</span> <span class="n">scene_ids</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">scene_ids</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
                 <span class="n">scene_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">scene_ids</span><span class="p">]</span>
             <span class="n">input_parameters</span><span class="p">[</span><span class="n">data_block_name</span><span class="p">][</span><span class="s2">"ids"</span><span class="p">]</span> <span class="o">=</span> <span class="n">scene_ids</span>
             <span class="n">input_parameters</span><span class="p">[</span><span class="n">data_block_name</span><span class="p">][</span><span class="s2">"limit"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">scene_ids</span><span class="p">)</span>
             <span class="n">input_parameters</span><span class="p">[</span><span class="n">data_block_name</span><span class="p">]</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"time"</span><span class="p">)</span>
-            <span class="c1"># TODO: In case of ids remove all non-relevant parameters. Cleaner.</span>
         <span class="k">elif</span> <span class="n">start_date</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">end_date</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">datetime</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">start_date</span><span class="si">}</span><span class="s2">T00:00:00Z/</span><span class="si">{</span><span class="n">end_date</span><span class="si">}</span><span class="s2">T00:00:00Z"</span>
             <span class="n">input_parameters</span><span class="p">[</span><span class="n">data_block_name</span><span class="p">][</span><span class="s2">"time"</span><span class="p">]</span> <span class="o">=</span> <span class="n">datetime</span>
-        <span class="n">aoi_fc</span> <span class="o">=</span> <span class="n">any_vector_to_fc</span><span class="p">(</span><span class="n">vector</span><span class="o">=</span><span class="n">geometry</span><span class="p">,)</span>
-        <span class="n">aoi_feature</span> <span class="o">=</span> <span class="n">fc_to_query_geometry</span><span class="p">(</span>
-            <span class="n">fc</span><span class="o">=</span><span class="n">aoi_fc</span><span class="p">,</span>
-            <span class="n">geometry_operation</span><span class="o">=</span><span class="n">geometry_operation</span><span class="p">,</span>  <span class="c1"># type: ignore</span>
-            <span class="n">squash_multiple_features</span><span class="o">=</span><span class="n">handle_multiple_features</span><span class="p">,</span>
+
+        <span class="k">if</span> <span class="n">geometry</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">aoi_fc</span> <span class="o">=</span> <span class="n">any_vector_to_fc</span><span class="p">(</span><span class="n">vector</span><span class="o">=</span><span class="n">geometry</span><span class="p">,)</span>
+            <span class="n">aoi_feature</span> <span class="o">=</span> <span class="n">fc_to_query_geometry</span><span class="p">(</span>
+                <span class="n">fc</span><span class="o">=</span><span class="n">aoi_fc</span><span class="p">,</span>
+                <span class="n">geometry_operation</span><span class="o">=</span><span class="n">geometry_operation</span><span class="p">,</span>  <span class="c1"># type: ignore</span>
+                <span class="n">squash_multiple_features</span><span class="o">=</span><span class="n">handle_multiple_features</span><span class="p">,</span>
+            <span class="p">)</span>
+
+            <span class="n">input_parameters</span><span class="p">[</span><span class="n">data_block_name</span><span class="p">][</span><span class="n">geometry_operation</span><span class="p">]</span> <span class="o">=</span> <span class="n">aoi_feature</span>
+    <span class="k">return</span> <span class="n">input_parameters</span>
+</code></pre>
+</div>
+</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h2 class="doc doc-heading" id="up42.workflow.Workflow.construct_parameters_parallel">
+<code class="highlight language-python">
+construct_parameters_parallel<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">geometries</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">interval_dates</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scene_ids</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit_per_job</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">geometry_operation</span><span class="o">=</span><span class="s1">'intersects'</span><span class="p">)</span> </code>
+<a class="headerlink" href="#up42.workflow.Workflow.construct_parameters_parallel" title="Permanent link">¶</a></h2>
+<div class="doc doc-contents">
+<p>Maps a list of geometries and a list of time series into a list
+of input parameters of a workflow. If you pass 2 geometries and 1 time
+interval this will result in 2 x 1 input parameters.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>geometries</code></td>
+<td><code>List[Union[Dict, geojson.feature.Feature, geojson.geometry.Polygon, shapely.geometry.polygon.Polygon, shapely.geometry.point.Point]]</code></td>
+<td>
+<p>List of unit geometries to map with times.</p>
+</td>
+<td><code>None</code></td>
+</tr>
+<tr>
+<td><code>interval_dates</code></td>
+<td><code>List[Tuple[str, str]]</code></td>
+<td>
+<p>List of tuples of start and end dates,
+i.e. <code>("2014-01-01","2015-01-01")</code>.</p>
+</td>
+<td><code>None</code></td>
+</tr>
+<tr>
+<td><code>scene_ids</code></td>
+<td><code>List</code></td>
+<td>
+<p>List of scene ids. Will be mapped 1:1 to each job.
+All other arguments are ignored except geometries if passed.</p>
+</td>
+<td><code>None</code></td>
+</tr>
+<tr>
+<td><code>limit_per_job</code></td>
+<td><code>int</code></td>
+<td>
+<p>Limit passed to be passed to each individual job parameter.</p>
+</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>geometry_operation</code></td>
+<td><code>str</code></td>
+<td>
+<p>Geometry operation to be passed to each job parameter.</p>
+</td>
+<td><code>'intersects'</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>List[dict]</code></td>
+<td>
+<p>List of dictionary of constructed input parameters.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>up42/workflow.py</code></summary>
+<table class="highlighttable">
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre><span></span>344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407</pre>
+</div>
+</td>
+<td class="code">
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">construct_parameters_parallel</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">geometries</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Dict</span><span class="p">,</span> <span class="n">Feature</span><span class="p">,</span> <span class="n">geojson_Polygon</span><span class="p">,</span> <span class="n">Polygon</span><span class="p">,</span> <span class="n">Point</span><span class="p">,]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">interval_dates</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">scene_ids</span><span class="p">:</span> <span class="n">List</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">limit_per_job</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">geometry_operation</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"intersects"</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">dict</span><span class="p">]:</span>
+    <span class="sd">"""</span>
+<span class="sd">    Maps a list of geometries and a list of time series into a list</span>
+<span class="sd">    of input parameters of a workflow. If you pass 2 geometries and 1 time</span>
+<span class="sd">    interval this will result in 2 x 1 input parameters.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        geometries: List of unit geometries to map with times.</span>
+<span class="sd">        interval_dates: List of tuples of start and end dates,</span>
+<span class="sd">            i.e. `("2014-01-01","2015-01-01")`.</span>
+<span class="sd">        scene_ids: List of scene ids. Will be mapped 1:1 to each job.</span>
+<span class="sd">            All other arguments are ignored except geometries if passed.</span>
+<span class="sd">        limit_per_job: Limit passed to be passed to each individual job parameter.</span>
+<span class="sd">        geometry_operation: Geometry operation to be passed to each job parameter.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        List of dictionary of constructed input parameters.</span>
+<span class="sd">    """</span>
+    <span class="c1"># TODO: Rename arguments</span>
+    <span class="n">result_params</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1"># scene_ids mapped to geometries</span>
+    <span class="k">if</span> <span class="n">scene_ids</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">geometries</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">geo</span> <span class="ow">in</span> <span class="n">geometries</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">scene_id</span> <span class="ow">in</span> <span class="n">scene_ids</span><span class="p">:</span>
+                <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">construct_parameters</span><span class="p">(</span>
+                    <span class="n">geometry</span><span class="o">=</span><span class="n">geo</span><span class="p">,</span>
+                    <span class="n">scene_ids</span><span class="o">=</span><span class="p">[</span><span class="n">scene_id</span><span class="p">],</span>
+                    <span class="n">geometry_operation</span><span class="o">=</span><span class="n">geometry_operation</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">result_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+
+    <span class="c1"># interval_dates mapped to geometries</span>
+    <span class="k">elif</span> <span class="n">interval_dates</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">geometries</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">geo</span> <span class="ow">in</span> <span class="n">geometries</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span> <span class="ow">in</span> <span class="n">interval_dates</span><span class="p">:</span>
+                <span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">construct_parameters</span><span class="p">(</span>
+                    <span class="n">geometry</span><span class="o">=</span><span class="n">geo</span><span class="p">,</span>
+                    <span class="n">geometry_operation</span><span class="o">=</span><span class="n">geometry_operation</span><span class="p">,</span>
+                    <span class="n">start_date</span><span class="o">=</span><span class="n">start_date</span><span class="p">,</span>
+                    <span class="n">end_date</span><span class="o">=</span><span class="n">end_date</span><span class="p">,</span>
+                    <span class="n">limit</span><span class="o">=</span><span class="n">limit_per_job</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">result_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+
+    <span class="c1"># only scene_ids</span>
+    <span class="k">elif</span> <span class="n">scene_ids</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">scene_id</span> <span class="ow">in</span> <span class="n">scene_ids</span><span class="p">:</span>
+            <span class="n">result_params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">construct_parameters</span><span class="p">(</span><span class="n">geometry</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scene_ids</span><span class="o">=</span><span class="p">[</span><span class="n">scene_id</span><span class="p">],)</span>
+            <span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">"Please provides geometries and scene_ids, geometries"</span>
+            <span class="s2">"and time_interval or scene_ids."</span>
         <span class="p">)</span>
 
-        <span class="n">input_parameters</span><span class="p">[</span><span class="n">data_block_name</span><span class="p">][</span><span class="n">geometry_operation</span><span class="p">]</span> <span class="o">=</span> <span class="n">aoi_feature</span>
-    <span class="k">return</span> <span class="n">input_parameters</span>
+    <span class="k">return</span> <span class="n">result_params</span>
 </code></pre>
 </div>
 </td>
@@ -1079,17 +1291,17 @@ delete<span class="p">(</span><span class="bp">self</span><span class="p">)</spa
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>499
-500
-501
-502
-503
-504
-505
-506
-507
-508
-509</pre>
+<pre><span></span>714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724</pre>
 </div>
 </td>
 <td class="code">
@@ -1103,7 +1315,7 @@ delete<span class="p">(</span><span class="bp">self</span><span class="p">)</spa
         <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">workflow_id</span><span class="si">}</span><span class="s2">"</span>
     <span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="n">request_type</span><span class="o">=</span><span class="s2">"DELETE"</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">return_text</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Successfully deleted workflow: </span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">workflow_id</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Successfully deleted workflow: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">workflow_id</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
     <span class="k">del</span> <span class="bp">self</span>
 </code></pre>
 </div>
@@ -1129,8 +1341,7 @@ will provide the compatible blocks for the last workflow task in the workflow.</
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>50
-51
+<pre><span></span>51
 52
 53
 54
@@ -1168,7 +1379,6 @@ will provide the compatible blocks for the last workflow task in the workflow.</
     <span class="p">)</span>
     <span class="n">response_json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="n">request_type</span><span class="o">=</span><span class="s2">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>
     <span class="n">compatible_blocks</span> <span class="o">=</span> <span class="n">response_json</span><span class="p">[</span><span class="s2">"data"</span><span class="p">][</span><span class="s2">"blocks"</span><span class="p">]</span>
-    <span class="c1"># TODO: Plot diagram of current workflow in green, attachable blocks in red.</span>
     <span class="n">compatible_blocks</span> <span class="o">=</span> <span class="p">{</span>
         <span class="n">block</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]:</span> <span class="n">block</span><span class="p">[</span><span class="s2">"blockId"</span><span class="p">]</span> <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">compatible_blocks</span>
     <span class="p">}</span>
@@ -1187,7 +1397,7 @@ will provide the compatible blocks for the last workflow task in the workflow.</
 get_jobs<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">return_json</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> </code>
 <a class="headerlink" href="#up42.workflow.Workflow.get_jobs" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents">
-<p>Get all jobs associated with the workflow as job objects or json.</p>
+<p>Get all jobs associated with the workflow as a JobCollection or json.</p>
 <p><strong>Parameters:</strong></p>
 <table>
 <thead>
@@ -1203,7 +1413,7 @@ get_jobs<span class="p">(</span><span class="bp">self</span><span class="p">,</s
 <td><code>return_json</code></td>
 <td><code>bool</code></td>
 <td>
-<p>If true, returns the job info jsons instead of job objects.</p>
+<p>If true, returns the job info jsons instead of a JobCollection.</p>
 </td>
 <td><code>False</code></td>
 </tr>
@@ -1219,9 +1429,9 @@ get_jobs<span class="p">(</span><span class="bp">self</span><span class="p">,</s
 </thead>
 <tbody>
 <tr>
-<td><code>Union[List[Job], Dict]</code></td>
+<td><code>Union[up42.jobcollection.JobCollection, List[Dict]]</code></td>
 <td>
-<p>All job objects as a list, or alternatively the jobs info as json.</p>
+<p>A JobCollection, or alternatively the jobs info as json.</p>
 </td>
 </tr>
 </tbody>
@@ -1232,51 +1442,52 @@ get_jobs<span class="p">(</span><span class="bp">self</span><span class="p">,</s
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>450
-451
-452
-453
-454
-455
-456
-457
-458
-459
-460
-461
-462
-463
-464
-465
-466
-467
-468
-469
-470
-471
-472
-473
-474
-475
-476
-477
-478
-479
-480
-481</pre>
+<pre><span></span>664
+665
+666
+667
+668
+669
+670
+671
+672
+673
+674
+675
+676
+677
+678
+679
+680
+681
+682
+683
+684
+685
+686
+687
+688
+689
+690
+691
+692
+693
+694
+695
+696</pre>
 </div>
 </td>
 <td class="code">
 <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">get_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">return_json</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="s2">"Job"</span><span class="p">],</span> <span class="n">Dict</span><span class="p">]:</span>
+<pre><span></span><code><span class="k">def</span> <span class="nf">get_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">return_json</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">JobCollection</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]]:</span>
     <span class="sd">"""</span>
-<span class="sd">    Get all jobs associated with the workflow as job objects or json.</span>
+<span class="sd">    Get all jobs associated with the workflow as a JobCollection or json.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        return_json: If true, returns the job info jsons instead of job objects.</span>
+<span class="sd">        return_json: If true, returns the job info jsons instead of a JobCollection.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        All job objects as a list, or alternatively the jobs info as json.</span>
+<span class="sd">        A JobCollection, or alternatively the jobs info as json.</span>
 <span class="sd">    """</span>
     <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_endpoint</span><span class="p">()</span><span class="si">}</span><span class="s2">/projects/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">project_id</span><span class="si">}</span><span class="s2">/jobs"</span>
     <span class="n">response_json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="n">request_type</span><span class="o">=</span><span class="s2">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>
@@ -1287,10 +1498,8 @@ get_jobs<span class="p">(</span><span class="bp">self</span><span class="p">,</s
     <span class="p">]</span>
 
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
-        <span class="s2">"Got </span><span class="si">%s</span><span class="s2"> jobs for workflow </span><span class="si">%s</span><span class="s2"> in project </span><span class="si">%s</span><span class="s2">."</span><span class="p">,</span>
-        <span class="nb">len</span><span class="p">(</span><span class="n">jobs_workflow_json</span><span class="p">),</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">workflow_id</span><span class="p">,</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">project_id</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">"Got </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">jobs_workflow_json</span><span class="p">)</span><span class="si">}</span><span class="s2"> jobs for workflow "</span>
+        <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">workflow_id</span><span class="si">}</span><span class="s2"> in project </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">project_id</span><span class="si">}</span><span class="s2">."</span>
     <span class="p">)</span>
     <span class="k">if</span> <span class="n">return_json</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">jobs_workflow_json</span>
@@ -1299,7 +1508,10 @@ get_jobs<span class="p">(</span><span class="bp">self</span><span class="p">,</s
             <span class="n">Job</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="p">,</span> <span class="n">job_id</span><span class="o">=</span><span class="n">job</span><span class="p">[</span><span class="s2">"id"</span><span class="p">],</span> <span class="n">project_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">project_id</span><span class="p">)</span>
             <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">jobs_workflow_json</span><span class="p">)</span>
         <span class="p">]</span>
-        <span class="k">return</span> <span class="n">jobs</span>
+        <span class="n">jobcollection</span> <span class="o">=</span> <span class="n">JobCollection</span><span class="p">(</span>
+            <span class="n">auth</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="p">,</span> <span class="n">project_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">project_id</span><span class="p">,</span> <span class="n">jobs</span><span class="o">=</span><span class="n">jobs</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">jobcollection</span>
 </code></pre>
 </div>
 </td>
@@ -1314,8 +1526,8 @@ get_jobs<span class="p">(</span><span class="bp">self</span><span class="p">,</s
 get_parameters_info<span class="p">(</span><span class="bp">self</span><span class="p">)</span> </code>
 <a class="headerlink" href="#up42.workflow.Workflow.get_parameters_info" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents">
-<p>Gets infos about the workflow parameters of each block in the workflow to
-make it easy to construct the desired parameters.</p>
+<p>Gets infos about the workflow parameters of each block in the current workflow
+to make it easy to construct the desired parameters.</p>
 <p><strong>Returns:</strong></p>
 <table>
 <thead>
@@ -1339,8 +1551,7 @@ make it easy to construct the desired parameters.</p>
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>232
-233
+<pre><span></span>233
 234
 235
 236
@@ -1353,15 +1564,16 @@ make it easy to construct the desired parameters.</p>
 243
 244
 245
-246</pre>
+246
+247</pre>
 </div>
 </td>
 <td class="code">
 <div class="highlight">
 <pre><span></span><code><span class="k">def</span> <span class="nf">get_parameters_info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
     <span class="sd">"""</span>
-<span class="sd">    Gets infos about the workflow parameters of each block in the workflow to</span>
-<span class="sd">    make it easy to construct the desired parameters.</span>
+<span class="sd">    Gets infos about the workflow parameters of each block in the current workflow</span>
+<span class="sd">    to make it easy to construct the desired parameters.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        Workflow parameters info json.</span>
@@ -1474,7 +1686,7 @@ get_workflow_tasks<span class="p">(</span><span class="bp">self</span><span clas
     <span class="p">)</span>
     <span class="n">response_json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="n">request_type</span><span class="o">=</span><span class="s2">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>
     <span class="n">tasks</span> <span class="o">=</span> <span class="n">response_json</span><span class="p">[</span><span class="s2">"data"</span><span class="p">]</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Got </span><span class="si">%s</span><span class="s2"> tasks/blocks in workflow </span><span class="si">%s</span><span class="s2">."</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tasks</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">workflow_id</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Got </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tasks</span><span class="p">)</span><span class="si">}</span><span class="s2"> tasks/blocks in workflow </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">workflow_id</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">basic</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">{</span><span class="n">task</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]:</span> <span class="n">task</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]</span> <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">tasks</span><span class="p">}</span>
@@ -1556,27 +1768,27 @@ the job status every 30 seconds.</p>
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>428
-429
-430
-431
-432
-433
-434
-435
-436
-437
-438
-439
-440
-441
-442
-443
-444
-445
-446
-447
-448</pre>
+<pre><span></span>615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635</pre>
 </div>
 </td>
 <td class="code">
@@ -1602,6 +1814,154 @@ the job status every 30 seconds.</p>
     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_helper_run_job</span><span class="p">(</span>
         <span class="n">input_parameters</span><span class="o">=</span><span class="n">input_parameters</span><span class="p">,</span> <span class="n">track_status</span><span class="o">=</span><span class="n">track_status</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span>
     <span class="p">)</span>
+</code></pre>
+</div>
+</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h2 class="doc doc-heading" id="up42.workflow.Workflow.run_jobs_parallel">
+<code class="highlight language-python">
+run_jobs_parallel<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_parameters_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_concurrent_jobs</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> </code>
+<a class="headerlink" href="#up42.workflow.Workflow.run_jobs_parallel" title="Permanent link">¶</a></h2>
+<div class="doc doc-contents">
+<p>Create and run jobs in parallel.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>input_parameters_list</code></td>
+<td><code>List[Dict]</code></td>
+<td>
+<p>List of dictionary of input parameters</p>
+</td>
+<td><code>None</code></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>str</code></td>
+<td>
+<p>The job name. Optional, by default the workflow name is assigned.</p>
+</td>
+<td><code>None</code></td>
+</tr>
+<tr>
+<td><code>max_concurrent_jobs</code></td>
+<td><code>int</code></td>
+<td>
+<p>The maximum number of jobs to run in parallel. This is defined in the project settings.</p>
+</td>
+<td><code>10</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>JobCollection</code></td>
+<td>
+<p>The spawned JobCollection object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exceptions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ValueError</code></td>
+<td>
+<p>When max_concurrent_jobs is greater than max_concurrent_jobs set in project settings.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>up42/workflow.py</code></summary>
+<table class="highlighttable">
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre><span></span>637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662</pre>
+</div>
+</td>
+<td class="code">
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">run_jobs_parallel</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">input_parameters_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">max_concurrent_jobs</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"JobCollection"</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    Create and run jobs in parallel.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        input_parameters_list: List of dictionary of input parameters</span>
+<span class="sd">        name: The job name. Optional, by default the workflow name is assigned.</span>
+<span class="sd">        max_concurrent_jobs: The maximum number of jobs to run in parallel. This is defined in the project settings.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The spawned JobCollection object.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: When max_concurrent_jobs is greater than max_concurrent_jobs set in project settings.</span>
+<span class="sd">    """</span>
+    <span class="n">jobcollection</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_helper_run_parallel_jobs</span><span class="p">(</span>
+        <span class="n">input_parameters_list</span><span class="o">=</span><span class="n">input_parameters_list</span><span class="p">,</span>
+        <span class="n">max_concurrent_jobs</span><span class="o">=</span><span class="n">max_concurrent_jobs</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">jobcollection</span>
 </code></pre>
 </div>
 </td>
@@ -1679,31 +2039,31 @@ the job status every 30 seconds.</p>
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>402
-403
-404
-405
-406
-407
-408
-409
-410
-411
-412
-413
-414
-415
-416
-417
-418
-419
-420
-421
-422
-423
-424
-425
-426</pre>
+<pre><span></span>560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584</pre>
 </div>
 </td>
 <td class="code">
@@ -1731,6 +2091,160 @@ the job status every 30 seconds.</p>
         <span class="n">input_parameters</span><span class="o">=</span><span class="n">input_parameters</span><span class="p">,</span>
         <span class="n">test_job</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">track_status</span><span class="o">=</span><span class="n">track_status</span><span class="p">,</span>
+        <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre>
+</div>
+</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h2 class="doc doc-heading" id="up42.workflow.Workflow.test_jobs_parallel">
+<code class="highlight language-python">
+test_jobs_parallel<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_parameters_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_concurrent_jobs</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> </code>
+<a class="headerlink" href="#up42.workflow.Workflow.test_jobs_parallel" title="Permanent link">¶</a></h2>
+<div class="doc doc-contents">
+<p>Create and run test jobs (Test Query) in parallel. With this test query you will not be
+charged with any data or processing credits, but have a preview of the job result.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>input_parameters_list</code></td>
+<td><code>List[Dict]</code></td>
+<td>
+<p>List of dictionary of input parameters</p>
+</td>
+<td><code>None</code></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>str</code></td>
+<td>
+<p>The job name. Optional, by default the workflow name is assigned.</p>
+</td>
+<td><code>None</code></td>
+</tr>
+<tr>
+<td><code>max_concurrent_jobs</code></td>
+<td><code>int</code></td>
+<td>
+<p>The maximum number of jobs to run in parallel.
+This is defined in the project settings.</p>
+</td>
+<td><code>10</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>JobCollection</code></td>
+<td>
+<p>The spawned test JobCollection object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exceptions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ValueError</code></td>
+<td>
+<p>When max_concurrent_jobs is greater than max_concurrent_jobs set in project settings.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>up42/workflow.py</code></summary>
+<table class="highlighttable">
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre><span></span>586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613</pre>
+</div>
+</td>
+<td class="code">
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="nf">test_jobs_parallel</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">input_parameters_list</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">max_concurrent_jobs</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">"JobCollection"</span><span class="p">:</span>
+    <span class="sd">"""</span>
+<span class="sd">    Create and run test jobs (Test Query) in parallel. With this test query you will not be</span>
+<span class="sd">    charged with any data or processing credits, but have a preview of the job result.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        input_parameters_list: List of dictionary of input parameters</span>
+<span class="sd">        name: The job name. Optional, by default the workflow name is assigned.</span>
+<span class="sd">        max_concurrent_jobs: The maximum number of jobs to run in parallel.</span>
+<span class="sd">            This is defined in the project settings.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        The spawned test JobCollection object.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: When max_concurrent_jobs is greater than max_concurrent_jobs set in project settings.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_helper_run_parallel_jobs</span><span class="p">(</span>
+        <span class="n">input_parameters_list</span><span class="o">=</span><span class="n">input_parameters_list</span><span class="p">,</span>
+        <span class="n">max_concurrent_jobs</span><span class="o">=</span><span class="n">max_concurrent_jobs</span><span class="p">,</span>
+        <span class="n">test_job</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
         <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
     <span class="p">)</span>
 </code></pre>
@@ -1783,21 +2297,21 @@ update_name<span class="p">(</span><span class="bp">self</span><span class="p">,
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>483
-484
-485
-486
-487
-488
-489
-490
-491
-492
-493
-494
-495
-496
-497</pre>
+<pre><span></span>698
+699
+700
+701
+702
+703
+704
+705
+706
+707
+708
+709
+710
+711
+712</pre>
 </div>
 </td>
 <td class="code">
@@ -1816,7 +2330,7 @@ update_name<span class="p">(</span><span class="bp">self</span><span class="p">,
         <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">workflow_id</span><span class="si">}</span><span class="s2">"</span>
     <span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="n">request_type</span><span class="o">=</span><span class="s2">"PUT"</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">properties_to_update</span><span class="p">)</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Updated workflow name: </span><span class="si">%r</span><span class="s2">"</span><span class="p">,</span> <span class="n">properties_to_update</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Updated workflow name: </span><span class="si">{</span><span class="n">properties_to_update</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </code></pre>
 </div>
 </td>
