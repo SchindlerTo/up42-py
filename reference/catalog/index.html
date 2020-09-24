@@ -8,10 +8,10 @@
 <meta content="UP42 Python SDK" name="description"/>
 <link href="https://up42.github.io/up42-py/reference/catalog/" rel="canonical"/>
 <link href="../../assets/logo-up42.ico" rel="shortcut icon"/>
-<meta content="mkdocs-1.1.2, mkdocs-material-5.5.12" name="generator"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-5.5.14" name="generator"/>
 <title>Catalog - UP42 Python SDK</title>
-<link href="../../assets/stylesheets/main.4dd2dd8d.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.6a5ad368.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.d3202873.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ff0a5ce4.min.css" rel="stylesheet"/>
 <meta content="#4051b5" name="theme-color"/>
 <!-- Google Tag Manager -->
 <script>
@@ -645,7 +645,7 @@ Ignored for sensors that have no cloudcover (e.g. sentinel1).</p>
 <span class="sd">    Returns:</span>
 <span class="sd">        The constructed parameters dictionary.</span>
 <span class="sd">    """</span>
-    <span class="n">datetime</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">start_date</span><span class="si">}</span><span class="s2">T00:00:00Z/</span><span class="si">{</span><span class="n">end_date</span><span class="si">}</span><span class="s2">T00:00:00Z"</span>
+    <span class="n">datetime</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">start_date</span><span class="si">}</span><span class="s2">T00:00:00Z/</span><span class="si">{</span><span class="n">end_date</span><span class="si">}</span><span class="s2">T23:59:59Z"</span>
     <span class="n">block_filters</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">sensor</span> <span class="ow">in</span> <span class="n">sensors</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">sensor</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">supported_sensors</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
@@ -783,9 +783,7 @@ directory.</p>
     <span class="p">)</span>
 
     <span class="k">if</span> <span class="n">output_directory</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">output_directory</span> <span class="o">=</span> <span class="p">(</span>
-            <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">"project_</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">project_id</span><span class="si">}</span><span class="s2">"</span> <span class="o">/</span> <span class="s2">"catalog"</span>
-        <span class="p">)</span>
+        <span class="n">output_directory</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">"project_</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">project_id</span><span class="si">}</span><span class="s2">/catalog"</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">output_directory</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">output_directory</span><span class="p">)</span>
     <span class="n">output_directory</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -876,7 +874,7 @@ the matching scenes.</p>
 <p><strong>Examples:</strong></p>
 <div class="highlight">
 <pre><span></span><code>    <span class="n">search_parameters</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">"datetime"</span><span class="p">:</span> <span class="s2">"2019-01-01T00:00:00Z/2019-01-15T00:00:00Z"</span><span class="p">,</span>
+        <span class="s2">"datetime"</span><span class="p">:</span> <span class="s2">"2019-01-01T00:00:00Z/2019-01-15T23:59:59Z"</span><span class="p">,</span>
         <span class="s2">"intersects"</span><span class="p">:</span> <span class="p">{</span>
             <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"Polygon"</span><span class="p">,</span>
             <span class="s2">"coordinates"</span><span class="p">:</span> <span class="p">[[[</span><span class="mf">13.32113746</span><span class="p">,</span><span class="mf">52.73971768</span><span class="p">],[</span><span class="mf">13.15981158</span><span class="p">,</span><span class="mf">52.2092959</span><span class="p">],</span>
@@ -907,7 +905,7 @@ the matching scenes.</p>
 <span class="sd">    Example:</span>
 <span class="sd">        ```python</span>
 <span class="sd">            search_parameters={</span>
-<span class="sd">                "datetime": "2019-01-01T00:00:00Z/2019-01-15T00:00:00Z",</span>
+<span class="sd">                "datetime": "2019-01-01T00:00:00Z/2019-01-15T23:59:59Z",</span>
 <span class="sd">                "intersects": {</span>
 <span class="sd">                    "type": "Polygon",</span>
 <span class="sd">                    "coordinates": [[[13.32113746,52.73971768],[13.15981158,52.2092959],</span>
@@ -1030,12 +1028,12 @@ the matching scenes.</p>
 </div>
 </footer>
 </div>
-<script src="../../assets/javascripts/vendor.3636a4ec.min.js"></script>
-<script src="../../assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+<script src="../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
+<script src="../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
 <script>
         app = initialize({
           base: "../..",
-          features: ["tabs"],
+          features: ['tabs'],
           search: Object.assign({
             worker: "../../assets/javascripts/worker/search.5eca75d3.min.js"
           }, typeof search !== "undefined" && search)
