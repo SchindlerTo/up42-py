@@ -8,10 +8,10 @@
 <meta content="UP42 Python SDK" name="description"/>
 <link href="https://up42.github.io/up42-py/reference/workflow/" rel="canonical"/>
 <link href="../../assets/logo-up42.ico" rel="shortcut icon"/>
-<meta content="mkdocs-1.1.2, mkdocs-material-5.5.14" name="generator"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-6.0.1" name="generator"/>
 <title>Workflow - UP42 Python SDK</title>
-<link href="../../assets/stylesheets/main.d3202873.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.ff0a5ce4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.38780c08.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.3f72e892.min.css" rel="stylesheet"/>
 <meta content="#4051b5" name="theme-color"/>
 <!-- Google Tag Manager -->
 <script>
@@ -271,8 +271,8 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../examples/map-quicklooks/" title="Quicklooks mapping">
-      Quicklooks mapping
+<a class="md-nav__link" href="../../examples/map-quicklooks/" title="Catalog Quicklooks">
+      Catalog Quicklooks
     </a>
 </li>
 </ul>
@@ -341,10 +341,25 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#attributes">
+    Attributes
+  </a>
+<nav aria-label="Attributes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
 <a class="md-nav__link" href="#up42.workflow.Workflow.max_concurrent_jobs">
     max_concurrent_jobs
   </a>
 </li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#methods">
+    Methods
+  </a>
+<nav aria-label="Methods" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#up42.workflow.Workflow.add_workflow_tasks">
     add_workflow_tasks()
@@ -409,6 +424,9 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 <a class="md-nav__link" href="#up42.workflow.Workflow.update_name">
     update_name()
   </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -511,10 +529,25 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#attributes">
+    Attributes
+  </a>
+<nav aria-label="Attributes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
 <a class="md-nav__link" href="#up42.workflow.Workflow.max_concurrent_jobs">
     max_concurrent_jobs
   </a>
 </li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#methods">
+    Methods
+  </a>
+<nav aria-label="Methods" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#up42.workflow.Workflow.add_workflow_tasks">
     add_workflow_tasks()
@@ -582,6 +615,9 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 </li>
 </ul>
 </nav>
+</li>
+</ul>
+</nav>
 </div>
 </div>
 </div>
@@ -591,28 +627,30 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 <p>The Workflow class can query all available and spawn new jobs for an UP42
 Workflow and helps to find and set the the workflow tasks, parameters and aoi.</p>
 <div class="doc doc-object doc-class">
-<h2 class="hidden-toc" href="#up42.workflow.Workflow" id="up42.workflow.Workflow" style="visibility: hidden; width: 0; height: 0;">
+<h2 class="hidden-toc" href="#up42.workflow.Workflow" id="up42.workflow.Workflow" style="visibility: hidden; position: absolute;">
 <a class="headerlink" href="#up42.workflow.Workflow" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents first">
 <div class="doc doc-children">
+<h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">¶</a></h2>
 <div class="doc doc-object doc-attribute">
-<h2 class="doc doc-heading" id="up42.workflow.Workflow.max_concurrent_jobs">
+<h3 class="doc doc-heading" id="up42.workflow.Workflow.max_concurrent_jobs">
 <code class="highlight">
 max_concurrent_jobs: <span class="nb">int</span> </code>
 <span class="doc doc-properties">
 <small class="doc doc-property doc-property-property"><code>property</code></small>
 <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
 </span>
-<a class="headerlink" href="#up42.workflow.Workflow.max_concurrent_jobs" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.workflow.Workflow.max_concurrent_jobs" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Gets the maximum number of concurrent jobs allowed by the project settings.</p>
 </div>
 </div>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.workflow.Workflow.add_workflow_tasks">
+<h3 class="doc doc-heading" id="up42.workflow.Workflow.add_workflow_tasks">
 <code class="highlight language-python">
 add_workflow_tasks<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_tasks</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.workflow.Workflow.add_workflow_tasks" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.workflow.Workflow.add_workflow_tasks" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Adds or overwrites workflow tasks in a workflow on UP42.</p>
 <p><strong>Parameters:</strong></p>
@@ -723,10 +761,10 @@ version of a block will always be added.</p>
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.workflow.Workflow.construct_parameters">
+<h3 class="doc doc-heading" id="up42.workflow.Workflow.construct_parameters">
 <code class="highlight language-python">
 construct_parameters<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">geometry_operation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">handle_multiple_features</span><span class="o">=</span><span class="s1">'union'</span><span class="p">,</span> <span class="n">start_date</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end_date</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scene_ids</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">order_ids</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.workflow.Workflow.construct_parameters" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.workflow.Workflow.construct_parameters" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Constructs workflow input parameters with a specified aoi, the default input parameters, and
 optionally limit and order-ids. Further parameter editing needs to be done manually
@@ -902,10 +940,10 @@ into new workflows.</p>
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.workflow.Workflow.construct_parameters_parallel">
+<h3 class="doc doc-heading" id="up42.workflow.Workflow.construct_parameters_parallel">
 <code class="highlight language-python">
 construct_parameters_parallel<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">geometries</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">interval_dates</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scene_ids</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit_per_job</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">geometry_operation</span><span class="o">=</span><span class="s1">'intersects'</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.workflow.Workflow.construct_parameters_parallel" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.workflow.Workflow.construct_parameters_parallel" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Maps a list of geometries and a list of time series into a list
 of input parameters of a workflow. If you pass 2 geometries and 1 time
@@ -1066,10 +1104,10 @@ All other arguments are ignored except geometries if passed.</p>
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.workflow.Workflow.delete">
+<h3 class="doc doc-heading" id="up42.workflow.Workflow.delete">
 <code class="highlight language-python">
 delete<span class="p">(</span><span class="bp">self</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.workflow.Workflow.delete" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.workflow.Workflow.delete" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Deletes the workflow and sets the Python object to None.</p>
 <details class="quote">
@@ -1092,10 +1130,10 @@ delete<span class="p">(</span><span class="bp">self</span><span class="p">)</spa
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.workflow.Workflow.get_compatible_blocks">
+<h3 class="doc doc-heading" id="up42.workflow.Workflow.get_compatible_blocks">
 <code class="highlight language-python">
 get_compatible_blocks<span class="p">(</span><span class="bp">self</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.workflow.Workflow.get_compatible_blocks" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.workflow.Workflow.get_compatible_blocks" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Gets all compatible blocks for the current workflow. If the workflow is empty
 it will provide all data blocks, if the workflow already has workflow tasks, it
@@ -1129,10 +1167,10 @@ will provide the compatible blocks for the last workflow task in the workflow.</
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.workflow.Workflow.get_jobs">
+<h3 class="doc doc-heading" id="up42.workflow.Workflow.get_jobs">
 <code class="highlight language-python">
 get_jobs<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">return_json</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.workflow.Workflow.get_jobs" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.workflow.Workflow.get_jobs" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Get all jobs associated with the workflow as a JobCollection or json.</p>
 <p><strong>Parameters:</strong></p>
@@ -1215,10 +1253,10 @@ get_jobs<span class="p">(</span><span class="bp">self</span><span class="p">,</s
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.workflow.Workflow.get_parameters_info">
+<h3 class="doc doc-heading" id="up42.workflow.Workflow.get_parameters_info">
 <code class="highlight language-python">
 get_parameters_info<span class="p">(</span><span class="bp">self</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.workflow.Workflow.get_parameters_info" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.workflow.Workflow.get_parameters_info" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Gets infos about the workflow parameters of each block in the current workflow
 to make it easy to construct the desired parameters.</p>
@@ -1263,10 +1301,10 @@ to make it easy to construct the desired parameters.</p>
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.workflow.Workflow.get_workflow_tasks">
+<h3 class="doc doc-heading" id="up42.workflow.Workflow.get_workflow_tasks">
 <code class="highlight language-python">
 get_workflow_tasks<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">basic</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.workflow.Workflow.get_workflow_tasks" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.workflow.Workflow.get_workflow_tasks" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Get the workflow-tasks of the workflow (Blocks in a workflow are called workflow_tasks)</p>
 <p><strong>Parameters:</strong></p>
@@ -1338,10 +1376,10 @@ get_workflow_tasks<span class="p">(</span><span class="bp">self</span><span clas
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.workflow.Workflow.run_job">
+<h3 class="doc doc-heading" id="up42.workflow.Workflow.run_job">
 <code class="highlight language-python">
 run_job<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_parameters</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">track_status</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.workflow.Workflow.run_job" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.workflow.Workflow.run_job" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Creates and runs a new job.</p>
 <p><strong>Parameters:</strong></p>
@@ -1429,10 +1467,10 @@ the job status every 30 seconds.</p>
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.workflow.Workflow.run_jobs_parallel">
+<h3 class="doc doc-heading" id="up42.workflow.Workflow.run_jobs_parallel">
 <code class="highlight language-python">
 run_jobs_parallel<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_parameters_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_concurrent_jobs</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.workflow.Workflow.run_jobs_parallel" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.workflow.Workflow.run_jobs_parallel" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Create and run jobs in parallel.</p>
 <p><strong>Parameters:</strong></p>
@@ -1541,10 +1579,10 @@ run_jobs_parallel<span class="p">(</span><span class="bp">self</span><span class
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.workflow.Workflow.test_job">
+<h3 class="doc doc-heading" id="up42.workflow.Workflow.test_job">
 <code class="highlight language-python">
 test_job<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_parameters</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">track_status</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.workflow.Workflow.test_job" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.workflow.Workflow.test_job" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Create a run a new test job (Test Query). With this test query you will not be
 charged with any data or processing credits, but have a preview of the job result.</p>
@@ -1637,10 +1675,10 @@ the job status every 30 seconds.</p>
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.workflow.Workflow.test_jobs_parallel">
+<h3 class="doc doc-heading" id="up42.workflow.Workflow.test_jobs_parallel">
 <code class="highlight language-python">
 test_jobs_parallel<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_parameters_list</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_concurrent_jobs</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.workflow.Workflow.test_jobs_parallel" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.workflow.Workflow.test_jobs_parallel" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Create and run test jobs (Test Query) in parallel. With this test query you will not be
 charged with any data or processing credits, but have a preview of the job result.</p>
@@ -1753,10 +1791,10 @@ This is defined in the project settings.</p>
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.workflow.Workflow.update_name">
+<h3 class="doc doc-heading" id="up42.workflow.Workflow.update_name">
 <code class="highlight language-python">
 update_name<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.workflow.Workflow.update_name" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.workflow.Workflow.update_name" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Updates the workflow name and description.</p>
 <p><strong>Parameters:</strong></p>
@@ -1879,14 +1917,14 @@ update_name<span class="p">(</span><span class="bp">self</span><span class="p">,
 </div>
 </footer>
 </div>
-<script src="../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
-<script src="../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+<script src="../../assets/javascripts/vendor.77e55a48.min.js"></script>
+<script src="../../assets/javascripts/bundle.aa3f9871.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
 <script>
         app = initialize({
           base: "../..",
-          features: ['tabs'],
+          features: ['navigation.tabs'],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.5eca75d3.min.js"
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

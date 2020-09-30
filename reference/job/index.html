@@ -8,10 +8,10 @@
 <meta content="UP42 Python SDK" name="description"/>
 <link href="https://up42.github.io/up42-py/reference/job/" rel="canonical"/>
 <link href="../../assets/logo-up42.ico" rel="shortcut icon"/>
-<meta content="mkdocs-1.1.2, mkdocs-material-5.5.14" name="generator"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-6.0.1" name="generator"/>
 <title>Job - UP42 Python SDK</title>
-<link href="../../assets/stylesheets/main.d3202873.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.ff0a5ce4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.38780c08.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.3f72e892.min.css" rel="stylesheet"/>
 <meta content="#4051b5" name="theme-color"/>
 <!-- Google Tag Manager -->
 <script>
@@ -271,8 +271,8 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../examples/map-quicklooks/" title="Quicklooks mapping">
-      Quicklooks mapping
+<a class="md-nav__link" href="../../examples/map-quicklooks/" title="Catalog Quicklooks">
+      Catalog Quicklooks
     </a>
 </li>
 </ul>
@@ -346,10 +346,25 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#attributes">
+    Attributes
+  </a>
+<nav aria-label="Attributes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
 <a class="md-nav__link" href="#up42.job.Job.is_succeeded">
     is_succeeded
   </a>
 </li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#methods">
+    Methods
+  </a>
+<nav aria-label="Methods" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#up42.job.Job.cancel_job">
     cancel_job()
@@ -404,6 +419,9 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 <a class="md-nav__link" href="#up42.job.Job.upload_results_to_bucket">
     upload_results_to_bucket()
   </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -501,10 +519,25 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#attributes">
+    Attributes
+  </a>
+<nav aria-label="Attributes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
 <a class="md-nav__link" href="#up42.job.Job.is_succeeded">
     is_succeeded
   </a>
 </li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#methods">
+    Methods
+  </a>
+<nav aria-label="Methods" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#up42.job.Job.cancel_job">
     cancel_job()
@@ -562,6 +595,9 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 </li>
 </ul>
 </nav>
+</li>
+</ul>
+</nav>
 </div>
 </div>
 </div>
@@ -571,28 +607,30 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 <p>The Job class provides access to the results, parameters and tasks of UP42
 Jobs (Workflows that have been run as Jobs).</p>
 <div class="doc doc-object doc-class">
-<h2 class="hidden-toc" href="#up42.job.Job" id="up42.job.Job" style="visibility: hidden; width: 0; height: 0;">
+<h2 class="hidden-toc" href="#up42.job.Job" id="up42.job.Job" style="visibility: hidden; position: absolute;">
 <a class="headerlink" href="#up42.job.Job" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents first">
 <div class="doc doc-children">
+<h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">¶</a></h2>
 <div class="doc doc-object doc-attribute">
-<h2 class="doc doc-heading" id="up42.job.Job.is_succeeded">
+<h3 class="doc doc-heading" id="up42.job.Job.is_succeeded">
 <code class="highlight">
 is_succeeded        </code>
 <span class="doc doc-properties">
 <small class="doc doc-property doc-property-property"><code>property</code></small>
 <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
 </span>
-<a class="headerlink" href="#up42.job.Job.is_succeeded" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.job.Job.is_succeeded" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Gets True if the job succeeded, False otherwise</p>
 </div>
 </div>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.job.Job.cancel_job">
+<h3 class="doc doc-heading" id="up42.job.Job.cancel_job">
 <code class="highlight language-python">
 cancel_job<span class="p">(</span><span class="bp">self</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.job.Job.cancel_job" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.job.Job.cancel_job" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Cancels a pending or running job.</p>
 <details class="quote">
@@ -609,10 +647,10 @@ cancel_job<span class="p">(</span><span class="bp">self</span><span class="p">)<
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.job.Job.download_quicklooks">
+<h3 class="doc doc-heading" id="up42.job.Job.download_quicklooks">
 <code class="highlight language-python">
 download_quicklooks<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_directory</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.job.Job.download_quicklooks" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.job.Job.download_quicklooks" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Conveniance function that downloads the quicklooks of the data (dirst) jobtask.</p>
 <p>After download, can be plotted via job.plot_quicklooks().</p>
@@ -643,10 +681,10 @@ download_quicklooks<span class="p">(</span><span class="bp">self</span><span cla
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.job.Job.download_results">
+<h3 class="doc doc-heading" id="up42.job.Job.download_results">
 <code class="highlight language-python">
 download_results<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_directory</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unpacking</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.job.Job.download_results" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.job.Job.download_results" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Downloads the job results. Unpacking the final file will happen as default.</p>
 <p><strong>Parameters:</strong></p>
@@ -744,10 +782,10 @@ directory.</p>
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.job.Job.get_jobtasks">
+<h3 class="doc doc-heading" id="up42.job.Job.get_jobtasks">
 <code class="highlight language-python">
 get_jobtasks<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">return_json</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.job.Job.get_jobtasks" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.job.Job.get_jobtasks" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Get the individual items of the job as JobTask objects or json.</p>
 <p><strong>Parameters:</strong></p>
@@ -830,10 +868,10 @@ get_jobtasks<span class="p">(</span><span class="bp">self</span><span class="p">
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.job.Job.get_jobtasks_results_json">
+<h3 class="doc doc-heading" id="up42.job.Job.get_jobtasks_results_json">
 <code class="highlight language-python">
 get_jobtasks_results_json<span class="p">(</span><span class="bp">self</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.job.Job.get_jobtasks_results_json" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.job.Job.get_jobtasks_results_json" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Convenience function to get the resulting data.json of all job tasks
 in a dictionary of strings.</p>
@@ -883,10 +921,10 @@ in a dictionary of strings.</p>
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.job.Job.get_logs">
+<h3 class="doc doc-heading" id="up42.job.Job.get_logs">
 <code class="highlight language-python">
 get_logs<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">as_print</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">as_return</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.job.Job.get_logs" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.job.Job.get_logs" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Convenience function to print or return the logs of all job tasks.</p>
 <p><strong>Parameters:</strong></p>
@@ -986,10 +1024,10 @@ get_logs<span class="p">(</span><span class="bp">self</span><span class="p">,</s
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.job.Job.get_results_json">
+<h3 class="doc doc-heading" id="up42.job.Job.get_results_json">
 <code class="highlight language-python">
 get_results_json<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">as_dataframe</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.job.Job.get_results_json" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.job.Job.get_results_json" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Gets the Job results data.json.</p>
 <p><strong>Parameters:</strong></p>
@@ -1062,10 +1100,10 @@ get_results_json<span class="p">(</span><span class="bp">self</span><span class=
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.job.Job.get_status">
+<h3 class="doc doc-heading" id="up42.job.Job.get_status">
 <code class="highlight language-python">
 get_status<span class="p">(</span><span class="bp">self</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.job.Job.get_status" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.job.Job.get_status" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Gets the job status.</p>
 <p><strong>Returns:</strong></p>
@@ -1107,10 +1145,10 @@ get_status<span class="p">(</span><span class="bp">self</span><span class="p">)<
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.job.Job.map_results">
+<h3 class="doc doc-heading" id="up42.job.Job.map_results">
 <code class="highlight language-python">
 map_results<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">show_images</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">name_column</span><span class="o">=</span><span class="s1">'uid'</span><span class="p">,</span> <span class="n">save_html</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.job.Job.map_results" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.job.Job.map_results" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Displays data.json, and if available, one or multiple results geotiffs.</p>
 <p><strong>Parameters:</strong></p>
@@ -1199,10 +1237,10 @@ map_results<span class="p">(</span><span class="bp">self</span><span class="p">,
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.job.Job.track_status">
+<h3 class="doc doc-heading" id="up42.job.Job.track_status">
 <code class="highlight language-python">
 track_status<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">report_time</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.job.Job.track_status" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.job.Job.track_status" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Continuously gets the job status until job has finished or failed.</p>
 <p>Internally checks every five seconds for the status, prints the log every
@@ -1276,10 +1314,10 @@ time interval given in report_time argument.</p>
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.job.Job.upload_results_to_bucket">
+<h3 class="doc doc-heading" id="up42.job.Job.upload_results_to_bucket">
 <code class="highlight language-python">
 upload_results_to_bucket<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gs_client</span><span class="p">,</span> <span class="n">bucket</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="n">extension</span><span class="o">=</span><span class="s1">'.tgz'</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">'v0'</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.job.Job.upload_results_to_bucket" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.job.Job.upload_results_to_bucket" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Uploads the results of a job directly to a custom google cloud storage bucket.</p>
 <details class="quote">
@@ -1386,14 +1424,14 @@ upload_results_to_bucket<span class="p">(</span><span class="bp">self</span><spa
 </div>
 </footer>
 </div>
-<script src="../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
-<script src="../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+<script src="../../assets/javascripts/vendor.77e55a48.min.js"></script>
+<script src="../../assets/javascripts/bundle.aa3f9871.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
 <script>
         app = initialize({
           base: "../..",
-          features: ['tabs'],
+          features: ['navigation.tabs'],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.5eca75d3.min.js"
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

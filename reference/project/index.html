@@ -8,10 +8,10 @@
 <meta content="UP42 Python SDK" name="description"/>
 <link href="https://up42.github.io/up42-py/reference/project/" rel="canonical"/>
 <link href="../../assets/logo-up42.ico" rel="shortcut icon"/>
-<meta content="mkdocs-1.1.2, mkdocs-material-5.5.14" name="generator"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-6.0.1" name="generator"/>
 <title>Project - UP42 Python SDK</title>
-<link href="../../assets/stylesheets/main.d3202873.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.ff0a5ce4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.38780c08.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.3f72e892.min.css" rel="stylesheet"/>
 <meta content="#4051b5" name="theme-color"/>
 <!-- Google Tag Manager -->
 <script>
@@ -271,8 +271,8 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../examples/map-quicklooks/" title="Quicklooks mapping">
-      Quicklooks mapping
+<a class="md-nav__link" href="../../examples/map-quicklooks/" title="Catalog Quicklooks">
+      Catalog Quicklooks
     </a>
 </li>
 </ul>
@@ -336,10 +336,25 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#attributes">
+    Attributes
+  </a>
+<nav aria-label="Attributes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
 <a class="md-nav__link" href="#up42.project.Project.max_concurrent_jobs">
     max_concurrent_jobs
   </a>
 </li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#methods">
+    Methods
+  </a>
+<nav aria-label="Methods" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#up42.project.Project.create_workflow">
     create_workflow()
@@ -364,6 +379,9 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 <a class="md-nav__link" href="#up42.project.Project.update_project_settings">
     update_project_settings()
   </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -471,10 +489,25 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#attributes">
+    Attributes
+  </a>
+<nav aria-label="Attributes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
 <a class="md-nav__link" href="#up42.project.Project.max_concurrent_jobs">
     max_concurrent_jobs
   </a>
 </li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#methods">
+    Methods
+  </a>
+<nav aria-label="Methods" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#up42.project.Project.create_workflow">
     create_workflow()
@@ -502,6 +535,9 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 </li>
 </ul>
 </nav>
+</li>
+</ul>
+</nav>
 </div>
 </div>
 </div>
@@ -511,28 +547,30 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 <p>The Project class can query all available workflows and spawn new workflows within an 
 UP42 project. Also handles project user settings.</p>
 <div class="doc doc-object doc-class">
-<h2 class="hidden-toc" href="#up42.project.Project" id="up42.project.Project" style="visibility: hidden; width: 0; height: 0;">
+<h2 class="hidden-toc" href="#up42.project.Project" id="up42.project.Project" style="visibility: hidden; position: absolute;">
 <a class="headerlink" href="#up42.project.Project" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents first">
 <div class="doc doc-children">
+<h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">¶</a></h2>
 <div class="doc doc-object doc-attribute">
-<h2 class="doc doc-heading" id="up42.project.Project.max_concurrent_jobs">
+<h3 class="doc doc-heading" id="up42.project.Project.max_concurrent_jobs">
 <code class="highlight">
 max_concurrent_jobs: <span class="nb">int</span> </code>
 <span class="doc doc-properties">
 <small class="doc doc-property doc-property-property"><code>property</code></small>
 <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
 </span>
-<a class="headerlink" href="#up42.project.Project.max_concurrent_jobs" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.project.Project.max_concurrent_jobs" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Gets the maximum number of concurrent jobs allowed by the project settings.</p>
 </div>
 </div>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.project.Project.create_workflow">
+<h3 class="doc doc-heading" id="up42.project.Project.create_workflow">
 <code class="highlight language-python">
 create_workflow<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">use_existing</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.project.Project.create_workflow" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.project.Project.create_workflow" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Creates a new workflow and returns a workflow object.</p>
 <p><strong>Parameters:</strong></p>
@@ -642,10 +680,10 @@ most recent workflow with the same name &amp; description.</p>
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.project.Project.get_jobs">
+<h3 class="doc doc-heading" id="up42.project.Project.get_jobs">
 <code class="highlight language-python">
 get_jobs<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">return_json</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.project.Project.get_jobs" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.project.Project.get_jobs" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Get all jobs in the project as a JobCollection or json.</p>
 <p>Use Workflow().get_job() to get a JobCollection with jobs associated with a
@@ -725,10 +763,10 @@ specific workflow.</p>
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.project.Project.get_project_settings">
+<h3 class="doc doc-heading" id="up42.project.Project.get_project_settings">
 <code class="highlight language-python">
 get_project_settings<span class="p">(</span><span class="bp">self</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.project.Project.get_project_settings" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.project.Project.get_project_settings" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Gets the project settings.</p>
 <p><strong>Returns:</strong></p>
@@ -768,10 +806,10 @@ get_project_settings<span class="p">(</span><span class="bp">self</span><span cl
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.project.Project.get_workflows">
+<h3 class="doc doc-heading" id="up42.project.Project.get_workflows">
 <code class="highlight language-python">
 get_workflows<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">return_json</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.project.Project.get_workflows" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.project.Project.get_workflows" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Gets all workflows in a project as workflow objects or json.</p>
 <p><strong>Parameters:</strong></p>
@@ -846,10 +884,10 @@ get_workflows<span class="p">(</span><span class="bp">self</span><span class="p"
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.project.Project.update_project_settings">
+<h3 class="doc doc-heading" id="up42.project.Project.update_project_settings">
 <code class="highlight language-python">
 update_project_settings<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_aoi_size</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_concurrent_jobs</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">number_of_images</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.project.Project.update_project_settings" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.project.Project.update_project_settings" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Updates a project's settings.</p>
 <p><strong>Parameters:</strong></p>
@@ -996,14 +1034,14 @@ update_project_settings<span class="p">(</span><span class="bp">self</span><span
 </div>
 </footer>
 </div>
-<script src="../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
-<script src="../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+<script src="../../assets/javascripts/vendor.77e55a48.min.js"></script>
+<script src="../../assets/javascripts/bundle.aa3f9871.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
 <script>
         app = initialize({
           base: "../..",
-          features: ['tabs'],
+          features: ['navigation.tabs'],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.5eca75d3.min.js"
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

@@ -8,10 +8,10 @@
 <meta content="UP42 Python SDK" name="description"/>
 <link href="https://up42.github.io/up42-py/reference/catalog/" rel="canonical"/>
 <link href="../../assets/logo-up42.ico" rel="shortcut icon"/>
-<meta content="mkdocs-1.1.2, mkdocs-material-5.5.14" name="generator"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-6.0.1" name="generator"/>
 <title>Catalog - UP42 Python SDK</title>
-<link href="../../assets/stylesheets/main.d3202873.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.ff0a5ce4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.38780c08.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.3f72e892.min.css" rel="stylesheet"/>
 <meta content="#4051b5" name="theme-color"/>
 <!-- Google Tag Manager -->
 <script>
@@ -271,8 +271,8 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../examples/map-quicklooks/" title="Quicklooks mapping">
-      Quicklooks mapping
+<a class="md-nav__link" href="../../examples/map-quicklooks/" title="Catalog Quicklooks">
+      Catalog Quicklooks
     </a>
 </li>
 </ul>
@@ -361,6 +361,12 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#methods">
+    Methods
+  </a>
+<nav aria-label="Methods" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
 <a class="md-nav__link" href="#up42.catalog.Catalog.construct_parameters">
     construct_parameters()
   </a>
@@ -374,6 +380,9 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 <a class="md-nav__link" href="#up42.catalog.Catalog.search">
     search()
   </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -456,6 +465,12 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#methods">
+    Methods
+  </a>
+<nav aria-label="Methods" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
 <a class="md-nav__link" href="#up42.catalog.Catalog.construct_parameters">
     construct_parameters()
   </a>
@@ -472,6 +487,9 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 </li>
 </ul>
 </nav>
+</li>
+</ul>
+</nav>
 </div>
 </div>
 </div>
@@ -482,18 +500,19 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 for satellite image scenes (for different sensors and criteria like cloud cover),
 plot the scene coverage and download and plot the scene quicklooks.</p>
 <div class="doc doc-object doc-class">
-<h2 class="hidden-toc" href="#up42.catalog.Catalog" id="up42.catalog.Catalog" style="visibility: hidden; width: 0; height: 0;">
+<h2 class="hidden-toc" href="#up42.catalog.Catalog" id="up42.catalog.Catalog" style="visibility: hidden; position: absolute;">
 <a class="headerlink" href="#up42.catalog.Catalog" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents first">
 <div class="doc doc-children">
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.catalog.Catalog.construct_parameters">
+<h3 class="doc doc-heading" id="up42.catalog.Catalog.construct_parameters">
 <code class="highlight language-python">
 construct_parameters<span class="p">(</span><span class="n">geometry</span><span class="p">,</span> <span class="n">start_date</span><span class="o">=</span><span class="s1">'2020-01-01'</span><span class="p">,</span> <span class="n">end_date</span><span class="o">=</span><span class="s1">'2020-01-30'</span><span class="p">,</span> <span class="n">sensors</span><span class="o">=</span><span class="p">[</span><span class="s1">'pleiades'</span><span class="p">,</span> <span class="s1">'spot'</span><span class="p">,</span> <span class="s1">'sentinel1'</span><span class="p">,</span> <span class="s1">'sentinel2'</span><span class="p">,</span> <span class="s1">'sentinel3'</span><span class="p">,</span> <span class="s1">'sentinel5p'</span><span class="p">],</span> <span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">max_cloudcover</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">sortby</span><span class="o">=</span><span class="s1">'acquisitionDate'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> </code>
 <span class="doc doc-properties">
 <small class="doc doc-property doc-property-staticmethod"><code>staticmethod</code></small>
 </span>
-<a class="headerlink" href="#up42.catalog.Catalog.construct_parameters" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.catalog.Catalog.construct_parameters" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Follows STAC principles and property names.</p>
 <p><strong>Parameters:</strong></p>
@@ -683,10 +702,10 @@ Ignored for sensors that have no cloudcover (e.g. sentinel1).</p>
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.catalog.Catalog.download_quicklooks">
+<h3 class="doc doc-heading" id="up42.catalog.Catalog.download_quicklooks">
 <code class="highlight language-python">
 download_quicklooks<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image_ids</span><span class="p">,</span> <span class="n">sensor</span><span class="p">,</span> <span class="n">output_directory</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.catalog.Catalog.download_quicklooks" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.catalog.Catalog.download_quicklooks" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Gets the quicklooks of scenes from a single sensor. After download, can
 be plotted via catalog.plot_quicklooks().</p>
@@ -818,10 +837,10 @@ directory.</p>
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.catalog.Catalog.search">
+<h3 class="doc doc-heading" id="up42.catalog.Catalog.search">
 <code class="highlight language-python">
 search<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">search_parameters</span><span class="p">,</span> <span class="n">as_dataframe</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.catalog.Catalog.search" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.catalog.Catalog.search" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Searches the catalog for the the search parameters and returns the metadata of
 the matching scenes.</p>
@@ -1028,14 +1047,14 @@ the matching scenes.</p>
 </div>
 </footer>
 </div>
-<script src="../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
-<script src="../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+<script src="../../assets/javascripts/vendor.77e55a48.min.js"></script>
+<script src="../../assets/javascripts/bundle.aa3f9871.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
 <script>
         app = initialize({
           base: "../..",
-          features: ['tabs'],
+          features: ['navigation.tabs'],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.5eca75d3.min.js"
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

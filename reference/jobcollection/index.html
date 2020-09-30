@@ -8,10 +8,10 @@
 <meta content="UP42 Python SDK" name="description"/>
 <link href="https://up42.github.io/up42-py/reference/jobcollection/" rel="canonical"/>
 <link href="../../assets/logo-up42.ico" rel="shortcut icon"/>
-<meta content="mkdocs-1.1.2, mkdocs-material-5.5.14" name="generator"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-6.0.1" name="generator"/>
 <title>JobCollection - UP42 Python SDK</title>
-<link href="../../assets/stylesheets/main.d3202873.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.ff0a5ce4.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/main.38780c08.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.3f72e892.min.css" rel="stylesheet"/>
 <meta content="#4051b5" name="theme-color"/>
 <!-- Google Tag Manager -->
 <script>
@@ -271,8 +271,8 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
     </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../examples/map-quicklooks/" title="Quicklooks mapping">
-      Quicklooks mapping
+<a class="md-nav__link" href="../../examples/map-quicklooks/" title="Catalog Quicklooks">
+      Catalog Quicklooks
     </a>
 </li>
 </ul>
@@ -351,6 +351,12 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#methods">
+    Methods
+  </a>
+<nav aria-label="Methods" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
 <a class="md-nav__link" href="#up42.jobcollection.JobCollection.apply">
     apply()
   </a>
@@ -369,6 +375,9 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 <a class="md-nav__link" href="#up42.jobcollection.JobCollection.get_jobs_status">
     get_jobs_status()
   </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -461,6 +470,12 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#methods">
+    Methods
+  </a>
+<nav aria-label="Methods" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
 <a class="md-nav__link" href="#up42.jobcollection.JobCollection.apply">
     apply()
   </a>
@@ -482,6 +497,9 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 </li>
 </ul>
 </nav>
+</li>
+</ul>
+</nav>
 </div>
 </div>
 </div>
@@ -491,15 +509,16 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 <p>The JobCollection class provides facilities for downloading and merging
 multiple jobs results.</p>
 <div class="doc doc-object doc-class">
-<h2 class="hidden-toc" href="#up42.jobcollection.JobCollection" id="up42.jobcollection.JobCollection" style="visibility: hidden; width: 0; height: 0;">
+<h2 class="hidden-toc" href="#up42.jobcollection.JobCollection" id="up42.jobcollection.JobCollection" style="visibility: hidden; position: absolute;">
 <a class="headerlink" href="#up42.jobcollection.JobCollection" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents first">
 <div class="doc doc-children">
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.jobcollection.JobCollection.apply">
+<h3 class="doc doc-heading" id="up42.jobcollection.JobCollection.apply">
 <code class="highlight language-python">
 apply<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">worker</span><span class="p">,</span> <span class="n">only_succeeded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.jobcollection.JobCollection.apply" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.jobcollection.JobCollection.apply" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Helper function to apply <code>worker</code> on all jobs in the collection.
 <code>worker</code> needs to accept <code>Job</code> as first argument. For example, a
@@ -611,10 +630,10 @@ of <code>worker</code>.</p>
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.jobcollection.JobCollection.download_results">
+<h3 class="doc doc-heading" id="up42.jobcollection.JobCollection.download_results">
 <code class="highlight language-python">
 download_results<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_directory</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">merge</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">unpacking</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.jobcollection.JobCollection.download_results" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.jobcollection.JobCollection.download_results" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Downloads the job results. The final results are individually downloaded
 and by default a merged data.json is generated with all the results in a single
@@ -750,10 +769,10 @@ data.json.</p>
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.jobcollection.JobCollection.get_jobs_info">
+<h3 class="doc doc-heading" id="up42.jobcollection.JobCollection.get_jobs_info">
 <code class="highlight language-python">
 get_jobs_info<span class="p">(</span><span class="bp">self</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.jobcollection.JobCollection.get_jobs_info" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.jobcollection.JobCollection.get_jobs_info" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Gets the jobs information.</p>
 <p><strong>Returns:</strong></p>
@@ -790,10 +809,10 @@ get_jobs_info<span class="p">(</span><span class="bp">self</span><span class="p"
 </div>
 </div>
 <div class="doc doc-object doc-method">
-<h2 class="doc doc-heading" id="up42.jobcollection.JobCollection.get_jobs_status">
+<h3 class="doc doc-heading" id="up42.jobcollection.JobCollection.get_jobs_status">
 <code class="highlight language-python">
 get_jobs_status<span class="p">(</span><span class="bp">self</span><span class="p">)</span> </code>
-<a class="headerlink" href="#up42.jobcollection.JobCollection.get_jobs_status" title="Permanent link">¶</a></h2>
+<a class="headerlink" href="#up42.jobcollection.JobCollection.get_jobs_status" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Gets the jobs status.</p>
 <p><strong>Returns:</strong></p>
@@ -897,14 +916,14 @@ get_jobs_status<span class="p">(</span><span class="bp">self</span><span class="
 </div>
 </footer>
 </div>
-<script src="../../assets/javascripts/vendor.2d1db4bd.min.js"></script>
-<script src="../../assets/javascripts/bundle.6627ddf3.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+<script src="../../assets/javascripts/vendor.77e55a48.min.js"></script>
+<script src="../../assets/javascripts/bundle.aa3f9871.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
 <script>
         app = initialize({
           base: "../..",
-          features: ['tabs'],
+          features: ['navigation.tabs'],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.5eca75d3.min.js"
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
