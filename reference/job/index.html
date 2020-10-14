@@ -39,7 +39,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#job-class">
+<a class="md-skip" href="#job">
           Skip to content
         </a>
 </div>
@@ -47,7 +47,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 <aside class="md-announce">
 <div class="md-announce__inner md-grid md-typeset">
 <style>.md-announce a,.md-announce a:focus,.md-announce a:hover{color:currentColor}.md-announce strong{white-space:nowrap}.md-announce .twitter{margin-left:.2em;color:#00acee}</style>
-<a href="https://up42.github.io/up42-py/CHANGELOG/"><strong>New version 0.11:</strong> Adds map quicklooks feature &amp; more, see the 📅
+<a href="https://sdk.up42.com/CHANGELOG/"><strong>New version 0.12.0:</strong> Improves object representation, adds info &amp; status properties and more! See the 📅
       <strong>release notes</strong>!
     </a>
 </div>
@@ -141,7 +141,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../project/">
+<a class="md-tabs__link md-tabs__link--active" href="../up42/">
           Code Reference
         </a>
 </li>
@@ -316,6 +316,11 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
       </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../up42/" title="up42">
+      up42
+    </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../project/" title="Project">
       Project
     </a>
@@ -352,8 +357,18 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 <nav aria-label="Attributes" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#up42.job.Job.info">
+    info
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#up42.job.Job.is_succeeded">
     is_succeeded
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#up42.job.Job.status">
+    status
   </a>
 </li>
 </ul>
@@ -525,8 +540,18 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 <nav aria-label="Attributes" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#up42.job.Job.info">
+    info
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#up42.job.Job.is_succeeded">
     is_succeeded
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#up42.job.Job.status">
+    status
   </a>
 </li>
 </ul>
@@ -603,9 +628,17 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 </div>
 <div class="md-content">
 <article class="md-content__inner md-typeset">
-<h1 id="job-class">Job class<a class="headerlink" href="#job-class" title="Permanent link">¶</a></h1>
-<p>The Job class provides access to the results, parameters and tasks of UP42
-Jobs (Workflows that have been run as Jobs).</p>
+<h1 id="job">Job<a class="headerlink" href="#job" title="Permanent link">¶</a></h1>
+<p>The Job object is the result of running a workflow. It lets you download, visualize and 
+manipulate the results of the job, and keep track of the status or cancel a job while
+still running.</p>
+<p>Initialize an existing job:</p>
+<div class="highlight"><pre><span></span><code><span class="n">job</span> <span class="o">=</span> <span class="n">up42</span><span class="o">.</span><span class="n">initialize_job</span><span class="p">(</span><span class="n">job_id</span><span class="o">=</span><span class="s2">"12345"</span><span class="p">)</span>
+</code></pre></div>
+<p>Run a new job:
+<div class="highlight"><pre><span></span><code><span class="n">job</span> <span class="o">=</span> <span class="n">workflow</span><span class="o">.</span><span class="n">run_job</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"new_job"</span><span class="p">,</span> <span class="n">input_parameters</span><span class="o">=</span><span class="p">{</span><span class="o">...</span><span class="p">})</span>
+</code></pre></div></p>
+<p><br/></p>
 <div class="doc doc-object doc-class">
 <h2 class="hidden-toc" href="#up42.job.Job" id="up42.job.Job" style="visibility: hidden; position: absolute;">
 <a class="headerlink" href="#up42.job.Job" title="Permanent link">¶</a></h2>
@@ -613,16 +646,44 @@ Jobs (Workflows that have been run as Jobs).</p>
 <div class="doc doc-children">
 <h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">¶</a></h2>
 <div class="doc doc-object doc-attribute">
+<h3 class="doc doc-heading" id="up42.job.Job.info">
+<code class="highlight">
+info: <span class="n">Dict</span> </code>
+<span class="doc doc-properties">
+<small class="doc doc-property doc-property-property"><code>property</code></small>
+<small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+</span>
+<a class="headerlink" href="#up42.job.Job.info" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Gets the job metadata information.</p>
+</div>
+</div>
+<div class="doc doc-object doc-attribute">
 <h3 class="doc doc-heading" id="up42.job.Job.is_succeeded">
 <code class="highlight">
-is_succeeded        </code>
+is_succeeded: <span class="nb">bool</span> </code>
 <span class="doc doc-properties">
 <small class="doc doc-property doc-property-property"><code>property</code></small>
 <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
 </span>
 <a class="headerlink" href="#up42.job.Job.is_succeeded" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
-<p>Gets True if the job succeeded, False otherwise</p>
+<p>Gets <code>True</code> if the job succeeded, <code>False</code> otherwise.
+Also see <a href="./#up42.job.Job.status">status attribute</a>.</p>
+</div>
+</div>
+<div class="doc doc-object doc-attribute">
+<h3 class="doc doc-heading" id="up42.job.Job.status">
+<code class="highlight">
+status: <span class="nb">str</span> </code>
+<span class="doc doc-properties">
+<small class="doc doc-property doc-property-property"><code>property</code></small>
+<small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+</span>
+<a class="headerlink" href="#up42.job.Job.status" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Gets the job progress status. One of <code>SUCCEEDED</code>, <code>NOT STARTED</code>, <code>PENDING</code>,
+    <code>RUNNING</code>, <code>CANCELLED</code>, <code>CANCELLING</code>, <code>FAILED</code>, <code>ERROR</code>.</p>
 </div>
 </div>
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
@@ -849,18 +910,18 @@ get_jobtasks<span class="p">(</span><span class="bp">self</span><span class="p">
     <span class="n">response_json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="n">request_type</span><span class="o">=</span><span class="s2">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>
     <span class="n">jobtasks_json</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="n">response_json</span><span class="p">[</span><span class="s2">"data"</span><span class="p">]</span>
 
-    <span class="n">jobtasks</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="n">JobTask</span><span class="p">(</span>
-            <span class="n">auth</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="p">,</span>
-            <span class="n">project_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">project_id</span><span class="p">,</span>
-            <span class="n">job_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="p">,</span>
-            <span class="n">jobtask_id</span><span class="o">=</span><span class="n">task</span><span class="p">[</span><span class="s2">"id"</span><span class="p">],</span>
-        <span class="p">)</span>
-        <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">jobtasks_json</span>
-    <span class="p">]</span>
     <span class="k">if</span> <span class="n">return_json</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">jobtasks_json</span>
     <span class="k">else</span><span class="p">:</span>
+        <span class="n">jobtasks</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">JobTask</span><span class="p">(</span>
+                <span class="n">auth</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="p">,</span>
+                <span class="n">project_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">project_id</span><span class="p">,</span>
+                <span class="n">job_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">job_id</span><span class="p">,</span>
+                <span class="n">jobtask_id</span><span class="o">=</span><span class="n">task</span><span class="p">[</span><span class="s2">"id"</span><span class="p">],</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">jobtasks_json</span>
+        <span class="p">]</span>
         <span class="k">return</span> <span class="n">jobtasks</span>
 </code></pre>
 </div>
@@ -1105,40 +1166,16 @@ get_results_json<span class="p">(</span><span class="bp">self</span><span class=
 get_status<span class="p">(</span><span class="bp">self</span><span class="p">)</span> </code>
 <a class="headerlink" href="#up42.job.Job.get_status" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
-<p>Gets the job status.</p>
-<p><strong>Returns:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>str</code></td>
-<td>
-<p>The job status, one of "SUCCEEDED", "NOT STARTED", "PENDING", "RUNNING",
-"CANCELLED", "CANCELLING", "FAILED", "ERROR"</p>
-</td>
-</tr>
-</tbody>
-</table>
+<p><code>get_status</code> will be deprecated in release 0.13, use <a href="./#up42.job.Job.status">status attribute</a> instead.</p>
 <details class="quote">
 <summary>Source code in <code>up42/job.py</code></summary>
 <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">get_status</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<pre><span></span><code><span class="nd">@deprecation</span><span class="p">(</span><span class="s2">"get_status"</span><span class="p">,</span> <span class="s2">"job.status"</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">get_status</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="sd">"""</span>
-<span class="sd">    Gets the job status.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        The job status, one of "SUCCEEDED", "NOT STARTED", "PENDING", "RUNNING",</span>
-<span class="sd">        "CANCELLED", "CANCELLING", "FAILED", "ERROR"</span>
+<span class="sd">    `get_status` will be deprecated in release 0.13, use [status attribute](job.md#up42.job.Job.status) instead.</span>
 <span class="sd">    """</span>
-    <span class="n">info</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_info</span><span class="p">()</span>
-    <span class="n">status</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="s2">"status"</span><span class="p">]</span>
-    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Job is </span><span class="si">{</span><span class="n">status</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">status</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span>
 </code></pre>
 </div>
 </details>
@@ -1242,7 +1279,8 @@ map_results<span class="p">(</span><span class="bp">self</span><span class="p">,
 track_status<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">report_time</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span> </code>
 <a class="headerlink" href="#up42.job.Job.track_status" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
-<p>Continuously gets the job status until job has finished or failed.</p>
+<p>`
+Continuously gets the job status until job has finished or failed.</p>
 <p>Internally checks every five seconds for the status, prints the log every
 time interval given in report_time argument.</p>
 <p><strong>Parameters:</strong></p>
@@ -1270,7 +1308,7 @@ time interval given in report_time argument.</p>
 <summary>Source code in <code>up42/job.py</code></summary>
 <div class="highlight">
 <pre><span></span><code><span class="k">def</span> <span class="nf">track_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">report_time</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">30</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="sd">"""</span>
+    <span class="sd">"""`</span>
 <span class="sd">    Continuously gets the job status until job has finished or failed.</span>
 
 <span class="sd">    Internally checks every five seconds for the status, prints the log every</span>
@@ -1287,7 +1325,7 @@ time interval given in report_time argument.</p>
 
     <span class="k">while</span> <span class="n">status</span> <span class="o">!=</span> <span class="s2">"SUCCEEDED"</span><span class="p">:</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">CRITICAL</span><span class="p">)</span>
-        <span class="n">status</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_status</span><span class="p">()</span>
+        <span class="n">status</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">status</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
 
         <span class="c1"># TODO: Add statuses as constants (maybe objects?)</span>

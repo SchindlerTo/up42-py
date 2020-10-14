@@ -10,22 +10,22 @@
         <meta name="description" content="UP42 Python SDK">
       
       
-        <link rel="canonical" href="https://up42.github.io/up42-py/swagger/">
+        <link rel="canonical" href="https://up42.github.io/up42-py/reference/up42/">
       
       
-      <link rel="shortcut icon" href="../assets/logo-up42.ico">
+      <link rel="shortcut icon" href="../../assets/logo-up42.ico">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.1">
     
     
       
-        <title>Swagger - UP42 Python SDK</title>
+        <title>up42 - UP42 Python SDK</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.38780c08.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.38780c08.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.3f72e892.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f72e892.min.css">
         
           
           
@@ -59,7 +59,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
     
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
     
       
@@ -85,6 +85,11 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#up42" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -92,7 +97,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           <div class="md-announce__inner md-grid md-typeset">
             
   <style>.md-announce a,.md-announce a:focus,.md-announce a:hover{color:currentColor}.md-announce strong{white-space:nowrap}.md-announce .twitter{margin-left:.2em;color:#00acee}</style>
-    <a href="https://up42.github.io/up42-py/CHANGELOG/"><strong>New version 0.11:</strong> Adds map quicklooks feature & more, see the 📅
+    <a href="https://sdk.up42.com/CHANGELOG/"><strong>New version 0.12.0:</strong> Improves object representation, adds info & status properties and more! See the 📅
       <strong>release notes</strong>!
     </a>
 
@@ -122,7 +127,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Swagger
+              up42
             
           </span>
         </div>
@@ -183,14 +188,16 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
         
           
 
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href=".." class="md-tabs__link md-tabs__link--active">
+      <a href="../.." class="md-tabs__link">
         Home
       </a>
     
@@ -202,7 +209,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
   
     <li class="md-tabs__item">
       
-        <a href="../30-second-example/" class="md-tabs__link">
+        <a href="../../30-second-example/" class="md-tabs__link">
           Getting Started
         </a>
       
@@ -215,7 +222,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
   
     <li class="md-tabs__item">
       
-        <a href="../examples-intro/" class="md-tabs__link">
+        <a href="../../examples-intro/" class="md-tabs__link">
           Examples
         </a>
       
@@ -228,7 +235,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
   
     <li class="md-tabs__item">
       
-        <a href="../cli/" class="md-tabs__link">
+        <a href="../../cli/" class="md-tabs__link">
           CLI
         </a>
       
@@ -241,7 +248,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
   
     <li class="md-tabs__item">
       
-        <a href="../reference/project/" class="md-tabs__link">
+        <a href="./" class="md-tabs__link md-tabs__link--active">
           Code Reference
         </a>
       
@@ -254,7 +261,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
   
     <li class="md-tabs__item">
       
-        <a href="../CHANGELOG/" class="md-tabs__link">
+        <a href="../../CHANGELOG/" class="md-tabs__link">
           Releases
         </a>
       
@@ -267,7 +274,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
   
     <li class="md-tabs__item">
       
-        <a href="../support-faq/" class="md-tabs__link">
+        <a href="../../support-faq/" class="md-tabs__link">
           FAQ & Support
         </a>
       
@@ -326,7 +333,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
-    <a href=".." title="Home" class="md-nav__link">
+    <a href="../.." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -359,7 +366,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
-    <a href="../30-second-example/" title="30 Second Example" class="md-nav__link">
+    <a href="../../30-second-example/" title="30 Second Example" class="md-nav__link">
       30 Second Example
     </a>
   </li>
@@ -371,7 +378,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
-    <a href="../installation/" title="Installation" class="md-nav__link">
+    <a href="../../installation/" title="Installation" class="md-nav__link">
       Installation
     </a>
   </li>
@@ -383,7 +390,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
-    <a href="../authentication/" title="Authentication" class="md-nav__link">
+    <a href="../../authentication/" title="Authentication" class="md-nav__link">
       Authentication
     </a>
   </li>
@@ -395,7 +402,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
-    <a href="../structure/" title="Structure" class="md-nav__link">
+    <a href="../../structure/" title="Structure" class="md-nav__link">
       Structure
     </a>
   </li>
@@ -407,7 +414,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
-    <a href="../catalog/" title="Catalog Search" class="md-nav__link">
+    <a href="../../catalog/" title="Catalog Search" class="md-nav__link">
       Catalog Search
     </a>
   </li>
@@ -419,7 +426,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
-    <a href="../detailed-example/" title="Detailed Example" class="md-nav__link">
+    <a href="../../detailed-example/" title="Detailed Example" class="md-nav__link">
       Detailed Example
     </a>
   </li>
@@ -457,7 +464,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
-    <a href="../examples-intro/" title="Examples" class="md-nav__link">
+    <a href="../../examples-intro/" title="Examples" class="md-nav__link">
       Examples
     </a>
   </li>
@@ -469,7 +476,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
-    <a href="../examples/radar_processing_1/" title="Radar processing" class="md-nav__link">
+    <a href="../../examples/radar_processing_1/" title="Radar processing" class="md-nav__link">
       Radar processing
     </a>
   </li>
@@ -481,7 +488,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
-    <a href="../examples/airports-parallel/" title="Airport monitoring" class="md-nav__link">
+    <a href="../../examples/airports-parallel/" title="Airport monitoring" class="md-nav__link">
       Airport monitoring
     </a>
   </li>
@@ -493,7 +500,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
-    <a href="../examples/flood_mapping/" title="Flood mapping" class="md-nav__link">
+    <a href="../../examples/flood_mapping/" title="Flood mapping" class="md-nav__link">
       Flood mapping
     </a>
   </li>
@@ -505,7 +512,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
-    <a href="../examples/map-quicklooks/" title="Catalog Quicklooks" class="md-nav__link">
+    <a href="../../examples/map-quicklooks/" title="Catalog Quicklooks" class="md-nav__link">
       Catalog Quicklooks
     </a>
   </li>
@@ -543,7 +550,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
-    <a href="../cli/" title="Command Line Interface (CLI)" class="md-nav__link">
+    <a href="../../cli/" title="Command Line Interface (CLI)" class="md-nav__link">
       Command Line Interface (CLI)
     </a>
   </li>
@@ -555,7 +562,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
-    <a href="../reference/cli/" title="Command Reference" class="md-nav__link">
+    <a href="../cli/" title="Command Reference" class="md-nav__link">
       Command Reference
     </a>
   </li>
@@ -570,10 +577,12 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
     <label class="md-nav__link" for="nav-5">
       Code Reference
@@ -591,9 +600,114 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           
           
 
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        up42
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="up42" class="md-nav__link md-nav__link--active">
+      up42
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#up42.__init__" class="md-nav__link">
+    up42.__init__
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#up42.__init__.initialize_catalog" class="md-nav__link">
+    initialize_catalog()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#up42.__init__.initialize_job" class="md-nav__link">
+    initialize_job()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#up42.__init__.initialize_jobtask" class="md-nav__link">
+    initialize_jobtask()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#up42.__init__.initialize_project" class="md-nav__link">
+    initialize_project()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#up42.__init__.initialize_workflow" class="md-nav__link">
+    initialize_workflow()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#up42.__init__.settings" class="md-nav__link">
+    settings()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
 
   <li class="md-nav__item">
-    <a href="../reference/project/" title="Project" class="md-nav__link">
+    <a href="../project/" title="Project" class="md-nav__link">
       Project
     </a>
   </li>
@@ -605,7 +719,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
-    <a href="../reference/workflow/" title="Workflow" class="md-nav__link">
+    <a href="../workflow/" title="Workflow" class="md-nav__link">
       Workflow
     </a>
   </li>
@@ -617,7 +731,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
-    <a href="../reference/job/" title="Job" class="md-nav__link">
+    <a href="../job/" title="Job" class="md-nav__link">
       Job
     </a>
   </li>
@@ -629,7 +743,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
-    <a href="../reference/jobcollection/" title="JobCollection" class="md-nav__link">
+    <a href="../jobcollection/" title="JobCollection" class="md-nav__link">
       JobCollection
     </a>
   </li>
@@ -641,7 +755,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
-    <a href="../reference/jobtask/" title="JobTask" class="md-nav__link">
+    <a href="../jobtask/" title="JobTask" class="md-nav__link">
       JobTask
     </a>
   </li>
@@ -653,7 +767,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
-    <a href="../reference/catalog/" title="Catalog" class="md-nav__link">
+    <a href="../catalog/" title="Catalog" class="md-nav__link">
       Catalog
     </a>
   </li>
@@ -665,7 +779,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
-    <a href="../reference/tools/" title="Tools" class="md-nav__link">
+    <a href="../tools/" title="Tools" class="md-nav__link">
       Tools
     </a>
   </li>
@@ -677,7 +791,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
-    <a href="../reference/cli/" title="CLI" class="md-nav__link">
+    <a href="../cli/" title="CLI" class="md-nav__link">
       CLI
     </a>
   </li>
@@ -715,7 +829,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
-    <a href="../CHANGELOG/" title="Releases" class="md-nav__link">
+    <a href="../../CHANGELOG/" title="Releases" class="md-nav__link">
       Releases
     </a>
   </li>
@@ -753,7 +867,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
-    <a href="../support-faq/" title="FAQ & Support" class="md-nav__link">
+    <a href="../../support-faq/" title="FAQ & Support" class="md-nav__link">
       FAQ & Support
     </a>
   </li>
@@ -765,7 +879,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
-    <a href="../privacy-policy/" title="Privacy Policy" class="md-nav__link">
+    <a href="../../privacy-policy/" title="Privacy Policy" class="md-nav__link">
       Privacy Policy
     </a>
   </li>
@@ -783,75 +897,280 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#up42.__init__" class="md-nav__link">
+    up42.__init__
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#up42.__init__.initialize_catalog" class="md-nav__link">
+    initialize_catalog()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#up42.__init__.initialize_job" class="md-nav__link">
+    initialize_job()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#up42.__init__.initialize_jobtask" class="md-nav__link">
+    initialize_jobtask()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#up42.__init__.initialize_project" class="md-nav__link">
+    initialize_project()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#up42.__init__.initialize_workflow" class="md-nav__link">
+    initialize_workflow()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#up42.__init__.settings" class="md-nav__link">
+    settings()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>Swagger</h1>
-                
-                <p><html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Swagger UI</title>
-    <link rel="stylesheet" type="text/css" href="./swagger-ui.css" >
-    <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
-    <style>
-      html
-      {
-        box-sizing: border-box;
-        overflow: -moz-scrollbars-vertical;
-        overflow-y: scroll;
-      }</p>
-<div class="codehilite"><pre><span></span><code>  *,
-  *:before,
-  *:after
-  {
-    box-sizing: inherit;
-  }
-
-  body
-  {
-    margin:0;
-    background: #fafafa;
-  }
-&lt;/style&gt;
+                <h1 id="up42">up42<a class="headerlink" href="#up42" title="Permanent link">&para;</a></h1>
+<p>up42 is the base object imported to Python. It provides the elementary functionality 
+that is not bound to a specific object of the UP42 structure (Project &gt; Workflow &gt; Job etc.).</p>
+<p>From it you can initialize these other objects, get information about UP42 
+data &amp; processing blocks, read or draw vector data, and adjust the SDK settings.</p>
+<p>To import the UP42 library:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">up42</span>
 </code></pre></div>
 
+<p><br></p>
+<div class="doc doc-object doc-module">
+<h2 class="hidden-toc" href="#up42.__init__" id="up42.__init__" style="visibility: hidden; position: absolute;">
+        <a class="headerlink" href="#up42.__init__" title="Permanent link">&para;</a></h2>
+<div class="doc doc-contents first">
+<div class="doc doc-children">
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h2>
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="up42.__init__.initialize_catalog">
 
-<p></head></p>
-<p><body>
-    <div id="swagger-ui"></div></p>
-<div class="codehilite"><pre><span></span><code>&lt;script src=&quot;./swagger-ui-bundle.js&quot;&gt; &lt;/script&gt;
-&lt;script src=&quot;./swagger-ui-standalone-preset.js&quot;&gt; &lt;/script&gt;
-&lt;script&gt;
-window.onload = function() {
-  // Begin Swagger UI call region
-  const ui = SwaggerUIBundle({
-    url: &quot;https://petstore.swagger.io/v2/swagger.json&quot;,
-    dom_id: &#39;#swagger-ui&#39;,
-    deepLinking: true,
-    presets: [
-      SwaggerUIBundle.presets.apis,
-      SwaggerUIStandalonePreset
-    ],
-    plugins: [
-      SwaggerUIBundle.plugins.DownloadUrl
-    ],
-    layout: &quot;StandaloneLayout&quot;
-  })
-  // End Swagger UI call region
-
-  window.ui = ui
-}
-</code></pre></div>
+        <code class="highlight language-python">
+initialize_catalog<span class="p">()</span>        </code>
 
 
-<p></script>
-  </body>
-</html></p>
+      <a class="headerlink" href="#up42.__init__.initialize_catalog" title="Permanent link">&para;</a></h3>
+<div class="doc doc-contents ">
+<p>Returns a Catalog object for using the catalog search.</p>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="up42.__init__.initialize_job">
+
+        <code class="highlight language-python">
+initialize_job<span class="p">(</span><span class="n">job_id</span><span class="p">)</span>        </code>
+
+
+      <a class="headerlink" href="#up42.__init__.initialize_job" title="Permanent link">&para;</a></h3>
+<div class="doc doc-contents ">
+<p>Returns a Job object (has to exist on UP42).</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>job_id</code></td>
+<td><code>str</code></td>
+<td>
+<p>The UP42 job_id</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="up42.__init__.initialize_jobtask">
+
+        <code class="highlight language-python">
+initialize_jobtask<span class="p">(</span><span class="n">jobtask_id</span><span class="p">,</span> <span class="n">job_id</span><span class="p">)</span>        </code>
+
+
+      <a class="headerlink" href="#up42.__init__.initialize_jobtask" title="Permanent link">&para;</a></h3>
+<div class="doc doc-contents ">
+<p>Returns a JobTask object (has to exist on UP42).</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>jobtask_id</code></td>
+<td><code></code></td>
+<td>
+<p>The UP42 jobtask_id</p>
+</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>job_id</code></td>
+<td><code></code></td>
+<td>
+<p>The UP42 job_id</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="up42.__init__.initialize_project">
+
+        <code class="highlight language-python">
+initialize_project<span class="p">()</span>        </code>
+
+
+      <a class="headerlink" href="#up42.__init__.initialize_project" title="Permanent link">&para;</a></h3>
+<div class="doc doc-contents ">
+<p>Returns the correct Project object (has to exist on UP42).</p>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="up42.__init__.initialize_workflow">
+
+        <code class="highlight language-python">
+initialize_workflow<span class="p">(</span><span class="n">workflow_id</span><span class="p">)</span>        </code>
+
+
+      <a class="headerlink" href="#up42.__init__.initialize_workflow" title="Permanent link">&para;</a></h3>
+<div class="doc doc-contents ">
+<p>Returns a Workflow object (has to exist on UP42).</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>workflow_id</code></td>
+<td><code>str</code></td>
+<td>
+<p>The UP42 workflow_id</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="doc doc-object doc-function">
+<h3 class="doc doc-heading" id="up42.__init__.settings">
+
+        <code class="highlight language-python">
+settings<span class="p">(</span><span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>        </code>
+
+
+      <a class="headerlink" href="#up42.__init__.settings" title="Permanent link">&para;</a></h3>
+<div class="doc doc-contents ">
+<p>Configures settings about logging etc. when using the up42-py package.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>log</code></td>
+<td><code></code></td>
+<td>
+<p>Activates/deactivates logging, default True is activated logging.</p>
+</td>
+<td><code>True</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
                 
               
               
@@ -866,6 +1185,41 @@ window.onload = function() {
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../cli/" title="Command Reference" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Command Reference
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../project/" title="Project" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Project
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -924,20 +1278,20 @@ window.onload = function() {
       
     </div>
     
-      <script src="../assets/javascripts/vendor.77e55a48.min.js"></script>
-      <script src="../assets/javascripts/bundle.aa3f9871.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="../../assets/javascripts/bundle.aa3f9871.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
-          base: "..",
+          base: "../..",
           features: ['navigation.tabs'],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
       
-        <script src="../stylesheets/extra.js"></script>
+        <script src="../../stylesheets/extra.js"></script>
       
     
   </body>

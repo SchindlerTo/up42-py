@@ -97,7 +97,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           <div class="md-announce__inner md-grid md-typeset">
             
   <style>.md-announce a,.md-announce a:focus,.md-announce a:hover{color:currentColor}.md-announce strong{white-space:nowrap}.md-announce .twitter{margin-left:.2em;color:#00acee}</style>
-    <a href="https://up42.github.io/up42-py/CHANGELOG/"><strong>New version 0.11:</strong> Adds map quicklooks feature & more, see the 📅
+    <a href="https://sdk.up42.com/CHANGELOG/"><strong>New version 0.12.0:</strong> Improves object representation, adds info & status properties and more! See the 📅
       <strong>release notes</strong>!
     </a>
 
@@ -248,7 +248,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
   
     <li class="md-tabs__item">
       
-        <a href="../reference/project/" class="md-tabs__link">
+        <a href="../reference/up42/" class="md-tabs__link">
           Code Reference
         </a>
       
@@ -600,6 +600,18 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
+    <a href="../reference/up42/" title="up42" class="md-nav__link">
+      up42
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../reference/project/" title="Project" class="md-nav__link">
       Project
     </a>
@@ -770,6 +782,13 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#0120-2020-10-14" class="md-nav__link">
+    0.12.0 (2020-10-14)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#0110-2020-08-13" class="md-nav__link">
     0.11.0 (2020-08-13)
   </a>
@@ -938,6 +957,13 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#0120-2020-10-14" class="md-nav__link">
+    0.12.0 (2020-10-14)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#0110-2020-08-13" class="md-nav__link">
     0.11.0 (2020-08-13)
   </a>
@@ -1029,6 +1055,19 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 </code></pre></div>
 
 <h2 id="versions">Versions<a class="headerlink" href="#versions" title="Permanent link">&para;</a></h2>
+<h3 id="0120-2020-10-14"><a href="https://pypi.org/project/up42-py/">0.12.0</a> (2020-10-14)<a class="headerlink" href="#0120-2020-10-14" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Simplify object representation to just relevant information, also simplifies logger messages.</li>
+<li>Add <code>.info</code> property to all objects to get the detialed object information, deprecation process for <code>get_info</code>.</li>
+<li>Add <code>status</code> property to job, jobtask and jobcollection objects. Deprecation process for <code>get_status</code>.</li>
+<li>Add selection of job mode for <code>.get_jobs</code>.</li>
+<li>Add description of initialization of each object to code reference.</li>
+<li>Move sdk documentation to custom subdomain "sdk.up42.com".</li>
+<li>Unpin geopandas version.</li>
+<li>Simplify mock tests &amp; test fixtures</li>
+<li>Fix: Use correct cutoff time 23:59:59 in default datetimes.</li>
+<li>Fix: Download jobtasks to respective jobtask subfolders instead of the job folder.</li>
+</ul>
 <h3 id="0110-2020-08-13"><a href="https://pypi.org/project/up42-py/">0.11.0</a> (2020-08-13)<a class="headerlink" href="#0110-2020-08-13" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Fix: Remove buffer 0 for fixing invalid geometry.</li>

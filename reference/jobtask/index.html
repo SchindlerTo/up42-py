@@ -86,7 +86,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
     <div data-md-component="skip">
       
         
-        <a href="#jobtask-class" class="md-skip">
+        <a href="#jobtask" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           <div class="md-announce__inner md-grid md-typeset">
             
   <style>.md-announce a,.md-announce a:focus,.md-announce a:hover{color:currentColor}.md-announce strong{white-space:nowrap}.md-announce .twitter{margin-left:.2em;color:#00acee}</style>
-    <a href="https://up42.github.io/up42-py/CHANGELOG/"><strong>New version 0.11:</strong> Adds map quicklooks feature & more, see the 📅
+    <a href="https://sdk.up42.com/CHANGELOG/"><strong>New version 0.12.0:</strong> Improves object representation, adds info & status properties and more! See the 📅
       <strong>release notes</strong>!
     </a>
 
@@ -248,7 +248,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
   
     <li class="md-tabs__item">
       
-        <a href="../project/" class="md-tabs__link md-tabs__link--active">
+        <a href="../up42/" class="md-tabs__link md-tabs__link--active">
           Code Reference
         </a>
       
@@ -602,6 +602,18 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
+    <a href="../up42/" title="up42" class="md-nav__link">
+      up42
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../project/" title="Project" class="md-nav__link">
       Project
     </a>
@@ -684,6 +696,26 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
   <a href="#up42.jobtask.JobTask" class="md-nav__link">
     up42.jobtask.JobTask
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attributes" class="md-nav__link">
+    Attributes
+  </a>
+  
+    <nav class="md-nav" aria-label="Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#up42.jobtask.JobTask.info" class="md-nav__link">
+    info
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -888,6 +920,26 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 </li>
       
         <li class="md-nav__item">
+  <a href="#attributes" class="md-nav__link">
+    Attributes
+  </a>
+  
+    <nav class="md-nav" aria-label="Attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#up42.jobtask.JobTask.info" class="md-nav__link">
+    info
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#methods" class="md-nav__link">
     Methods
   </a>
@@ -934,15 +986,36 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
               
                 
                 
-                <h1 id="jobtask-class">JobTask class<a class="headerlink" href="#jobtask-class" title="Permanent link">&para;</a></h1>
-<p>The JobTask class provides access to the results and parameters of single
-Tasks of UP42 Jobs (each Job contains one or multiple Jobtasks, one for each
-block in the workflow).</p>
+                <h1 id="jobtask">JobTask<a class="headerlink" href="#jobtask" title="Permanent link">&para;</a></h1>
+<p>The JobTask object provides access to a specific intermediate result of a block in the 
+workflow. Each job contains one or multiple JobTasks, one for each block.</p>
+<p>Initialize an existing jobtask:</p>
+<div class="highlight"><pre><span></span><code><span class="n">jobtask</span> <span class="o">=</span> <span class="n">up42</span><span class="o">.</span><span class="n">initialize_jobtask</span><span class="p">(</span><span class="n">jobtask_id</span><span class="o">=</span><span class="s2">&quot;12345&quot;</span><span class="p">,</span> <span class="n">job_id</span><span class="o">=</span><span class="s2">&quot;12345&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p><br></p>
 <div class="doc doc-object doc-class">
 <h2 class="hidden-toc" href="#up42.jobtask.JobTask" id="up42.jobtask.JobTask" style="visibility: hidden; position: absolute;">
         <a class="headerlink" href="#up42.jobtask.JobTask" title="Permanent link">&para;</a></h2>
 <div class="doc doc-contents first">
 <div class="doc doc-children">
+<h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">&para;</a></h2>
+<div class="doc doc-object doc-attribute">
+<h3 class="doc doc-heading" id="up42.jobtask.JobTask.info">
+
+        <code class="highlight">
+info: <span class="n">Dict</span>        </code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-property"><code>property</code></small>
+      <small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+  </span>
+
+      <a class="headerlink" href="#up42.jobtask.JobTask.info" title="Permanent link">&para;</a></h3>
+<div class="doc doc-contents ">
+<p>Gets the jobtask metadata information.</p>
+</div>
+</div>
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">&para;</a></h2>
 <div class="doc doc-object doc-method">
 <h3 class="doc doc-heading" id="up42.jobtask.JobTask.download_quicklooks">

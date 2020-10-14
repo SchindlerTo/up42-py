@@ -97,7 +97,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           <div class="md-announce__inner md-grid md-typeset">
             
   <style>.md-announce a,.md-announce a:focus,.md-announce a:hover{color:currentColor}.md-announce strong{white-space:nowrap}.md-announce .twitter{margin-left:.2em;color:#00acee}</style>
-    <a href="https://up42.github.io/up42-py/CHANGELOG/"><strong>New version 0.11:</strong> Adds map quicklooks feature & more, see the 📅
+    <a href="https://sdk.up42.com/CHANGELOG/"><strong>New version 0.12.0:</strong> Improves object representation, adds info & status properties and more! See the 📅
       <strong>release notes</strong>!
     </a>
 
@@ -248,7 +248,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
   
     <li class="md-tabs__item">
       
-        <a href="../project/" class="md-tabs__link md-tabs__link--active">
+        <a href="../up42/" class="md-tabs__link md-tabs__link--active">
           Code Reference
         </a>
       
@@ -602,6 +602,18 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
+    <a href="../up42/" title="up42" class="md-nav__link">
+      up42
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../project/" title="Project" class="md-nav__link">
       Project
     </a>
@@ -809,13 +821,6 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 </li>
         
           <li class="md-nav__item">
-  <a href="#get-info" class="md-nav__link">
-    get-info
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#get-jobtasks" class="md-nav__link">
     get-jobtasks
   </a>
@@ -846,6 +851,13 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           <li class="md-nav__item">
   <a href="#get-status" class="md-nav__link">
     get-status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#info" class="md-nav__link">
+    info
   </a>
   
 </li>
@@ -947,13 +959,6 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 </li>
         
           <li class="md-nav__item">
-  <a href="#get-info_1" class="md-nav__link">
-    get-info
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#get-jobs" class="md-nav__link">
     get-jobs
   </a>
@@ -970,6 +975,13 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           <li class="md-nav__item">
   <a href="#get-workflow-tasks" class="md-nav__link">
     get-workflow-tasks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#info_1" class="md-nav__link">
+    info
   </a>
   
 </li>
@@ -1221,13 +1233,6 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 </li>
         
           <li class="md-nav__item">
-  <a href="#get-info" class="md-nav__link">
-    get-info
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#get-jobtasks" class="md-nav__link">
     get-jobtasks
   </a>
@@ -1258,6 +1263,13 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           <li class="md-nav__item">
   <a href="#get-status" class="md-nav__link">
     get-status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#info" class="md-nav__link">
+    info
   </a>
   
 </li>
@@ -1359,13 +1371,6 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 </li>
         
           <li class="md-nav__item">
-  <a href="#get-info_1" class="md-nav__link">
-    get-info
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#get-jobs" class="md-nav__link">
     get-jobs
   </a>
@@ -1382,6 +1387,13 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           <li class="md-nav__item">
   <a href="#get-workflow-tasks" class="md-nav__link">
     get-workflow-tasks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#info_1" class="md-nav__link">
+    info
   </a>
   
 </li>
@@ -1557,12 +1569,6 @@ the matching scenes. Generate search parameters with
 <div class="highlight"><pre><span></span><code>up42 job download-results [OPTIONS] OUTPUT_DIRECTORY
 </code></pre></div>
 
-<h4 id="get-info">get-info<a class="headerlink" href="#get-info" title="Permanent link">&para;</a></h4>
-<p>Get information about the job.</p>
-<p>Usage:</p>
-<div class="highlight"><pre><span></span><code>up42 job get-info [OPTIONS]
-</code></pre></div>
-
 <h4 id="get-jobtasks">get-jobtasks<a class="headerlink" href="#get-jobtasks" title="Permanent link">&para;</a></h4>
 <p>Get the individual items of the job.</p>
 <p>Usage:</p>
@@ -1591,6 +1597,12 @@ the matching scenes. Generate search parameters with
 <p>Get the job status.</p>
 <p>Usage:</p>
 <div class="highlight"><pre><span></span><code>up42 job get-status [OPTIONS]
+</code></pre></div>
+
+<h4 id="info">info<a class="headerlink" href="#info" title="Permanent link">&para;</a></h4>
+<p>Get information about the job.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>up42 job info [OPTIONS]
 </code></pre></div>
 
 <h4 id="track-status">track-status<a class="headerlink" href="#track-status" title="Permanent link">&para;</a></h4>
@@ -1696,12 +1708,6 @@ is available.</p>
 <div class="highlight"><pre><span></span><code>up42 workflow get-compatible-blocks [OPTIONS]
 </code></pre></div>
 
-<h4 id="get-info_1">get-info<a class="headerlink" href="#get-info_1" title="Permanent link">&para;</a></h4>
-<p>Get information about the workflow.</p>
-<p>Usage:</p>
-<div class="highlight"><pre><span></span><code>up42 workflow get-info [OPTIONS]
-</code></pre></div>
-
 <h4 id="get-jobs">get-jobs<a class="headerlink" href="#get-jobs" title="Permanent link">&para;</a></h4>
 <p>Get the jobs ran with this workflow.</p>
 <p>Usage:</p>
@@ -1722,6 +1728,12 @@ is available.</p>
 
 <p>Options:</p>
 <div class="highlight"><pre><span></span><code>  --basic / --full  Show basic or full task information.
+</code></pre></div>
+
+<h4 id="info_1">info<a class="headerlink" href="#info_1" title="Permanent link">&para;</a></h4>
+<p>Get information about the workflow.</p>
+<p>Usage:</p>
+<div class="highlight"><pre><span></span><code>up42 workflow info [OPTIONS]
 </code></pre></div>
 
 <h4 id="run-job">run-job<a class="headerlink" href="#run-job" title="Permanent link">&para;</a></h4>

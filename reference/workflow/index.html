@@ -39,7 +39,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#workflow-class">
+<a class="md-skip" href="#workflow">
           Skip to content
         </a>
 </div>
@@ -47,7 +47,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 <aside class="md-announce">
 <div class="md-announce__inner md-grid md-typeset">
 <style>.md-announce a,.md-announce a:focus,.md-announce a:hover{color:currentColor}.md-announce strong{white-space:nowrap}.md-announce .twitter{margin-left:.2em;color:#00acee}</style>
-<a href="https://up42.github.io/up42-py/CHANGELOG/"><strong>New version 0.11:</strong> Adds map quicklooks feature &amp; more, see the 📅
+<a href="https://sdk.up42.com/CHANGELOG/"><strong>New version 0.12.0:</strong> Improves object representation, adds info &amp; status properties and more! See the 📅
       <strong>release notes</strong>!
     </a>
 </div>
@@ -141,7 +141,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../project/">
+<a class="md-tabs__link md-tabs__link--active" href="../up42/">
           Code Reference
         </a>
 </li>
@@ -316,6 +316,11 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
       </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../up42/" title="up42">
+      up42
+    </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../project/" title="Project">
       Project
     </a>
@@ -347,8 +352,18 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 <nav aria-label="Attributes" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#up42.workflow.Workflow.info">
+    info
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#up42.workflow.Workflow.max_concurrent_jobs">
     max_concurrent_jobs
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#up42.workflow.Workflow.workflow_tasks">
+    workflow_tasks
   </a>
 </li>
 </ul>
@@ -535,8 +550,18 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 <nav aria-label="Attributes" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#up42.workflow.Workflow.info">
+    info
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#up42.workflow.Workflow.max_concurrent_jobs">
     max_concurrent_jobs
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#up42.workflow.Workflow.workflow_tasks">
+    workflow_tasks
   </a>
 </li>
 </ul>
@@ -623,15 +648,35 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 </div>
 <div class="md-content">
 <article class="md-content__inner md-typeset">
-<h1 id="workflow-class">Workflow class<a class="headerlink" href="#workflow-class" title="Permanent link">¶</a></h1>
-<p>The Workflow class can query all available and spawn new jobs for an UP42
-Workflow and helps to find and set the the workflow tasks, parameters and aoi.</p>
+<h1 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link">¶</a></h1>
+<p>With whe workflow object you can configure &amp; run jobs and query exisiting jobs of this 
+workflow.</p>
+<p>Initialize an existing workflow:</p>
+<div class="highlight"><pre><span></span><code><span class="n">workflow</span> <span class="o">=</span> <span class="n">up42</span><span class="o">.</span><span class="n">initialize_workflow</span><span class="p">(</span><span class="n">workflow_id</span><span class="o">=</span><span class="s2">"12345"</span><span class="p">)</span>
+</code></pre></div>
+<p>Create a new workflow:
+<div class="highlight"><pre><span></span><code><span class="n">workflow</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">create_workflow</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"new_workflow"</span><span class="p">)</span>
+</code></pre></div></p>
+<p><br/></p>
 <div class="doc doc-object doc-class">
 <h2 class="hidden-toc" href="#up42.workflow.Workflow" id="up42.workflow.Workflow" style="visibility: hidden; position: absolute;">
 <a class="headerlink" href="#up42.workflow.Workflow" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents first">
 <div class="doc doc-children">
 <h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">¶</a></h2>
+<div class="doc doc-object doc-attribute">
+<h3 class="doc doc-heading" id="up42.workflow.Workflow.info">
+<code class="highlight">
+info: <span class="n">Dict</span> </code>
+<span class="doc doc-properties">
+<small class="doc doc-property doc-property-property"><code>property</code></small>
+<small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+</span>
+<a class="headerlink" href="#up42.workflow.Workflow.info" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Gets the workflow metadata information.</p>
+</div>
+</div>
 <div class="doc doc-object doc-attribute">
 <h3 class="doc doc-heading" id="up42.workflow.Workflow.max_concurrent_jobs">
 <code class="highlight">
@@ -643,6 +688,19 @@ max_concurrent_jobs: <span class="nb">int</span> </code>
 <a class="headerlink" href="#up42.workflow.Workflow.max_concurrent_jobs" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Gets the maximum number of concurrent jobs allowed by the project settings.</p>
+</div>
+</div>
+<div class="doc doc-object doc-attribute">
+<h3 class="doc doc-heading" id="up42.workflow.Workflow.workflow_tasks">
+<code class="highlight">
+workflow_tasks: <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> </code>
+<span class="doc doc-properties">
+<small class="doc doc-property doc-property-property"><code>property</code></small>
+<small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+</span>
+<a class="headerlink" href="#up42.workflow.Workflow.workflow_tasks" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Gets the building blocks of the workflow as a dictionary with task_name : block-version</p>
 </div>
 </div>
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
@@ -1169,7 +1227,7 @@ will provide the compatible blocks for the last workflow task in the workflow.</
 <div class="doc doc-object doc-method">
 <h3 class="doc doc-heading" id="up42.workflow.Workflow.get_jobs">
 <code class="highlight language-python">
-get_jobs<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">return_json</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> </code>
+get_jobs<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">return_json</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">test_jobs</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">real_jobs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> </code>
 <a class="headerlink" href="#up42.workflow.Workflow.get_jobs" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Get all jobs associated with the workflow as a JobCollection or json.</p>
@@ -1191,6 +1249,22 @@ get_jobs<span class="p">(</span><span class="bp">self</span><span class="p">,</s
 <p>If true, returns the job info jsons instead of a JobCollection.</p>
 </td>
 <td><code>False</code></td>
+</tr>
+<tr>
+<td><code>test_jobs</code></td>
+<td><code>bool</code></td>
+<td>
+<p>Return test jobs or test queries.</p>
+</td>
+<td><code>True</code></td>
+</tr>
+<tr>
+<td><code>real_jobs</code></td>
+<td><code>bool</code></td>
+<td>
+<p>Return real jobs.</p>
+</td>
+<td><code>True</code></td>
 </tr>
 </tbody>
 </table>
@@ -1214,19 +1288,23 @@ get_jobs<span class="p">(</span><span class="bp">self</span><span class="p">,</s
 <details class="quote">
 <summary>Source code in <code>up42/workflow.py</code></summary>
 <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">get_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">return_json</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">JobCollection</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]]:</span>
+<pre><span></span><code><span class="k">def</span> <span class="nf">get_jobs</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">return_json</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">test_jobs</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">real_jobs</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">JobCollection</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]]:</span>
     <span class="sd">"""</span>
 <span class="sd">    Get all jobs associated with the workflow as a JobCollection or json.</span>
 
 <span class="sd">    Args:</span>
 <span class="sd">        return_json: If true, returns the job info jsons instead of a JobCollection.</span>
+<span class="sd">        test_jobs: Return test jobs or test queries.</span>
+<span class="sd">        real_jobs: Return real jobs.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A JobCollection, or alternatively the jobs info as json.</span>
 <span class="sd">    """</span>
     <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_endpoint</span><span class="p">()</span><span class="si">}</span><span class="s2">/projects/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">project_id</span><span class="si">}</span><span class="s2">/jobs"</span>
     <span class="n">response_json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="n">request_type</span><span class="o">=</span><span class="s2">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>
-    <span class="n">jobs_json</span> <span class="o">=</span> <span class="n">response_json</span><span class="p">[</span><span class="s2">"data"</span><span class="p">]</span>
+    <span class="n">jobs_json</span> <span class="o">=</span> <span class="n">filter_jobs_on_mode</span><span class="p">(</span><span class="n">response_json</span><span class="p">[</span><span class="s2">"data"</span><span class="p">],</span> <span class="n">test_jobs</span><span class="p">,</span> <span class="n">real_jobs</span><span class="p">)</span>
 
     <span class="n">jobs_workflow_json</span> <span class="o">=</span> <span class="p">[</span>
         <span class="n">j</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">jobs_json</span> <span class="k">if</span> <span class="n">j</span><span class="p">[</span><span class="s2">"workflowId"</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">workflow_id</span>
@@ -1322,7 +1400,7 @@ get_workflow_tasks<span class="p">(</span><span class="bp">self</span><span clas
 <td><code>basic</code></td>
 <td><code>bool</code></td>
 <td>
-<p>If selected returns a simplified task-name : task-id` version.</p>
+<p>If selected returns a simplified task-name : block-version dict.</p>
 </td>
 <td><code>False</code></td>
 </tr>
@@ -1353,7 +1431,7 @@ get_workflow_tasks<span class="p">(</span><span class="bp">self</span><span clas
 <span class="sd">    Get the workflow-tasks of the workflow (Blocks in a workflow are called workflow_tasks)</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        basic: If selected returns a simplified task-name : task-id` version.</span>
+<span class="sd">        basic: If selected returns a simplified task-name : block-version dict.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        The workflow task info.</span>
@@ -1367,7 +1445,7 @@ get_workflow_tasks<span class="p">(</span><span class="bp">self</span><span clas
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Got </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">tasks</span><span class="p">)</span><span class="si">}</span><span class="s2"> tasks/blocks in workflow </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">workflow_id</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">basic</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">{</span><span class="n">task</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]:</span> <span class="n">task</span><span class="p">[</span><span class="s2">"id"</span><span class="p">]</span> <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">tasks</span><span class="p">}</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">task</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]:</span> <span class="n">task</span><span class="p">[</span><span class="s2">"blockVersionTag"</span><span class="p">]</span> <span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">tasks</span><span class="p">}</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">tasks</span>
 </code></pre>
@@ -1843,6 +1921,7 @@ update_name<span class="p">(</span><span class="bp">self</span><span class="p">,
         <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">workflow_id</span><span class="si">}</span><span class="s2">"</span>
     <span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="n">request_type</span><span class="o">=</span><span class="s2">"PUT"</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">properties_to_update</span><span class="p">)</span>
+    <span class="c1"># TODO: Renew info</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Updated workflow name: </span><span class="si">{</span><span class="n">properties_to_update</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </code></pre>
 </div>

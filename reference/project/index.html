@@ -39,7 +39,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#project-class">
+<a class="md-skip" href="#project">
           Skip to content
         </a>
 </div>
@@ -47,7 +47,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 <aside class="md-announce">
 <div class="md-announce__inner md-grid md-typeset">
 <style>.md-announce a,.md-announce a:focus,.md-announce a:hover{color:currentColor}.md-announce strong{white-space:nowrap}.md-announce .twitter{margin-left:.2em;color:#00acee}</style>
-<a href="https://up42.github.io/up42-py/CHANGELOG/"><strong>New version 0.11:</strong> Adds map quicklooks feature &amp; more, see the 📅
+<a href="https://sdk.up42.com/CHANGELOG/"><strong>New version 0.12.0:</strong> Improves object representation, adds info &amp; status properties and more! See the 📅
       <strong>release notes</strong>!
     </a>
 </div>
@@ -141,7 +141,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="./">
+<a class="md-tabs__link md-tabs__link--active" href="../up42/">
           Code Reference
         </a>
 </li>
@@ -315,6 +315,11 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
         Code Reference
       </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../up42/" title="up42">
+      up42
+    </a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
@@ -341,6 +346,11 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
   </a>
 <nav aria-label="Attributes" class="md-nav">
 <ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#up42.project.Project.info">
+    info
+  </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#up42.project.Project.max_concurrent_jobs">
     max_concurrent_jobs
@@ -495,6 +505,11 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 <nav aria-label="Attributes" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#up42.project.Project.info">
+    info
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#up42.project.Project.max_concurrent_jobs">
     max_concurrent_jobs
   </a>
@@ -543,15 +558,36 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 </div>
 <div class="md-content">
 <article class="md-content__inner md-typeset">
-<h1 id="project-class">Project class<a class="headerlink" href="#project-class" title="Permanent link">¶</a></h1>
-<p>The Project class can query all available workflows and spawn new workflows within an 
-UP42 project. Also handles project user settings.</p>
+<h1 id="project">Project<a class="headerlink" href="#project" title="Permanent link">¶</a></h1>
+<p>The Project is the top level object of the UP42 hierachy. With it you can create 
+new workflows, query already existing workflows &amp; jobs in the project and 
+manage the project settings.</p>
+<p>To initialize an existing project, first <a href="../../authentication/#authenticate">authenticate</a>
+with UP42, then use:</p>
+<div class="highlight"><pre><span></span><code><span class="n">project</span> <span class="o">=</span> <span class="n">up42</span><span class="o">.</span><span class="n">initialize_project</span><span class="p">()</span>
+</code></pre></div>
+<p>To create a new project use the <a href="../../authentication/#authenticate">UP42 website interface</a>. 
+This functionality will soon also be available via the UP42 API &amp; Python SDK.</p>
+<p><br/></p>
 <div class="doc doc-object doc-class">
 <h2 class="hidden-toc" href="#up42.project.Project" id="up42.project.Project" style="visibility: hidden; position: absolute;">
 <a class="headerlink" href="#up42.project.Project" title="Permanent link">¶</a></h2>
 <div class="doc doc-contents first">
 <div class="doc doc-children">
 <h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">¶</a></h2>
+<div class="doc doc-object doc-attribute">
+<h3 class="doc doc-heading" id="up42.project.Project.info">
+<code class="highlight">
+info: <span class="n">Dict</span> </code>
+<span class="doc doc-properties">
+<small class="doc doc-property doc-property-property"><code>property</code></small>
+<small class="doc doc-property doc-property-readonly"><code>readonly</code></small>
+</span>
+<a class="headerlink" href="#up42.project.Project.info" title="Permanent link">¶</a></h3>
+<div class="doc doc-contents">
+<p>Gets the project metadata information.</p>
+</div>
+</div>
 <div class="doc doc-object doc-attribute">
 <h3 class="doc doc-heading" id="up42.project.Project.max_concurrent_jobs">
 <code class="highlight">
@@ -655,8 +691,8 @@ most recent workflow with the same name &amp; description.</p>
         <span class="n">matching_workflows</span> <span class="o">=</span> <span class="p">[</span>
             <span class="n">workflow</span>
             <span class="k">for</span> <span class="n">workflow</span> <span class="ow">in</span> <span class="n">existing_workflows</span>
-            <span class="k">if</span> <span class="n">workflow</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]</span> <span class="o">==</span> <span class="n">name</span>
-            <span class="ow">and</span> <span class="n">workflow</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">"description"</span><span class="p">]</span> <span class="o">==</span> <span class="n">description</span>
+            <span class="k">if</span> <span class="n">workflow</span><span class="o">.</span><span class="n">_info</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]</span> <span class="o">==</span> <span class="n">name</span>
+            <span class="ow">and</span> <span class="n">workflow</span><span class="o">.</span><span class="n">_info</span><span class="p">[</span><span class="s2">"description"</span><span class="p">]</span> <span class="o">==</span> <span class="n">description</span>
         <span class="p">]</span>
         <span class="k">if</span> <span class="n">matching_workflows</span><span class="p">:</span>
             <span class="n">existing_workflow</span> <span class="o">=</span> <span class="n">matching_workflows</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -682,7 +718,7 @@ most recent workflow with the same name &amp; description.</p>
 <div class="doc doc-object doc-method">
 <h3 class="doc doc-heading" id="up42.project.Project.get_jobs">
 <code class="highlight language-python">
-get_jobs<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">return_json</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> </code>
+get_jobs<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">return_json</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">test_jobs</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">real_jobs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> </code>
 <a class="headerlink" href="#up42.project.Project.get_jobs" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
 <p>Get all jobs in the project as a JobCollection or json.</p>
@@ -707,6 +743,22 @@ specific workflow.</p>
 </td>
 <td><code>False</code></td>
 </tr>
+<tr>
+<td><code>test_jobs</code></td>
+<td><code>bool</code></td>
+<td>
+<p>Return test jobs or test queries.</p>
+</td>
+<td><code>True</code></td>
+</tr>
+<tr>
+<td><code>real_jobs</code></td>
+<td><code>bool</code></td>
+<td>
+<p>Return real jobs.</p>
+</td>
+<td><code>True</code></td>
+</tr>
 </tbody>
 </table>
 <p><strong>Returns:</strong></p>
@@ -719,7 +771,7 @@ specific workflow.</p>
 </thead>
 <tbody>
 <tr>
-<td><code>Union[up42.jobcollection.JobCollection, Dict]</code></td>
+<td><code>Union[up42.jobcollection.JobCollection, List[Dict]]</code></td>
 <td>
 <p>All job objects in a JobCollection, or alternatively the jobs info as json.</p>
 </td>
@@ -729,7 +781,9 @@ specific workflow.</p>
 <details class="quote">
 <summary>Source code in <code>up42/project.py</code></summary>
 <div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">get_jobs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">return_json</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">JobCollection</span><span class="p">,</span> <span class="n">Dict</span><span class="p">]:</span>
+<pre><span></span><code><span class="k">def</span> <span class="nf">get_jobs</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">return_json</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">test_jobs</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">real_jobs</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">JobCollection</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]]:</span>
     <span class="sd">"""</span>
 <span class="sd">    Get all jobs in the project as a JobCollection or json.</span>
 
@@ -738,13 +792,15 @@ specific workflow.</p>
 
 <span class="sd">    Args:</span>
 <span class="sd">        return_json: If true, returns the job info jsons instead of JobCollection.</span>
+<span class="sd">        test_jobs: Return test jobs or test queries.</span>
+<span class="sd">        real_jobs: Return real jobs.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        All job objects in a JobCollection, or alternatively the jobs info as json.</span>
 <span class="sd">    """</span>
     <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_endpoint</span><span class="p">()</span><span class="si">}</span><span class="s2">/projects/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">project_id</span><span class="si">}</span><span class="s2">/jobs"</span>
     <span class="n">response_json</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth</span><span class="o">.</span><span class="n">_request</span><span class="p">(</span><span class="n">request_type</span><span class="o">=</span><span class="s2">"GET"</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>
-    <span class="n">jobs_json</span> <span class="o">=</span> <span class="n">response_json</span><span class="p">[</span><span class="s2">"data"</span><span class="p">]</span>
+    <span class="n">jobs_json</span> <span class="o">=</span> <span class="n">filter_jobs_on_mode</span><span class="p">(</span><span class="n">response_json</span><span class="p">[</span><span class="s2">"data"</span><span class="p">],</span> <span class="n">test_jobs</span><span class="p">,</span> <span class="n">real_jobs</span><span class="p">)</span>
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Got </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">jobs_json</span><span class="p">)</span><span class="si">}</span><span class="s2"> jobs in project </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">project_id</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">return_json</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">jobs_json</span>
@@ -976,7 +1032,7 @@ update_project_settings<span class="p">(</span><span class="bp">self</span><span
 <footer class="md-footer">
 <div class="md-footer-nav">
 <nav aria-label="Footer" class="md-footer-nav__inner md-grid">
-<a class="md-footer-nav__link md-footer-nav__link--prev" href="../cli/" rel="prev" title="Command Reference">
+<a class="md-footer-nav__link md-footer-nav__link--prev" href="../up42/" rel="prev" title="up42">
 <div class="md-footer-nav__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -985,7 +1041,7 @@ update_project_settings<span class="p">(</span><span class="bp">self</span><span
 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Command Reference
+                up42
               </div>
 </div>
 </a>
