@@ -47,7 +47,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 <aside class="md-announce">
 <div class="md-announce__inner md-grid md-typeset">
 <style>.md-announce a,.md-announce a:focus,.md-announce a:hover{color:currentColor}.md-announce strong{white-space:nowrap}.md-announce .twitter{margin-left:.2em;color:#00acee}</style>
-<a href="https://sdk.up42.com/CHANGELOG/"><strong>New version 0.13.0:</strong> Improved access &amp; documentation of plotting and basic functionality and more! See the 📅
+<a href="https://sdk.up42.com/CHANGELOG/"><strong>New version 0.12.0:</strong> Improves object representation, adds info &amp; status properties and more! See the 📅
       <strong>release notes</strong>!
     </a>
 </div>
@@ -1827,11 +1827,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding: 0 5px
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [6]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight highlight-ipynb hl-python"><pre><span></span><span class="c1"># Authenticate with UP42</span>
-<span class="n">up42</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">project_id</span><span class="o">=</span><span class="s2">"12345"</span><span class="p">,</span> <span class="n">project_api_key</span><span class="o">=</span><span class="s2">"6889"</span><span class="p">)</span>
+<span class="n">up42</span><span class="o">.</span><span class="n">authenticate</span><span class="p">(</span><span class="n">project_id</span><span class="o">=</span><span class="s2">"123"</span><span class="p">,</span> <span class="n">project_api_key</span><span class="o">=</span><span class="s2">"456"</span><span class="p">)</span>
 <span class="c1">#up42.authenticate(cfg_file="config.json")</span>
 
 <span class="n">project</span> <span class="o">=</span> <span class="n">up42</span><span class="o">.</span><span class="n">initialize_project</span><span class="p">()</span>
@@ -1839,22 +1839,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding: 0 5px
 </div>
 </div>
 </div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>2020-08-07 10:04:37,852 - up42.auth - INFO - Authentication with UP42 successful!
-2020-08-07 10:04:37,853 - up42 - INFO - Working on Project with project_id 75d25f7a-426d-495f-8cfa-e54a57d2da74
-</pre>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [7]:</div>
+<div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight highlight-ipynb hl-python"><pre><span></span><span class="c1"># Increase the parallel job limit for the project.</span>
@@ -1869,7 +1857,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding: 0 5px
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>2020-08-07 10:04:39,248 - up42.project - INFO - Updated project settings: [{'name': 'JOB_QUERY_MAX_AOI_SIZE', 'value': '100'}, {'name': 'MAX_CONCURRENT_JOBS', 'value': '10'}, {'name': 'JOB_QUERY_LIMIT_PARAMETER_MAX_VALUE', 'value': '10'}]
+<pre>2020-10-30 15:27:18,570 - Updated project settings: [{'name': 'JOB_QUERY_MAX_AOI_SIZE', 'value': '100'}, {'name': 'MAX_CONCURRENT_JOBS', 'value': '10'}, {'name': 'JOB_QUERY_LIMIT_PARAMETER_MAX_VALUE', 'value': '10'}]
 </pre>
 </div>
 </div>
@@ -1878,7 +1866,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding: 0 5px
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [8]:</div>
+<div class="prompt input_prompt">In [9]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight highlight-ipynb hl-python"><pre><span></span><span class="n">workflow</span> <span class="o">=</span> <span class="n">project</span><span class="o">.</span><span class="n">create_workflow</span><span class="p">(</span><span class="s2">"workflow_airports"</span><span class="p">,</span> <span class="n">use_existing</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1891,10 +1879,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding: 0 5px
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>2020-08-07 10:04:39,255 - up42.project - INFO - Getting existing workflows in project ...
-2020-08-07 10:04:39,627 - up42.project - INFO - Got 3 workflows for project 75d25f7a-426d-495f-8cfa-e54a57d2da74.
-100%|██████████| 3/3 [00:01&lt;00:00,  2.73it/s]
-2020-08-07 10:04:40,749 - up42.project - INFO - Using existing workflow: workflow_airports - 4022cf7c-fa26-4dd4-a2c6-b37583cacc27
+<pre>2020-10-30 15:27:18,575 - Getting existing workflows in project ...
+2020-10-30 15:27:18,867 - Got 28 workflows for project 75d25f7a-426d-495f-8cfa-e54a57d2da74.
+100%|██████████| 28/28 [00:08&lt;00:00,  3.30it/s]
+2020-10-30 15:27:27,370 - Using existing workflow: workflow_airports - 4022cf7c-fa26-4dd4-a2c6-b37583cacc27
 </pre>
 </div>
 </div>
@@ -1903,7 +1891,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding: 0 5px
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [9]:</div>
+<div class="prompt input_prompt">In [10]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight highlight-ipynb hl-python"><pre><span></span><span class="c1"># Fill the workflow with tasks</span>
@@ -1922,15 +1910,15 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding: 0 5px
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>2020-08-07 10:04:42,249 - up42.workflow - INFO - Added tasks to workflow: [{'name': 'sobloo-s2-l1c-aoiclipped:1', 'parentName': None, 'blockId': 'a2daaab4-196d-4226-a018-a810444dcad1'}]
-2020-08-07 10:04:42,697 - up42.workflow - INFO - Got 1 tasks/blocks in workflow 4022cf7c-fa26-4dd4-a2c6-b37583cacc27.
+<pre>2020-10-30 15:27:29,793 - Added tasks to workflow: [{'name': 'sobloo-s2-l1c-aoiclipped:1', 'parentName': None, 'blockId': 'a2daaab4-196d-4226-a018-a810444dcad1'}]
+2020-10-30 15:27:30,205 - Got 1 tasks/blocks in workflow 4022cf7c-fa26-4dd4-a2c6-b37583cacc27.
 </pre>
 </div>
 </div>
 <div class="output_area">
-<div class="prompt output_prompt">Out[9]:</div>
+<div class="prompt output_prompt">Out[10]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>{'sobloo-s2-l1c-aoiclipped:1': '10b80b0d-9b99-4a2d-b5a4-2cbd8331cc0d'}</pre>
+<pre>{'sobloo-s2-l1c-aoiclipped:1': '2.3.0'}</pre>
 </div>
 </div>
 </div>
@@ -1946,7 +1934,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding: 0 5px
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [10]:</div>
+<div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class="highlight highlight-ipynb hl-python"><pre><span></span><span class="c1"># Run jobs in parallel</span>
@@ -1967,7 +1955,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding: 0 5px
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>2020-08-07 10:04:42,703 - up42 - INFO - Logging disabled - use up42.settings(log=True) to reactivate.
+<pre>2020-10-30 15:27:30,212 - Logging disabled - use up42.settings(log=True) to reactivate.
 </pre>
 </div>
 </div>
