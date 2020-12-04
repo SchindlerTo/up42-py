@@ -520,7 +520,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
 
 
   <li class="md-nav__item">
-    <a href="../../examples/shop-identification.ipynb" class="md-nav__link">
+    <a href="../../examples/ship-identification/" class="md-nav__link">
       Ship identification
     </a>
   </li>
@@ -1420,14 +1420,15 @@ It is installed automatically with and based on the Python SDK.</p>
 <div class="highlight"><pre><span></span><code>up42 [OPTIONS] COMMAND [ARGS]...
 </code></pre></div>
 <p>Options:</p>
-<div class="highlight"><pre><span></span><code>  -pid, --project-id TEXT        Your project ID, get it in the Project
-                                 settings in the console.
+<div class="highlight"><pre><span></span><code>  -pid, --project-id TEXT        Your project ID, get it in the
+                                 Project settings in the console.
 
-  -pkey, --project-api-key TEXT  Your project API KEY, get in the Project
-                                 settings in the console.
+  -pkey, --project-api-key TEXT  Your project API KEY, get in the
+                                 Project settings in the console.
 
   -cfg, --config-file PATH       File path to the config.json with
-                                 {project_id: &#39;...&#39;, project_api_key: &#39;...&#39;}
+                                 {project_id: &#39;...&#39;, project_api_key:
+                                 &#39;...&#39;}
 
   --env TEXT
 </code></pre></div>
@@ -1458,11 +1459,13 @@ catalog search.</p>
   --sensors [pleiades|spot|sentinel1|sentinel2|sentinel3|sentinel5p]
                                   Imagery sensors to search for.
   --max-cloud-cover INTEGER RANGE
-                                  Maximum cloudcover percentage. 100 will
-                                  return all scenes,8.4 will return all scenes
-                                  with 8.4 or less cloudcover.
+                                  Maximum cloudcover percentage. 100
+                                  will return all scenes,8.4 will
+                                  return all scenes with 8.4 or less
+                                  cloudcover.
 
-  --limit INTEGER                 The maximum number of search results.
+  --limit INTEGER                 The maximum number of search
+                                  results.
 </code></pre></div>
 <h4 id="search">search<a class="headerlink" href="#search" title="Permanent link">&para;</a></h4>
 <p>Searches the catalog for the search parameters and returns the metadata of
@@ -1495,7 +1498,8 @@ the matching scenes. Generate search parameters with
 <p>Options:</p>
 <div class="highlight"><pre><span></span><code>  -t, --block-type [data|processing]
                                   Filter by block type.
-  --basic / --full                Show basic or full block information.
+  --basic / --full                Show basic or full block
+                                  information.
 </code></pre></div>
 <h3 id="job">job<a class="headerlink" href="#job" title="Permanent link">&para;</a></h3>
 <p>Get job status, results and more.</p>
@@ -1503,8 +1507,9 @@ the matching scenes. Generate search parameters with
 <div class="highlight"><pre><span></span><code>up42 job [OPTIONS] COMMAND [ARGS]...
 </code></pre></div>
 <p>Options:</p>
-<div class="highlight"><pre><span></span><code>  -jid, --job-id TEXT  Your job ID, get it by creating a job or running &#39;up42
-                       project workflow get-jobs&#39;  [required]
+<div class="highlight"><pre><span></span><code>  -jid, --job-id TEXT  Your job ID, get it by creating a job or
+                       running &#39;up42 project workflow get-jobs&#39;
+                       [required]
 </code></pre></div>
 <h4 id="cancel-job">cancel-job<a class="headerlink" href="#cancel-job" title="Permanent link">&para;</a></h4>
 <p>Cancel a job that is running.</p>
@@ -1557,8 +1562,8 @@ the matching scenes. Generate search parameters with
 <div class="highlight"><pre><span></span><code>up42 job track-status [OPTIONS]
 </code></pre></div>
 <p>Options:</p>
-<div class="highlight"><pre><span></span><code>  -i, --interval INTEGER RANGE  Interval between getting job status in
-                                seconds.
+<div class="highlight"><pre><span></span><code>  -i, --interval INTEGER RANGE  Interval between getting job status
+                                in seconds.
 </code></pre></div>
 <h3 id="project">project<a class="headerlink" href="#project" title="Permanent link">&para;</a></h3>
 <p>Create and get workflows, manage project settings and more.</p>
@@ -1586,16 +1591,18 @@ the matching scenes. Generate search parameters with
 <div class="highlight"><pre><span></span><code>up42 project update-project-settings [OPTIONS]
 </code></pre></div>
 <p>Options:</p>
-<div class="highlight"><pre><span></span><code>  --max-aoi-size INTEGER RANGE    The maximum area of interest geometry size,
-                                  from 1-1000 sqkm, default 10 sqkm.
+<div class="highlight"><pre><span></span><code>  --max-aoi-size INTEGER RANGE    The maximum area of interest
+                                  geometry size, from 1-1000 sqkm,
+                                  default 10 sqkm.
 
   --max-concurrent-jobs INTEGER RANGE
-                                  The maximum number of concurrent jobs, from
-                                  1-10, default 1.
+                                  The maximum number of concurrent
+                                  jobs, from 1-10, default 1.
 
   --number-of-images INTEGER RANGE
-                                  The maximum number of images returned with
-                                  each job, from 1-20, default 10.
+                                  The maximum number of images
+                                  returned with each job, from 1-20,
+                                  default 10.
 </code></pre></div>
 <h4 id="workflow-from-name">workflow-from-name<a class="headerlink" href="#workflow-from-name" title="Permanent link">&para;</a></h4>
 <p>Use a workflow from name.</p>
@@ -1616,8 +1623,9 @@ the matching scenes. Generate search parameters with
 <div class="highlight"><pre><span></span><code>up42 workflow [OPTIONS] COMMAND [ARGS]...
 </code></pre></div>
 <p>Options:</p>
-<div class="highlight"><pre><span></span><code>  -wid, --workflow-id TEXT  Your workflow ID, get it by creating a workflow or
-                            running &#39;up42 project get-workflows&#39;  [required]
+<div class="highlight"><pre><span></span><code>  -wid, --workflow-id TEXT  Your workflow ID, get it by creating a
+                            workflow or running &#39;up42 project get-
+                            workflows&#39;  [required]
 </code></pre></div>
 <h4 id="add-workflow-tasks">add-workflow-tasks<a class="headerlink" href="#add-workflow-tasks" title="Permanent link">&para;</a></h4>
 <p>Adds or overwrites workflow tasks.
