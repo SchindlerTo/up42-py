@@ -682,7 +682,7 @@ workflow_tasks: <span class="n">Dict</span><span class="p">[</span><span class="
 </span>
 <a class="headerlink" href="#up42.workflow.Workflow.workflow_tasks" title="Permanent link">¶</a></h3>
 <div class="doc doc-contents">
-<p>Gets the building blocks of the workflow as a dictionary with task_name : block-version</p>
+<p>Gets the building blocks of the workflow as a dictionary with <code>task_name:block-version</code></p>
 </div>
 </div>
 <h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permanent link">¶</a></h2>
@@ -708,9 +708,9 @@ add_workflow_tasks<span class="p">(</span><span class="bp">self</span><span clas
 <td><code>input_tasks</code></td>
 <td><code>Union[List[str], List[Dict]]</code></td>
 <td>
-<p>The input tasks, specifying the blocks. Can be a list of the
-block ids, block names or block display names (The name shown on the
-<a href="https://marketplace.up42.com">marketplace</a>.</p>
+<p>The blocks to be added to the workflow. Can be a list of the
+block names, block ids (use <code>up42.get_blocks()</code>) or block display names
+(The names shown on the <a href="https://marketplace.up42.com">UP42 marketplace</a>.</p>
 </td>
 <td><em>required</em></td>
 </tr>
@@ -719,72 +719,94 @@ block ids, block names or block display names (The name shown on the
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>With block names or block display names, the most recent version of a block
-will always be added. Using block ids specifies a specific version of the
-block that will be added to the workflow.</p>
+will be added. Using block ids specifies a specific version of a block.</p>
 </div>
 <p><strong>Examples:</strong></p>
 <div class="highlight">
-<pre><span></span><code><span class="n">input_tasks</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"sobloo-s2-l1c-aoiclipped"</span><span class="p">,</span> <span class="s2">"tiling"</span><span class="p">]</span>
+<pre><span></span><code><span class="c1"># Block names</span>
+<span class="n">input_tasks</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"sentinelhub-s2"</span><span class="p">,</span> <span class="s2">"tiling"</span><span class="p">]</span>
 </code></pre>
 </div>
 <div class="highlight">
-<pre><span></span><code><span class="n">input_tasks</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Sentinel-2 L1C MSI AOI clipped"</span><span class="p">,</span>
+<pre><span></span><code><span class="c1"># Block Display names</span>
+<span class="n">input_tasks</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Sentinel-2 Level 2 (BOA) AOI clipped"</span><span class="p">,</span>
                <span class="s2">"Raster Tiling"</span><span class="p">]</span>
 </code></pre>
 </div>
 <div class="highlight">
-<pre><span></span><code><span class="n">input_tasks</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a2daaab4-196d-4226-a018-a810444dcad1'</span><span class="p">,</span>
+<pre><span></span><code><span class="c1"># Block Ids</span>
+<span class="n">input_tasks</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'018dfb34-fc19-4334-8125-14fd7535f979'</span><span class="p">,</span>
                <span class="s1">'4ed70368-d4e1-4462-bef6-14e768049471'</span><span class="p">]</span>
+</code></pre>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Using Custom Blocks</p>
+<p>To use a custom block in your workspace, you need to provide the custom block
+id directly in the <a href="https://docs.up42.com/going-further/api-walkthrough.html#creating-the-the-second-task-processing-block-addition">full workflow definition</a>
+(dict of block id, block name and parent block name). See example below.</p>
+</div>
+<p><strong>Examples:</strong></p>
+<div class="highlight">
+<pre><span></span><code><span class="c1"># Full workflow definition</span>
+<span class="n">input_tasks</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">'name'</span><span class="p">:</span> <span class="s1">'sentinelhub-s2:1'</span><span class="p">,</span>
+                <span class="s1">'parentName'</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="s1">'blockId'</span><span class="p">:</span> <span class="s1">'018dfb34-fc19-4334-8125-14fd7535f979'</span><span class="p">},</span>
+               <span class="p">{</span><span class="s1">'name'</span><span class="p">:</span> <span class="s1">'tiling:1'</span><span class="p">,</span>
+                <span class="s1">'parentName'</span><span class="p">:</span> <span class="s1">'sentinelhub-s2:1'</span><span class="p">,</span>
+                <span class="s1">'blockId'</span><span class="p">:</span> <span class="s1">'4ed70368-d4e1-4462-bef6-14e768049471'</span><span class="p">}]</span>
 </code></pre>
 </div>
 <details class="quote">
 <summary>Source code in <code>up42/workflow.py</code></summary>
 <div class="highlight">
 <pre><span></span><code><span class="k">def</span> <span class="nf">add_workflow_tasks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_tasks</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="c1"># pylint: disable=line-too-long</span>
     <span class="sd">"""</span>
 <span class="sd">    Adds or overwrites workflow tasks in a workflow on UP42.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        input_tasks: The input tasks, specifying the blocks. Can be a list of the</span>
-<span class="sd">            block ids, block names or block display names (The name shown on the</span>
-<span class="sd">            [marketplace](https://marketplace.up42.com).</span>
+<span class="sd">        input_tasks: The blocks to be added to the workflow. Can be a list of the</span>
+<span class="sd">            block names, block ids (use `up42.get_blocks()`) or block display names</span>
+<span class="sd">            (The names shown on the [UP42 marketplace](https://marketplace.up42.com).</span>
 
 <span class="sd">    !!! Info</span>
 <span class="sd">        With block names or block display names, the most recent version of a block</span>
-<span class="sd">        will always be added. Using block ids specifies a specific version of the</span>
-<span class="sd">        block that will be added to the workflow.</span>
+<span class="sd">        will be added. Using block ids specifies a specific version of a block.</span>
 
-<span class="sd">    Example:</span>
+<span class="sd">    Examples:</span>
 <span class="sd">        ```python</span>
-<span class="sd">        input_tasks = ["sobloo-s2-l1c-aoiclipped", "tiling"]</span>
+<span class="sd">        # Block names</span>
+<span class="sd">        input_tasks = ["sentinelhub-s2", "tiling"]</span>
 <span class="sd">        ```</span>
 
 <span class="sd">        ```python</span>
-<span class="sd">        input_tasks = ["Sentinel-2 L1C MSI AOI clipped",</span>
+<span class="sd">        # Block Display names</span>
+<span class="sd">        input_tasks = ["Sentinel-2 Level 2 (BOA) AOI clipped",</span>
 <span class="sd">                       "Raster Tiling"]</span>
 <span class="sd">        ```</span>
 
 <span class="sd">        ```python</span>
-<span class="sd">        input_tasks = ['a2daaab4-196d-4226-a018-a810444dcad1',</span>
+<span class="sd">        # Block Ids</span>
+<span class="sd">        input_tasks = ['018dfb34-fc19-4334-8125-14fd7535f979',</span>
 <span class="sd">                       '4ed70368-d4e1-4462-bef6-14e768049471']</span>
 <span class="sd">        ```</span>
-<span class="sd">    """</span>
-    <span class="c1"># Relevant when non-linear workflows are introduced:</span>
-    <span class="c1"># Optional:</span>
-    <span class="c1">#     The input_tasks can also be provided as the full, detailed workflow task</span>
-    <span class="c1">#     definition (dict of block id, block name and parent block name). Always use :1</span>
-    <span class="c1">#     to be able to identify the order when two times the same workflow task is used.</span>
-    <span class="c1">#     The name is arbitrary, but best use the block name.</span>
-    <span class="c1">#</span>
-    <span class="c1"># Example:</span>
-    <span class="c1">#     ```python</span>
-    <span class="c1">#     input_tasks_full = [{'name': 'sobloo-s2-l1c-aoiclipped:1',</span>
-    <span class="c1">#                          'parentName': None,</span>
-    <span class="c1">#                          'blockId': 'a2daaab4-196d-4226-a018-a810444dcad1'},</span>
-    <span class="c1">#                         {'name': 'sharpening:1',</span>
-    <span class="c1">#                          'parentName': 'sobloo-s2-l1c-aoiclipped',</span>
-    <span class="c1">#                          'blockId': '4ed70368-d4e1-4462-bef6-14e768049471'}]</span>
 
+<span class="sd">    !!! Info "Using Custom Blocks"</span>
+<span class="sd">        To use a custom block in your workspace, you need to provide the custom block</span>
+<span class="sd">        id directly in the [full workflow definition](https://docs.up42.com/going-further/api-walkthrough.html#creating-the-the-second-task-processing-block-addition)</span>
+<span class="sd">        (dict of block id, block name and parent block name). See example below.</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        ```python</span>
+<span class="sd">        # Full workflow definition</span>
+<span class="sd">        input_tasks = [{'name': 'sentinelhub-s2:1',</span>
+<span class="sd">                        'parentName': None,</span>
+<span class="sd">                        'blockId': '018dfb34-fc19-4334-8125-14fd7535f979'},</span>
+<span class="sd">                       {'name': 'tiling:1',</span>
+<span class="sd">                        'parentName': 'sentinelhub-s2:1',</span>
+<span class="sd">                        'blockId': '4ed70368-d4e1-4462-bef6-14e768049471'}]</span>
+<span class="sd">        ```</span>
+<span class="sd">    """</span>
     <span class="c1"># Construct proper task definition from simplified input.</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">input_tasks</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">input_tasks</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">dict</span><span class="p">):</span>
         <span class="n">input_tasks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_construct_full_workflow_tasks_dict</span><span class="p">(</span><span class="n">input_tasks</span><span class="p">)</span>
