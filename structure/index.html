@@ -11,11 +11,11 @@
       
       
       
+      
         <link rel="canonical" href="https://up42.github.io/up42-py/structure/">
       
-      
       <link rel="shortcut icon" href="../assets/logo-up42.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.4">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
     
     
       
@@ -23,10 +23,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.358818c7.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.3b61ea93.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.f0267088.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
         
           
           
@@ -51,7 +51,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
     
       
         
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
@@ -79,6 +79,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="purple">
       
   
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -120,18 +121,20 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
     <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             UP42 Python SDK
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             
               Structure
             
           </span>
         </div>
-      
+      </div>
     </div>
     
       <label class="md-header-nav__button md-icon" for="__search">
@@ -142,7 +145,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -186,32 +189,36 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
       
         
           
-
-  
-
-<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
+  
+  
+
+
   <li class="md-tabs__item">
-    
-      <a href=".." class="md-tabs__link">
-        Home
-      </a>
-    
+    <a href=".." class="md-tabs__link">
+      Home
+    </a>
   </li>
 
       
         
   
   
+    
+  
+
+
+  
+  
+  
     <li class="md-tabs__item">
-      
-        <a href="../30-second-example/" class="md-tabs__link md-tabs__link--active">
-          Getting Started
-        </a>
-      
+      <a href="../30-second-example/" class="md-tabs__link md-tabs__link--active">
+        Getting Started
+      </a>
     </li>
   
 
@@ -219,12 +226,15 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
         
   
   
+
+
+  
+  
+  
     <li class="md-tabs__item">
-      
-        <a href="../examples-intro/" class="md-tabs__link">
-          Examples
-        </a>
-      
+      <a href="../examples-intro/" class="md-tabs__link">
+        Examples
+      </a>
     </li>
   
 
@@ -232,12 +242,15 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
         
   
   
+
+
+  
+  
+  
     <li class="md-tabs__item">
-      
-        <a href="../reference/up42-reference/" class="md-tabs__link">
-          Code Reference
-        </a>
-      
+      <a href="../reference/up42-reference/" class="md-tabs__link">
+        Code Reference
+      </a>
     </li>
   
 
@@ -245,12 +258,15 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
         
   
   
+
+
+  
+  
+  
     <li class="md-tabs__item">
-      
-        <a href="../cli/" class="md-tabs__link">
-          CLI
-        </a>
-      
+      <a href="../cli/" class="md-tabs__link">
+        CLI
+      </a>
     </li>
   
 
@@ -258,12 +274,15 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
         
   
   
+
+
+  
+  
+  
     <li class="md-tabs__item">
-      
-        <a href="../CHANGELOG/" class="md-tabs__link">
-          Changelog & FAQ
-        </a>
-      
+      <a href="../CHANGELOG/" class="md-tabs__link">
+        Changelog & FAQ
+      </a>
     </li>
   
 
@@ -277,12 +296,18 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
         <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="https://up42.github.io/up42-py/" title="UP42 Python SDK" class="md-nav__button md-logo" aria-label="UP42 Python SDK">
       
@@ -315,6 +340,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
       
 
 
+
   <li class="md-nav__item">
     <a href=".." class="md-nav__link">
       Home
@@ -326,10 +352,13 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
       
       
 
+
   
 
 
+  
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
     
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
@@ -350,6 +379,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           
 
 
+
   <li class="md-nav__item">
     <a href="../30-second-example/" class="md-nav__link">
       30 Second Example
@@ -360,6 +390,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -374,6 +405,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           
 
 
+
   <li class="md-nav__item">
     <a href="../authentication/" class="md-nav__link">
       Authentication
@@ -384,6 +416,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           
           
           
+
 
   
 
@@ -450,6 +483,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           
 
 
+
   <li class="md-nav__item">
     <a href="../catalog/" class="md-nav__link">
       Catalog Search
@@ -460,6 +494,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -479,9 +514,12 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
     
     <label class="md-nav__link" for="nav-3">
       Examples
@@ -500,6 +538,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           
 
 
+
   <li class="md-nav__item">
     <a href="../examples-intro/" class="md-nav__link">
       Examples
@@ -510,6 +549,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -524,6 +564,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           
 
 
+
   <li class="md-nav__item">
     <a href="../examples/radar_processing_1/" class="md-nav__link">
       Radar processing
@@ -534,6 +575,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -548,6 +590,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           
 
 
+
   <li class="md-nav__item">
     <a href="../examples/catalog-quicklooks/" class="md-nav__link">
       Catalog Quicklooks
@@ -558,6 +601,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -577,9 +621,12 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
     
     <label class="md-nav__link" for="nav-4">
       Code Reference
@@ -598,6 +645,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           
 
 
+
   <li class="md-nav__item">
     <a href="../reference/up42-reference/" class="md-nav__link">
       up42
@@ -608,6 +656,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -622,6 +671,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           
 
 
+
   <li class="md-nav__item">
     <a href="../reference/workflow-reference/" class="md-nav__link">
       Workflow
@@ -632,6 +682,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -646,6 +697,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           
 
 
+
   <li class="md-nav__item">
     <a href="../reference/jobcollection-reference/" class="md-nav__link">
       JobCollection
@@ -656,6 +708,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -670,6 +723,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           
 
 
+
   <li class="md-nav__item">
     <a href="../reference/catalog-reference/" class="md-nav__link">
       Catalog
@@ -680,6 +734,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -699,9 +754,12 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
     
     <label class="md-nav__link" for="nav-5">
       CLI
@@ -720,6 +778,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           
 
 
+
   <li class="md-nav__item">
     <a href="../cli/" class="md-nav__link">
       Command Line Interface (CLI)
@@ -730,6 +789,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -749,9 +809,12 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" >
     
     <label class="md-nav__link" for="nav-6">
       Changelog & FAQ
@@ -770,6 +833,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           
 
 
+
   <li class="md-nav__item">
     <a href="../CHANGELOG/" class="md-nav__link">
       Changelog
@@ -782,6 +846,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           
 
 
+
   <li class="md-nav__item">
     <a href="../support-faq/" class="md-nav__link">
       FAQ & Support
@@ -792,6 +857,7 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
           
           
           
+
 
 
   <li class="md-nav__item">
@@ -813,7 +879,8 @@ if (typeof window !== 'undefined' && window.location.href.includes('127.0.0.1'))
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -990,18 +1057,21 @@ function.</p>
 
 <span class="n">project</span> <span class="o">=</span> <span class="n">up42</span><span class="o">.</span><span class="n">initialize_project</span><span class="p">()</span>
 </code></pre></div>
+
 </div>
 <input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Workflow</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="n">UP42_WORKFLOW_ID</span><span class="o">=</span><span class="s2">&quot;7fb2ec8a-45be-41ad-a50f-98ba6b528b98&quot;</span>
 
 <span class="n">workflow</span> <span class="o">=</span> <span class="n">up42</span><span class="o">.</span><span class="n">initialize_workflow</span><span class="p">(</span><span class="n">workflow_id</span><span class="o">=</span><span class="n">UP42_WORKFLOW_ID</span><span class="p">)</span>
 </code></pre></div>
+
 </div>
 <input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">Job</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="n">UP42_JOB_ID</span><span class="o">=</span><span class="s2">&quot;de5806aa-5ef1-4dc9-ab1d-06d7ec1a5021&quot;</span>
 
 <span class="n">job</span> <span class="o">=</span> <span class="n">up42</span><span class="o">.</span><span class="n">initialize_job</span><span class="p">(</span><span class="n">job_id</span><span class="o">=</span><span class="n">UP42_JOB_ID</span><span class="p">)</span>
 </code></pre></div>
+
 </div>
 <input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><label for="__tabbed_2_4">JobTask</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="n">UP42_JOBTASK_ID</span><span class="o">=</span><span class="s2">&quot;3f772637-09aa-4164-bded-692fcd746d20&quot;</span>
@@ -1009,10 +1079,12 @@ function.</p>
 <span class="n">jobtask</span> <span class="o">=</span> <span class="n">up42</span><span class="o">.</span><span class="n">initialize_jobtask</span><span class="p">(</span><span class="n">jobtask_id</span><span class="o">=</span><span class="n">UP42_JOBTASK_ID</span><span class="p">,</span>
                                   <span class="n">job_id</span><span class="o">=</span><span class="n">UP42_JOB_ID</span><span class="p">)</span>
 </code></pre></div>
+
 </div>
 <input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><label for="__tabbed_2_5">Catalog</label><div class="tabbed-content">
 <div class="highlight"><pre><span></span><code><span class="n">catalog</span> <span class="o">=</span> <span class="n">up42</span><span class="o">.</span><span class="n">initialize_catalog</span><span class="p">()</span>
 </code></pre></div>
+
 </div>
 </div>
 </div>
@@ -1114,15 +1186,15 @@ function.</p>
 
     </div>
     
-      <script src="../assets/javascripts/vendor.7e0ee788.min.js"></script>
-      <script src="../assets/javascripts/bundle.b3a72adc.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../assets/javascripts/vendor.08c56446.min.js"></script>
+      <script src="../assets/javascripts/bundle.6ced434e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
           base: "..",
           features: ['navigation.tabs'],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+            worker: "../assets/javascripts/worker/search.8c7e0a7e.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
